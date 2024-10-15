@@ -1,0 +1,58 @@
+{
+  "collapse-filter": false,
+  "search": "",
+  "showTags": false,
+  "showAttachments": false,
+  "hideUnresolved": false,
+  "showOrphans": true,
+  "collapse-color-groups": true,
+  "colorGroups": [
+    {
+      "query": "tag:#core  ",
+      "color": {
+        "a": 1,
+        "rgb": 5357575
+      }
+    },
+    {
+      "query": "tag:#react",
+      "color": {
+        "a": 1,
+        "rgb": 6084296
+      }
+    },
+    {
+      "query": "tag:#nodejs",
+      "color": {
+        "a": 1,
+        "rgb": 15364624
+      }
+    },
+    {
+      "query": "tag:#dev",
+      "color": {
+        "a": 1,
+        "rgb": 9000678
+      }
+    },
+    {
+      "query": "tag:#devops",
+      "color": {
+        "a": 1,
+        "rgb": 14497334
+      }
+    }
+  ],
+  "collapse-display": true,
+  "showArrow": false,
+  "textFadeMultiplier": 0,
+  "nodeSizeMultiplier": 0.745198567708333,
+  "lineSizeMultiplier": 1.045068359375,
+  "collapse-forces": true,
+  "centerStrength": 0.6165771484375,
+  "repelStrength": 10.57373046875,
+  "linkStrength": 1,
+  "linkDistance": 250,
+  "scale": 1.8220415901555445,
+  "close": true
+}

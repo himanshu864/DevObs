@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "29e7e3815426ef5f",
+        "id": "7d132ff9e298a085",
         "type": "tabs",
         "children": [
           {
-            "id": "1a9c4f29468f8c1a",
+            "id": "8022593116080c7a",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Dev.md",
+                "file": "Theory Of Computation.md",
                 "mode": "source",
                 "source": false
               }
@@ -43,7 +43,7 @@
             }
           },
           {
-            "id": "2e2ff97865c08c96",
+            "id": "1329045c47560003",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -64,12 +64,28 @@
               "type": "bookmarks",
               "state": {}
             }
+          },
+          {
+            "id": "b84ca6d1bb698394",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "50af07d8ac9fe310",
@@ -85,7 +101,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Dev.md",
+                "file": "Theory Of Computation.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,14 +118,32 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Dev.md",
+                "file": "Theory Of Computation.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
             }
           },
           {
-            "id": "bb425492d1832800",
+            "id": "0e4871a27c947456",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Theory Of Computation.md"
+              }
+            }
+          },
+          {
+            "id": "19e52fe1b6c4d6fa",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {}
+            }
+          },
+          {
+            "id": "89eb67532150639e",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -120,16 +154,18 @@
             }
           },
           {
-            "id": "0e4871a27c947456",
+            "id": "6792637692c2a0d5",
             "type": "leaf",
             "state": {
-              "type": "outline",
+              "type": "tag",
               "state": {
-                "file": "Dev.md"
+                "sortOrder": "frequency",
+                "useHierarchy": true
               }
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -140,14 +176,50 @@
     "hiddenItems": {
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
-      "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false
+      "command-palette:Open command palette": false,
+      "obsidian-git:Open Git source control": false
     }
   },
-  "active": "1a9c4f29468f8c1a",
+  "active": "8022593116080c7a",
   "lastOpenFiles": [
-    "Dev.md"
+    "README.md",
+    "Python.md",
+    "Optimize React - Memo.md",
+    "Clusters.md",
+    "Class-Based ErrorBoundry.md",
+    "React Backend.md",
+    "React.md",
+    "Context.md",
+    "React Forms Inputs.md",
+    "React-Index.md",
+    "NGINX Deploy NodeJS AWS Docker.md",
+    "INDEX.md",
+    "Custom Hooks.md",
+    "Serverless.md",
+    "ec2.md",
+    "Context API.md",
+    "WebSocket.md",
+    "Web Technology.md",
+    "useRef.md",
+    "Theory Of Computation.md",
+    "SSH GitHub on MacBook.md",
+    "Side Effects.md",
+    "NodeJS Streams.md",
+    "NGINX.md",
+    "Engineering Economics.md",
+    "Docker.md",
+    "Assets/Untitled.png",
+    "Assets/WhatsApp Image 2024-09-21 at 11.50.16 1.jpeg",
+    "Assets/Untitled 1.png",
+    "Assets/Screenshot 2024-09-26 at 3.49.06 PM 1.png",
+    "Assets/Screenshot 2024-09-26 at 2.58.27 PM 1.png",
+    "Assets/Screenshot 2024-09-26 at 2.57.42 PM 1.png",
+    "Assets/Screenshot 2024-09-26 at 2.57.00 PM 1.png",
+    "Assets/Screenshot 2024-09-26 at 2.54.27 PM 2.png",
+    "Assets/Screenshot 2024-09-26 at 2.54.27 PM 1 1.png",
+    "Assets/Screenshot 2024-09-26 at 2.54.12 PM 1.png",
+    "Assets"
   ]
 }

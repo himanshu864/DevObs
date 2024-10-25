@@ -4,19 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "7d132ff9e298a085",
+        "id": "e1ff4cbed10fe482",
         "type": "tabs",
         "children": [
           {
-            "id": "8022593116080c7a",
+            "id": "a7990835b1542f88",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Theory Of Computation.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
             }
           }
         ]
@@ -39,7 +37,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
             }
           },
           {
@@ -54,7 +54,9 @@
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-search",
+              "title": "Search"
             }
           },
           {
@@ -62,7 +64,9 @@
             "type": "leaf",
             "state": {
               "type": "bookmarks",
-              "state": {}
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
             }
           },
           {
@@ -77,7 +81,9 @@
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-search",
+              "title": "Search"
             }
           }
         ]
@@ -101,7 +107,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Theory Of Computation.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -109,7 +114,9 @@
                 "searchQuery": "",
                 "backlinkCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
             }
           },
           {
@@ -118,10 +125,11 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Theory Of Computation.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
             }
           },
           {
@@ -129,9 +137,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Theory Of Computation.md"
-              }
+              "state": {},
+              "icon": "lucide-list",
+              "title": "Outline"
             }
           },
           {
@@ -139,7 +147,9 @@
             "type": "leaf",
             "state": {
               "type": "git-view",
-              "state": {}
+              "state": {},
+              "icon": "lucide-file",
+              "title": "Plugin no longer active"
             }
           },
           {
@@ -150,7 +160,9 @@
               "state": {
                 "sortOrder": "frequency",
                 "useHierarchy": true
-              }
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
             }
           },
           {
@@ -161,7 +173,9 @@
               "state": {
                 "sortOrder": "frequency",
                 "useHierarchy": true
-              }
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
             }
           }
         ],
@@ -176,50 +190,47 @@
     "hiddenItems": {
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
-      "daily-notes:Open today's daily note": false,
-      "templates:Insert template": false,
       "command-palette:Open command palette": false,
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "8022593116080c7a",
+  "active": "a7990835b1542f88",
   "lastOpenFiles": [
-    "README.md",
-    "Python.md",
-    "Optimize React - Memo.md",
-    "Clusters.md",
+    "Custom Hooks.md",
     "Class-Based ErrorBoundry.md",
+    "Python.md",
+    "Assets/Pasted image 20240724005003.png",
+    "Assets/Pasted image 20240810135307.png",
+    "Assets/Pasted image 20240926155153.png",
+    "Assets/Pasted image 20240926145106.png",
+    "Assets/Pasted image 20240924140354.png",
+    "Assets/Pasted image 20240926155111.png",
+    "Assets/Pasted image 20240929204545.png",
+    "Assets/Pasted image 20240929201538.png",
+    "Assets/Pasted image 20240929201423.png",
+    "Assets/PinkedIn.png",
+    "Serverless.md",
+    "useRef.md",
+    "WebSocket.md",
     "React Backend.md",
+    "NodeJS Streams.md",
+    "Context API.md",
+    "Clusters.md",
+    "Side Effects.md",
+    "NGINX.md",
+    "NGINX Deploy NodeJS AWS Docker.md",
+    "Optimize React - Memo.md",
+    "README.md",
+    "React Forms Inputs.md",
+    "Docker.md",
+    "Theory Of Computation.md",
+    "theyr.md",
+    "Data Modelling - Mongoose.md",
+    "Engineering Economics.md",
     "React.md",
     "Context.md",
-    "React Forms Inputs.md",
     "React-Index.md",
-    "NGINX Deploy NodeJS AWS Docker.md",
     "INDEX.md",
-    "Custom Hooks.md",
-    "Serverless.md",
-    "ec2.md",
-    "Context API.md",
-    "WebSocket.md",
-    "Web Technology.md",
-    "useRef.md",
-    "Theory Of Computation.md",
-    "SSH GitHub on MacBook.md",
-    "Side Effects.md",
-    "NodeJS Streams.md",
-    "NGINX.md",
-    "Engineering Economics.md",
-    "Docker.md",
-    "Assets/Untitled.png",
-    "Assets/WhatsApp Image 2024-09-21 at 11.50.16 1.jpeg",
-    "Assets/Untitled 1.png",
-    "Assets/Screenshot 2024-09-26 at 3.49.06 PM 1.png",
-    "Assets/Screenshot 2024-09-26 at 2.58.27 PM 1.png",
-    "Assets/Screenshot 2024-09-26 at 2.57.42 PM 1.png",
-    "Assets/Screenshot 2024-09-26 at 2.57.00 PM 1.png",
-    "Assets/Screenshot 2024-09-26 at 2.54.27 PM 2.png",
-    "Assets/Screenshot 2024-09-26 at 2.54.27 PM 1 1.png",
-    "Assets/Screenshot 2024-09-26 at 2.54.12 PM 1.png",
     "Assets"
   ]
 }

@@ -23,7 +23,7 @@ print('a = ', a)
 print(f'a = {a}')
 ```
 
-- he function **`str()`** takes a value and converts it into a string. There are other functions such as **`int()`**, **`float()`** and **`bool()`**
+- Function **`str()`** takes a value and converts it into a string. There are other functions such as **`int()`**, **`float()`** and **`bool()`**
 
 - ** - exponential.
 - // - Floor Division
@@ -312,3 +312,4 @@ def main():
     x = [x for x in range(5) if x % 2 == 0] # [0,2,4]
 ```
 
+---

@@ -9,19 +9,13 @@ Take input string and checks if it's part of a grammar.
 > `(Q, ∑, ð, S, F)`
 >  Q : finite non empty states
 >  ∑ : finite input alphabets
->  ð : transition function ; `ð : (Q x Z -> Q)`
+>  ð : transition function ; `ð : (Q x ∑ -> Q)`
 >  S : initial state
 >  F : set of final states
 
-**Block Diagram of FA**:
-![[Pasted image 20240924122333.png]]
-- Input Tape: containing Z. read left to right
-- Head : reading / processing one by one
-- Finite Control : reference engine takes care of transition
-
 **Non - DFA**:
-> `(Q, Z, ð, S, F)`
->  ð : transition function ; `ð : (Q x Z -> 2^Q)`
+> `(Q, ∑, ð, S, F)`
+>  ð : transition function ; `ð : (Q x ∑ -> 2^Q)`
 
 - Easier to design
 - Incomplete
@@ -42,8 +36,8 @@ Theoretical machine allows set of possible moves. Hence, different results for s
 **NFA with Epsilon Move (€ - NFA)**: Null - NFA
 - allows transition of empty string. (null - transition)
 
-> `(Q, Z, ð, S, F)`
-> ð : transition function ; `ð : (Q x (Z U €) -> 2^Q)`
+> `(Q, ∑, ð, S, F)`
+> ð : transition function ; `ð : (Q x (∑ U €) -> 2^Q)`
 
 - *Null Closer (€\*)* : set of all states which are zero distance from state Q.
 
@@ -71,13 +65,13 @@ Note:
 - No final state or dead state. Generates output
 - Moore and Mealy equivalent in power
 
-> `(Q, ∑, O, ð, λ, q0)`
+> `(Q, ∑, O, δ, λ, q0)`
 >  Q: set of finite states  
->  q0: initial state
 >  ∑: input alphabets
 >  O: output alphabet  
 >  δ: transition function where `Q × ∑ → Q`
 >  λ: output function where `Q → O`
+>  q0: initial state
 
 - *Output is associated with state*
 - Responds to null-string
@@ -92,7 +86,7 @@ Note:
 4. Repeat step 3
 
 ### Mealy Machine
-> `(Q, ∑, O, ð, λ, q0)`
+> `(Q, ∑, O, δ, λ, q0)`
 >  λ: output function where `Q x ∑ → O`
 
 - *Output is associated with transition*
@@ -124,7 +118,7 @@ Table Filling Method: Minimization of DFA
 ![[Pasted image 20240924151940.png]]
 1. Draw table for all pairs of states
 2. Mark all pairs where one of the states is final and other one is non-final
-3. Mark all unmarked pairs [P, Q] where [ð(P, a), ð(Q, a)] is marked
+3. Mark all unmarked pairs [P, Q] where [δ(P, a), δ(Q, a)] is marked
 4. Combine all unmarked pairs into single states
 
 # Regular Expression
@@ -140,7 +134,7 @@ Table Filling Method: Minimization of DFA
 #### Arden's Theorem
 Mechanism for constructing R.E from FA
 - Write down all expressions for every state of DFA using incoming transitions
-- For **R = Q + RP$^*$**, If P 
+- For **R = Q + RP**, If P 
 	- is free from Null. **R = QP$^*$**. Unique Solution
 	- contains Null. Infinite solutions
 - Solve expressions
@@ -156,19 +150,19 @@ For any regular language L, there exists an integer n, such that for all Z ∈ L
 If any i exists where uv$^i$w doesn't belong to L, the language is irregular.
 
 ### Decision Properties
-1. **Emptiness** : (if accepts any string)
-2. **Non** **Emptiness**
-- Remove all unreachable states
-- If resulting machine contains even one final state. FA is non-empty
-- Otherwise FA is empty.
-3. **Finiteness**
-4. **Infiniteness**: (if contains any loop)
-5. **Membership**: (property to verify if string is accepted by FA or not)
-6. **Equality**: (if two FA accept same language. i.e. same Minimal FA)
+1. **Emptiness** : (if accepts any string. Final state exists)
+2. **Non** **Emptiness**:
+	- Remove all unreachable states
+	- If resulting machine contains even one final state. FA is non-empty
+	- Otherwise FA is empty.
+1. **Finiteness**
+2. **Infiniteness**: (if contains any loop)
+3. **Membership**: (property to verify if string is accepted by FA or not)
+4. **Equality**: (if two FA accept same language. i.e. same Minimal FA)
 
-### Grammer
+### Grammar
 - Mathematical Model for generating language
-> `(Vn, T, P, S)
+> `(Vn, T, P, S)`
 > Vn : Variable : Non-terminal : A, B, C ...
 > T : Terminals : a, b, c ...
 > P : Production Rules : finite set of rules whose elements are α → β | α, β ∈ Vn U T
@@ -176,33 +170,34 @@ If any i exists where uv$^i$w doesn't belong to L, the language is irregular.
 
 ### Chomsky's Classification of Grammar
 1. **Type 0**: Unrestricted / Phase structured / recursively enumerable grammar
-- No restriction.
-- Accepted by turing machine
-- α → β
-- α  = (Vn U T)$^*$Vn(Vn U T)$^*$
-- β  = (Vn U T)$^*$
+	- No restriction.
+	- Accepted by Turing machine
+> α → β
+> α  = (Vn U T)$^*$ Vn (Vn U T)$^*$
+> β  = (Vn U T)$^*$
 
 2. **Type 1**: Context sensitive Grammar
-- Accepted by Linear Bounded automata
-- α → β
-- α  = (Vn U T)$^*$Vn(Vn U T)$^*$
-- β  = (Vn U T)$^*$
-- |α| ≤ |β|
+	- Accepted by Linear Bounded automata
+> α → β
+> α  = (Vn U T)$^*$Vn(Vn U T)$^*$
+> β  = (Vn U T)$^*$
+> |α| ≤ |β|
 
-3. **Type 2:** Context Free Grammar (CFG)
-- accepted by push down automata
-- α → β
-- α  = Vn
-- β  = (Vn U T)$^*$
-- |α| = 1
-Only one non-terminal on LHS.
+1. **Type 2:** Context Free Grammar (CFG)
+	- accepted by push down automata
+	- Only one terminal on LHS
+> α → β
+> α  = Vn
+> β  = (Vn U T)$^*$
+> |α| = 1
 
-4. **Type 3**: Regular Grammer
-- generated by regular language, and accepted by finite automata
-- Left Linear or Right Linear
-- |α| = 1
-- A -> aA | a
-- A -> Aa | a
+4. **Type 3**: Regular Grammar
+	- generated by regular language, and accepted by finite automata
+	- Left Linear or Right Linear
+> α → β
+> |α| = 1
+> A -> aA | a
+> A -> Aa | a
 
 #### Ambiguous Grammar
 Type 2 or above

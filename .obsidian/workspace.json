@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "e1ff4cbed10fe482",
+        "id": "9b67cb87bf67dbbc",
         "type": "tabs",
         "children": [
           {
-            "id": "a7990835b1542f88",
+            "id": "d99888511046388e",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "type": "markdown",
+              "state": {
+                "file": "Web Technology.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Web Technology"
             }
           }
         ]
@@ -194,43 +198,44 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "a7990835b1542f88",
+  "active": "d99888511046388e",
   "lastOpenFiles": [
-    "Custom Hooks.md",
-    "Class-Based ErrorBoundry.md",
+    "Web Technology.md",
     "Python.md",
-    "Assets/Pasted image 20240724005003.png",
-    "Assets/Pasted image 20240810135307.png",
-    "Assets/Pasted image 20240926155153.png",
-    "Assets/Pasted image 20240926145106.png",
-    "Assets/Pasted image 20240924140354.png",
-    "Assets/Pasted image 20240926155111.png",
-    "Assets/Pasted image 20240929204545.png",
-    "Assets/Pasted image 20240929201538.png",
-    "Assets/Pasted image 20240929201423.png",
-    "Assets/PinkedIn.png",
-    "Serverless.md",
-    "useRef.md",
-    "WebSocket.md",
-    "React Backend.md",
-    "NodeJS Streams.md",
     "Context API.md",
-    "Clusters.md",
-    "Side Effects.md",
-    "NGINX.md",
     "NGINX Deploy NodeJS AWS Docker.md",
-    "Optimize React - Memo.md",
+    "React Backend.md",
+    "Side Effects.md",
+    "SSH GitHub on MacBook.md",
     "README.md",
-    "React Forms Inputs.md",
-    "Docker.md",
+    "Web Tech Assignment 2.md",
+    "WebSocket.md",
+    "settings.md",
+    "Assets/Screenshot 2024-09-26 at 2.57.00 PM.png",
+    "useRef.md",
+    "Custom Hooks.md",
     "Theory Of Computation.md",
-    "theyr.md",
     "Data Modelling - Mongoose.md",
+    "Class-Based ErrorBoundry.md",
+    "NodeJS Streams.md",
+    "HTML.md",
+    "Boilerplate For MERN Project.md",
+    "CORS.md",
+    "Assets/Pasted image 20240817171503.png",
+    "React Forms Inputs.md",
+    "Untitled.md",
+    "Docker.md",
+    "Testing.md",
     "Engineering Economics.md",
-    "React.md",
-    "Context.md",
-    "React-Index.md",
-    "INDEX.md",
+    "Serverless.md",
+    "Assets/Pasted image 20240924135508.png",
+    "Assets/Pasted image 20240923190649.png",
+    "Assets/Pasted image 20240923125704.png",
+    "Assets/Pasted image 20240922161744.png",
+    "Assets/Pasted image 20240826144748.png",
+    "Assets/Pasted image 20240726205853.png",
+    "Assets/Pasted image 20240723130752.png",
+    "Assets/Pasted image 20240817170554.png",
     "Assets"
   ]
 }

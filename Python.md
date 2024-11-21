@@ -13,6 +13,7 @@ if __name__ == '__main__':
 
 - No curly braces or closing semicolons
 - Indentation necessary
+
 - Automatic datatype
 - Similar to javascript, formatted string literals and concatenation
 ## Input()
@@ -312,4 +313,115 @@ def main():
     x = [x for x in range(5) if x % 2 == 0] # [0,2,4]
 ```
 
+# Let Us Python
 ---
+
+# Unit 1
+---
+
+- High level programming language
+- Free, quality, productivity, portability, libraries, integration, joy
+- Powerful, Automatic, Ready-made stuff, Easy
+- Dynamic Typing (check errors at runtime)
+
+## Uses
+- System Programming
+- Building GUI
+- Internet Scripting
+- Game programming
+- Scientific programming
+- Robotics
+- Database programming
+- Component Integration (can invoke c++, frameworks, etc )
+- Machine Learning
+- Google (Web Search System), Youtube (Video Sharing), Movie animaition
+
+**Paradigms**
+Style of structuring and coding
+One program may use many paradigms
+### Functional
+- Decompose problem into set of functions (taking input, returning output)
+- mathematical equations like expression (code that produces a value)
+- *Declarative* : what're u finna do? `amma beat his ass`
+
+### Procedural
+- Implements one statement at a time
+- Uses functions but treats them like statements (instruction for computer)
+- sequential - step by step
+- *Imperative* : how're u finna do it? `amma go there, and punch him 3 times`
+
+### Object-Oriented
+- like real world, creating mini-world of objects
+- in college, objects are professors, students, staff, papers, courses, etc
+- Each Object has a state (values) and behaviour (interface / methods), from class that created it
+- Objects call each other's interface
+
+### Event-driven
+- used for programming GUI applications containing elements (window, buttons, etc)
+- interact with elements, and emit messages via listener methods
+- Asynchronous
+
+# Unit 2
+---
+
+## Compiler vs Interpreter
+**Compiler** is a software that converts your entire code into machine for the computer to process.
+
+**Interpreter**, on the other hand, is already binary.
+
+Eg: `$python hello.py`
+
+Here python is the interpreter that will be stored in the memory and has two components
+- Compiler
+- Python Virtual Machine
+
+Compiler will convert `hello.py` into *Byte Code*
+
+These Byte code, can't be understood by the processor. But instead will be processed by the *Python Virtual Machine*.
+
+So that's how everything works on the hardware
+
+CPython is written in C. (official, popular) - python3
+There's also Jython, in java
+PyPy - in RPython
+IronPython - in C#
+
+**IDE**
+- NetBeans, PyCharm, VSCode
+
+**PyPI** : Python Package Index. For installing pre-built third party packages.
+
+Some packages that are popular for Data Science:
+- **NumPy**: Advanced Mathematical Operations - multi-dimen. arrays
+- **SciPy**: Scientific Computing Library - image processing, optimizing
+- **Panda**: Library for manipulating numeric tables and time series
+- **MatPlotLib**: 2D and 3D Data visualization
+- **OpenCV**: Open Source Computer Vision
+
+**pip**: tool for installing packages from PyPI
+
+More tools for python
+- **Jupyter Notebook**: flexible browser based interactive tool
+- **Google Colab**: Jupyter env to run code on google cloud
+- **Spyder**: Scientific Python Development Environment
+
+##### Python Programming Modes
+- Interactive mode: explore syntax, help and debug small: shell
+- Script mode: proper programming: \*.py
+
+# Unit 3
+---
+
+- Case sensitive language
+- identifier used to name a variable, function, class, module, or other objects
+- Python has 33 keywords. All lowercase except True and False
+
+### Python Types
+- Basic Types: int, float, complex, bool, string, bytes
+- Container Types: list, tuple, set, dict
+- User-Defined Types: class
+
+### Basic Types
+- **int** can be binary 0b, decimal 12, hexadecimal 0x, etc
+- **float** can be fractional or exponential
+- 

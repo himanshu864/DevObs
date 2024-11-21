@@ -1,5 +1,13 @@
 {
   "vimMode": true,
   "attachmentFolderPath": "Assets",
-  "promptDelete": false
+  "promptDelete": false,
+  "autoConvertHtml": true,
+  "pdfExportSettings": {
+    "pageSize": "A4",
+    "landscape": false,
+    "margin": "0",
+    "downscalePercent": 100
+  },
+  "showLineNumber": true
 }

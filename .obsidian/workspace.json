@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Web Technology.md",
+                "file": "Engineering Economics.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Web Technology"
+              "title": "Engineering Economics"
             }
           }
         ]
@@ -201,6 +201,21 @@
   "active": "d99888511046388e",
   "lastOpenFiles": [
     "Web Technology.md",
+    "HTML.md",
+    "Assets/Screenshot 2024-11-22 at 11.56.42 PM.png",
+    "Engineering Economics.md",
+    "Docker.md",
+    "Assets/Screenshot 2024-11-22 at 5.06.44 PM.png",
+    "Assets/Screenshot 2024-11-22 at 4.32.10 PM.png",
+    "Assets/Screenshot 2024-11-22 at 4.21.19 PM.png",
+    "Assets/Screenshot 2024-11-22 at 3.43.13 PM.png",
+    "Assets/Screenshot 2024-11-22 at 3.39.13 PM.png",
+    "Assets/Screenshot 2024-11-21 at 2.34.35 PM.png",
+    "Assets/Screenshot 2024-11-21 at 2.33.56 PM.png",
+    "Assets/Screenshot 2024-11-21 at 1.54.15 PM.png",
+    "Assets/Screenshot 2024-11-21 at 1.51.24 PM.png",
+    "Web Tech Assignment 2.md",
+    "Soft A2.md",
     "Python.md",
     "Context API.md",
     "NGINX Deploy NodeJS AWS Docker.md",
@@ -208,34 +223,17 @@
     "Side Effects.md",
     "SSH GitHub on MacBook.md",
     "README.md",
-    "Web Tech Assignment 2.md",
     "WebSocket.md",
     "settings.md",
-    "Assets/Screenshot 2024-09-26 at 2.57.00 PM.png",
     "useRef.md",
     "Custom Hooks.md",
     "Theory Of Computation.md",
     "Data Modelling - Mongoose.md",
     "Class-Based ErrorBoundry.md",
     "NodeJS Streams.md",
-    "HTML.md",
     "Boilerplate For MERN Project.md",
     "CORS.md",
-    "Assets/Pasted image 20240817171503.png",
     "React Forms Inputs.md",
-    "Untitled.md",
-    "Docker.md",
-    "Testing.md",
-    "Engineering Economics.md",
-    "Serverless.md",
-    "Assets/Pasted image 20240924135508.png",
-    "Assets/Pasted image 20240923190649.png",
-    "Assets/Pasted image 20240923125704.png",
-    "Assets/Pasted image 20240922161744.png",
-    "Assets/Pasted image 20240826144748.png",
-    "Assets/Pasted image 20240726205853.png",
-    "Assets/Pasted image 20240723130752.png",
-    "Assets/Pasted image 20240817170554.png",
     "Assets"
   ]
 }

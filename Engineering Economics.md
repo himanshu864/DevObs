@@ -3,38 +3,9 @@
 # Syllabus
 ---
 ![[Screenshot 2024-09-26 at 2.58.27 PM.png]]
-## But really
-1. Law of Demand
-2. Law of Supply
-3. Factors affecting Demand
-4. Factors affecting Supply
-5. Types of Goods
-6. Types of Market
-7. Customer Equilibrium
-8. Elasticity of Demand
 
-# Important Topics
+# Questions
 ---
-
-1. ~~Difference between macroeconomics and microeconomics~~
-2. ﻿﻿﻿Employment, inflation, taxation,
-3. ﻿﻿﻿~~Downward sloping, law of diminishing marginal utility, these are two theories for microeconomics~~
-4. ﻿﻿﻿~~Law of equi-marginal utility~~
-5. ~~Wish, want and demand~~
-6. ﻿﻿﻿~~Elasticity of demand, price elasticity of demand~~
-8. ﻿﻿﻿~~5 types of price elasticity of demand~~
-9. ﻿﻿﻿Differentiate between commercial bank and central bank
-10. ﻿﻿﻿What is bank, purpose responsibilities and functions of bank
-# PYQs
----
-![[Screenshot 2024-09-26 at 2.39.59 PM.png]]
-![[Screenshot 2024-09-26 at 2.41.42 PM.png]]
-![[Screenshot 2024-09-26 at 2.42.43 PM.png]]
-![[Screenshot 2024-09-26 at 2.44.05 PM.png]]
-# Important Questions
----
- ![[Pasted image 20240923102055.png]]
-
 ### 1. Engineering Economics and Its Role in Economic Development
 
 **Engineering Economics** is the application of economic principles to engineering projects. It involves analyzing costs, benefits, risks, and the efficiency of projects to make informed decisions. It focuses on optimizing resources to ensure that projects are financially viable and sustainable.
@@ -82,12 +53,11 @@ Engineering economics plays a key role in making projects more efficient, reduci
 7. **Natural Conditions**: Adverse conditions (e.g., droughts) decrease supply, while favorable conditions increase it.
 # Introduction
 ---
-- **Scarcity**: When Supply < Demands
+- **Scarcity / Economic Goods**: When Supply < Demands
 - **Free Goods** : Supply > Demands
-- *Choice* to distribute limited resources on unlimited wants
 
-**Positive Economics**: We talk about past, present and future. Facts and figures.
-**Normative Economics**: What should be.
+*Choice* to distribute limited resources on unlimited wants is economics.
+
 ## Microeconomics
 When problem of choice (economical problem) are at level of individual. At house-hold level.
 - Demand theory
@@ -111,7 +81,7 @@ Micro variables constant
 ![[Screenshot 2024-09-23 at 11.05.54 AM.png]]
 # Economy
 ----
-Is a system/process by which goods and services are produces, sold & brought in a country/region by which people of an area earn their living.
+Is a system/process by which goods and services are produced, sold & brought in a country/region by which people of an area earn their living.
 
 **Simple Economy**: degree of interdependence and exchange is of moderate degree.
 - Like the good ol' times
@@ -706,3 +676,6 @@ The Reserve Bank of India (RBI) uses several key tools to control inflation:
 
 5. **Statutory Liquidity Ratio (SLR)**:
 	- Minimum amount of deposits that every commercial bank. need to keep to them in form of liquid cash and other assets. Increase this ratio.
+
+
+Kartik chutiya h

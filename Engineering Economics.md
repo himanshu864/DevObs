@@ -165,7 +165,7 @@ Additional Utility derived on consuming another unit of commodity.
 ***Marginal Unit of Money***: How much a dollar cost? Worth of a rupee.
 Used to convert MU into rupee.
 
-Equilibrium is when rupee worth of satisfaction a consumer excepts to get match the rupee worth of satisfaction he actually gets.
+Equilibrium is when rupee worth of satisfaction a consumer expects to get match the rupee worth of satisfaction he actually gets.
 
 ## Law of Equi-Marginal Utility:
 The law states that a consumer should spend his limited income on different commodities in such a way that the last rupee spent on each commodity yield him equal marginal utility in order to get maximum satisfaction.
@@ -277,6 +277,12 @@ Measurement of percentage change in quantity demanded due to percentage change i
 
 ![[Screenshot 2024-09-23 at 3.32.25 PM.png]]
 - Higher the EOD - Flatter the curve
+
+- Perfectly Elastic: Sunlight
+- Relatively Elastic: Luxury items
+- Relatively Inelastic: Basic necessary
+- Perfectly Inelastic: Necessary Medicines
+
 More EOD means same change in price will lead to more change in quantity demand.
 
 ### Factors Affecting Price EOD
@@ -677,5 +683,47 @@ The Reserve Bank of India (RBI) uses several key tools to control inflation:
 5. **Statutory Liquidity Ratio (SLR)**:
 	- Minimum amount of deposits that every commercial bank. need to keep to them in form of liquid cash and other assets. Increase this ratio.
 
+## National Trade vs Internation
+---
 
-Kartik chutiya h
+- Buying and selling within the same country. No taxes, currency bullshit, low risk
+- Internation: minimum two countries, taxes, restrictions, high opportunity cost and risk
+
+# Dumping
+---
+Sale of good abroad at a price lower than the selling point of the same good at home
+###  International
+- Occasional foreign sales below home price
+- To drive off existing foreign market
+- To set foot hold
+- To dispose off occasional domestic supplies
+
+### Persistent
+- Continuous sale abroad
+
+## Balance of Trade
+
+- Difference between the value of a countries export and the value of the countries import over a specific period of time
+- If import exceeds export, a country has a trade deficit, otherwise surplus
+- Balance of trade is affected by factor such as exchange rates, tariffs, and competition of countries industries.
+
+## Balance of Payment
+
+Balance of payment is a broader concept that includes balance of trade and also other financial transactions of a country with the rest of the world.
+
+- **Current Account**: flow of goods, services and income.
+- **Capital Account**: flow of capital including investments, loans.
+- **Financial Account**: change in ownership of financial assets and liabilities. Stocks
+
+## Free Trade
+- economic policy, which allows unrestricted entry and exit of foreign firms
+- benefits, all participating firms
+- allows countries to access goods which they cannot produce efficiently
+- but can negatively affect domestic producers, prioritizing short-term gains over long-term.
+
+## Protectionism
+- opposite of free trade, restricted entry and exit of foreign forms
+- supports domestic production instead of allowing other countries to sell products at cheaper price
+- involves multiple exchange rates, tariffs custom duties regulations
+- while it supports young industries, but it can lead to higher prices and potentially harm overall economic growth
+

@@ -2,11 +2,11 @@
 
 # Hyper Text Markup Language
 
-### Html is skeleton/head of a website. Css is skin/beauty. And JS is brain/functioning
+> Html is skeleton/head of a website. CSS is skin/beauty. And JS is brain/functioning
 
-Opening and closing tags, or empty tags
+Opening/closing tags OR empty tags
 
-### html is case insensitive language
+html is *case insensitive* language
 
 `<!-- comments -->`
 
@@ -21,8 +21,8 @@ Opening and closing tags, or empty tags
 - table: caption, thead, tbody, tfoot: `<tr>` `<th>` `<td>`
 - `<meta name="description" content="the actual description">`
 
+# Search Engine Optimization
 ---
-## Search Engine Optimization
 
 Website with better results and performance will be preferred by google
 ## Core Web Vitals:
@@ -37,9 +37,8 @@ How fast is the first interaction by user with a page responds
 Might use lighthouse by google to check performance of a website
 Responsive Website, resolution
 
----
-
 # Forms
+---
 
 The `<form>` tag in HTML is used to create an HTML form for user input. It can contain various form elements like input fields, checkboxes, radio-buttons, submit buttons, reset etc., which are used to collect user input.
 
@@ -118,9 +117,8 @@ Pattern for only accepted type of input. upper case/numbers etc.
 </fieldset>
 ```
 
----
-
 # Inline and Block Elements
+---
 
 > **Inline elements don't start a new line and only take up as much width as necessary**
 
@@ -184,9 +182,8 @@ Pattern for only accepted type of input. upper case/numbers etc.
 - `<data>`: Machine-readable content
 - `<acronym>`: Acronym (Not supported in HTML5)
 
----
-
 ## ID and Classes
+---
 
 > Id is a unique identifier for one element
 
@@ -195,9 +192,8 @@ Pattern for only accepted type of input. upper case/numbers etc.
 In CSS: `.class {}` and `#id{}`
 IDs can also be used for linking
 
----
-
 ## Audio, Video And Media
+---
 
 ```html
 <video src="/Media/Sample/SampleVideo_1280x720_1mb.mp4" width="500" controls muted loop poster="/Media/Sample/woodcuts_16.jpg"></video>
@@ -238,14 +234,12 @@ Can embed websites and YouTube videos:
 <iframe src="https://www.codewithharry.com/" frameborder="0" height="500" width="500"></iframe>
 ```
 
----
-
 ## Semantic Tags
+---
 Semantic HTML elements like `<header>`, `<footer>`, `<article>`, and `<section>` clearly define their content, enhancing accessibility and SEO.
 
----
-
 # Miscellaneous
+---
 
 ### HTML Entities
 Display reserved characters in HTML:

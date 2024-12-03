@@ -577,7 +577,7 @@ def main():
 
 - **decimal**: precise arithmetic operations functions
 
-### Python Type Jargon
+	### Python Type Jargon
 
 - **Collection**: a generic term for container types
 - **Iterable**: collection that can be iterated over using loop
@@ -598,22 +598,33 @@ Dict - {} - unordered collection, keys immutable, value immutable, iterable
 > start with \# for one line comments
 > type between `'''...'''` or `"""..."""` for multi-line comments
 > Indentation matters in python
- 
-**print spaces:**
+
+### Printing
+
 ```python
+print("himanshu") # outputs value to console
+
+print("Name:", name, "Age:", age)  # , separates output by spaces
+
+print(f"Name: {name}, Age: {age}")  # Formatted Strings
+
+# printing empty space
 print('''
 hello
 		asd
 ''')
+
+# by default print() moves to new line, but can change that
+print("Hello", end=", ")
+print("world!)
+# outputs: Hello, world!
+
+# by default separated by spaces, but can change that
+print("Apple", "Banana", "Cherry", sep=", ")
+# Output: Apple, Banana, Cherry
 ```
 
-**String Literals**:
-```python
-x = "himanshu"
-print(f'hello, {x}')
-```
-
-**Multi-lining**
+#### Multi-lining
 - long statements can be written in multiple lines by ending each line expect last with `\`
 - multi-line statements within `[], {}, or ()` don't need `\`
 ```python
@@ -651,13 +662,54 @@ print(obj.name) # attribute
 print(obj.greet()) # call methods
 ```
 
-- **`__init__` Method**:
-    - The class constructor.
-    - Automatically called when an object is created.
-    - Used to initialize object attributes.
-- **`self`**:
-    - Refers to the current instance of the class.
-    - Must be the first parameter of instance methods.
-- **Class vs Instance**:
-    - **Class Attributes**: Shared by all instances.
-    - **Instance Attributes**: Unique to each object.
+**`__init__` Method**:
+- The class constructor.
+- Automatically called when an object is created.
+- Used to initialize object attributes.
+
+**`self`**:
+- Refers to the current instance of the class.
+- Must be the first parameter of instance methods.
+
+**Class vs Instance**:
+- **Class Attributes**: Shared by all instances.
+- **Instance Attributes**: Unique to each object.
+
+#### Mind fuck
+
+- A class has a name, whereas objects are nameless. Since objects not have names, they are referred using their addresses in memory via pointers.
+
+```python
+class Solution:
+    def fucksumn(self, a, b):
+        return a + b
+
+def main():
+    a = 5
+    print(isinstance(a, int)) # true
+
+    sol = Solution()
+    print(type(sol)) # <class '__main__.Solution'>
+    print(sol.fucksumn(3, 5))
+
+if __name__ == '__main__':
+    main() 
+```
+
+- Here `Solution()` is the object with attributes and methods.
+- `sol` is simply a pointer referencing that object, since it doesn't have a name.
+
+> That means `a` is not actually a variable, but a pointer to an object!
+
+**Multiple Objects**
+```python
+a = 3
+b = 3
+print(id(a), id(b)) # same ids
+print(a is b) # true
+a = 30 # now a 
+print(id(a)) # different id
+```
+
+- Here since a and b are referring to the same int object. Hence, they are the same.
+

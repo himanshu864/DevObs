@@ -302,49 +302,10 @@ again [start:stop:step] similar to *for* loops
 - [4:2:-1] -> 4th index, 3rd index
 - [::-1] -> reverses the object
 
-## Comprehension
-
-> Read in reverse
-
-Syntax:
-```python
-[expression for variable in iterable if condition]
-```
-
-> **Parameters**
-> 
-> - **`expression`**: What you want in your new list (e.g., `x`, `x+3`, `x%3`).
-> - **`for variable in iterable`**: Loops over the sequence (`range(5)` is like a for loop iterating from 0 to 4).
-> - **`if condition`** _(optional)_: Filters elements based on the condition (e.g., `x % 2 == 0`).
-
-```python
-def main():
-    x = [x for x in range(5)] # [0,1,2,3,4]
-    x = [x + 3 for x in range(5)] # [3,4,5,6,7]
-    x = [x % 3 for x in range(5)] # [0,1,2,0,1]
-    x = [x for x in range(2) for x in range(5)] # [0,1,2,3,4,0,1,2,3,4]
-    x = [y for y in range(2) for x in range(5)] # [0,0,0,0,0,1,1,1,1,1]
-    x = [x for x in range(5) if x % 2 == 0] # [0,2,4]
-```
-
-**Example 4** in c++:
-
-`for x in range(5)` means 0, 1, 2, 3, 4
-`for x in range(2) for ...` means nested for loops, i.e. twice range(5)
-`[x for x in ...]` means return actual list twice. i.e. actual value
-`[y for y in ...]` implies returning list of iterations i.e. i in case of nested loops in c++
-
-```cpp
-vector<int> x;
-for (int i = 0; i < 2; ++i)
-    for (int j = 0; j < 5; ++j)
-        x.push_back(j);
-```
-
 # Let Us Python
 ---
 
-# Unit 1
+# UNIT 1 : Introduction
 ---
 
 - High level programming language
@@ -390,7 +351,7 @@ One program may use many paradigms
 - interact with elements, and emit messages via listener methods
 - Asynchronous
 
-# Unit 2
+# UNIT 2: Getting Started
 ---
 
 ## Compiler vs Interpreter
@@ -438,7 +399,7 @@ More tools for python
 - *Interactive mode:* explore syntax, help and debug small: shell
 - *Script mode:* proper programming: \*.py
 
-# Unit 3
+# UNIT 3 : Python Basics
 ---
 
 - Case sensitive language
@@ -599,31 +560,6 @@ Dict - {} - unordered collection, keys immutable, value immutable, iterable
 > type between `'''...'''` or `"""..."""` for multi-line comments
 > Indentation matters in python
 
-### Printing
-
-```python
-print("himanshu") # outputs value to console
-
-print("Name:", name, "Age:", age)  # , separates output by spaces
-
-print(f"Name: {name}, Age: {age}")  # Formatted Strings
-
-# printing empty space
-print('''
-hello
-		asd
-''')
-
-# by default print() moves to new line, but can change that
-print("Hello", end=", ")
-print("world!)
-# outputs: Hello, world!
-
-# by default separated by spaces, but can change that
-print("Apple", "Banana", "Cherry", sep=", ")
-# Output: Apple, Banana, Cherry
-```
-
 #### Multi-lining
 - long statements can be written in multiple lines by ending each line expect last with `\`
 - multi-line statements within `[], {}, or ()` don't need `\`
@@ -712,4 +648,495 @@ print(id(a)) # different id
 ```
 
 - Here since a and b are referring to the same int object. Hence, they are the same.
+
+
+# UNIT 4 : String
+---
+
+#### Negative Indexing
+![[Screenshot 2024-12-04 at 12.32.30 AM.png]]
+
+### String Properties
+- Slicing and negative index works. `[start, end]`. end not included.
+- Python strings are immutable-they cannot be changed.
+- strings can be concatenated using +.
+- string can be replicated during printing. `print('-' * 10)`
+- check if substring exists in the string. `print('her' in 'dishwasher') # true`
+
+#### Build in functions
+```python
+s = "himanshuAggarwal"
+print(len(s))
+print(min(s)) # prints min ascii value ; A
+print(max(s))
+```
+
+### String Methods
+
+ **content test function**
+ ```
+1. s.isalpha() - checks if all characters in string are alphabets.
+2. s.isdigit() - checks if all characters in string are digits.
+3. s.isalnum() - checks if all characters in string are alphabets or digit.
+4. s.islower() - checks if all characters in string are lower case
+5. s.isupper()
+6. s.startswith(ss) - checks prefix
+7. s.endswith(ss) - checks suffix
+```
+
+**search and replace**
+```
+1. s.find(ss) - searches for a substring, return its starting index. else -1
+2. s.replace(a, b) - replace a substring with b.
+```
+
+**trim whitespace**
+```
+1. s.lstrip() - removes starting white spaces.
+2. s.rstrip() - removes ending white spaces.
+3. s.strip() - removes whitespaces from both sides.
+```
+
+**Split and Partition**
+```
+1. s.split(ss) - splits the string at given substring
+2. s.partition(ss) - partitions the string into 3 parts, left, subtring, right
+```
+
+**Join**
+Joins substring to each element of iterable except last.
+
+```python
+a = "asdf"
+print("-".join(a)) # a-s-d-f
+
+x = "himanshu"
+y = "Aggarwal"
+z = "angel"
+print(" ".join([x, y, z])) # himanshu Aggarwal angel
+```
+
+### String Conversions
+
+**Case conversion**
+```
+1. s.upper() - converts entire string to uppercase
+2. s.lower() - converts entire string to lowercase
+3. s.capitalize() - converts first character of string to uppercase
+4. s.title() - converts first letter of each word to uppercase
+5. s.swapcase() - inverts cases of entire string
+```
+
+**Numeric Conversion**
+```
+1. str(x) - converts int, float, complex to string
+2. int("23") - converts numeric string to int
+```
+
+- `chr()` prints Unicode character. `ord()` prints ascii value
+- *String comparisons* and sorting is done **Lexicographically**
+
+
+# UNIT 5 : Decision Control Instruction
+---
+
+All logical operations remain the same as c++
+
+```python
+if a > b > c:
+	print(a)
+elif a == b == c:
+	print(c)
+else:
+	print(b)
+```
+
+- don't need bracket if indented properly
+- and, or, not
+
+**Conditional Expressions**
+Like ternary operators
+
+> Read left to right
+
+```python
+# if 10 > 20 print dumb else cool
+print("dumb" if 10 > 20 else "cool") # cool
+
+wt = 60 
+s = 'fat' if wt > 80 else 'heavy' if wt > 55 else 'light' # heavy
+# if wt > 80 'fat', else if wt > 55 'heavy', else 'light'
+```
+
+- **all()** same as AND over a iterable
+- **any()** same as OR
+- ***input()*** to take input from user
+
+# UNIT 6 : Repetition Control Instruction
+---
+
+**While**
+```python
+while condition:
+	statement1
+else:
+	statement2
+```
+
+**For**
+```python
+for var in itr:
+	statement1
+else:
+	statement2
+```
+
+- else is optional
+- if loop is terminated using **break**, else will not be executed.
+- **continue** to skip the remaining iteration
+- use enumerate instead of range() which want index + value
+
+# UNIT 7 : Console Input / Output
+---
+
+### Input
+```python
+input('prompt')
+
+a,b,c = input("Enter 3 values: ").split()
+print(int(a) + int(b) + int(c))
+
+l = [x for x in input("Enter values: ").split()]
+```
+### Output
+```python
+print("himanshu") # outputs value to console
+
+print("Name:", name, "Age:", age)  # , separates output by spaces
+
+print(f"Name: {name}, Age: {age}")  # Formatted Strings
+
+# multiple lines with spacing
+print('''
+hello
+	asd
+''')
+# could also use \n for enter and \t for spaces
+
+# by default print() moves to new line, but can change that
+print("Hello", end=", ")
+print("world!)
+# outputs: Hello, world!
+
+# by default separated by spaces, but can change that
+print("Apple", "Banana", "Cherry", sep=", ")
+# Output: Apple, Banana, Cherry
+
+# escape characters
+print("it\'s not what he said - \"what the fuck\" he said\t nigga")
+
+# raw string
+print(r"that wasn't me ma'am")
+
+# for formatting large one line strings for cleaner code
+print("it said \
+bro tf is you sayin")
+	  
+print("one love baby"
+"second love sidechick")
+```
+
+- Python takes input as strings. Make sure to properly typecast values before performing operations.
+
+# UNIT 8 : List `[]`
+---
+
+Entity which contains multiple data items. Also known as collection or compound data type.
+
+- Can grow and shrink during execution. Hence, dynamic array.
+- May contain duplicates
+- Can directly `print(arr)`
+- Can \* to repeat element multiple times. Useful for initializing arrays.
+```python
+arr = [0] * 5 # [0, 0, 0, 0, 0]
+```
+
+- Ordered collection. Indexing possible. Sequence type. 0-indexed
+- Slicing possible
+- Mutable. Can change values.
+
+```python
+arr = [0, 1, 2, 3, 4, 5]
+arr[2:4] = [6,7,8] # replace [2,3]: [0,1,6,7,8,4,5]
+arr[5:] = [] # delete from 5th index onwards: [0,1,6,7,8]
+```
+
+- Can concatenate and merge two lists using +
+- Convert any set/tuple/string into list using **list()** conversion function
+
+```python
+l = list("abcd") # ['a', 'b', 'c', 'd']
+```
+
+- **Aliasing**: Shallow copy. Pass by reference. Don't copy contents only address
+```python
+l1 = [1, 2, 3]
+l2 = l1
+l2[0] = 100
+print(l1) # [100, 2, 3]
+```
+
+- **Cloning**: Deep copy. Copy inside contents. Pass by value.
+```python
+l1 = [1, 2, [3,4]]
+l2 = []
+l2 = l1 + l2
+```
+
+- **Searching** : `if val in num:`
+- **Identity**:
+```python
+l1 = [1,2,3]
+l2 = [1,2,3]
+l3 = l1
+print(l1 is l3) # true
+print(l1 is l2) # false
+```
+
+- **Comparison**: matches two strings until a mismatch and compares
+```python
+l1 = [1,2,3,4]
+l2 = [1,2,4]
+print(l1 < l2) # true
+```
+
+- **Empty** list is valid. Can check
+```python
+l = []
+if not l:
+	print("empty")
+
+print(bool(l)) # false
+```
+
+### Functions
+![[Screenshot 2024-12-04 at 2.43.47 AM.png]]
+
+```python
+l = del(l[0]) # deletes first element
+l = del(l[1:3]) # deletes 1st to 2nd index
+l = del(l[:]) # deleted entire list
+```
+
+### Methods
+![[Screenshot 2024-12-04 at 2.50.52 AM.png]]
+
+Changes are made in place
+```python
+lst.sort()
+lst.reverse()
+lst.sort(reverse=True)
+```
+
+### List Varieties
+
+- Nested Loops by embedding
+```python
+a = [3,4,5]
+b = [1,a,2] # [1, [3, 4, 5], 5]
+```
+
+- unpack a list using `*` operator
+```python
+a = [3,4,5]
+b = "abc"
+b = [1, *a, *b] # [1, 3, 4, 5, 'a', 'b', 'c']
+```
+
+
+# UNIT 9 : Tuple `()`
+---
+
+- Immutable, ordered collection, iterable list.
+- Can contain duplicates
+
+```python
+t = () # empty
+t = (10,) # single. comma is necessary for tuple, else int
+t = (1,2,3,1.0, 2, 'hi') # dissimilar elements
+t = 3,31,5 # don't even need ()
+t = (5,) * 3 # (5, 5, 5)
+```
+
+- Can access using indexes
+- Use slice to print
+- `t[1] = 2` will give error for immutability. Can't append, remove, insert
+- Can contain mutable lists through.
+- Other operations of tuples remain the same as list. Eg: concatenation, conversion *tuple()*, copy, searching, identity, empty...
+- Same build-in functions
+- Methods - `tpl.count(1)` and `tpl.index(3)`
+- Nested tuples, unpack, and list of tuples, ...
+
+# UNIT 10 : Sets `{}`
+---
+
+- Do not contain duplicates
+- Mutation. Unordered collection.
+
+```python
+s = set() # empty set
+s = {20}
+s = {1,1,1.1,1,2,3,2} # {1, 2, 3, 1.1}
+```
+
+- It is only possible to create set of immutable datatypes. Like, strings and tuples. But not lists.
+- Can't access using indexes or perform slice operations.
+- Access using their values as hash.
+- Can for loop on sets.
+- Enumerate gives access order, not insertion order.
+- `set.add(4)`
+- `frozenset()` for immutable set
+- Concatenation and merging doesn't work
+- Converse removes duplicates.
+- Can create alias and clone.
+- Searching, Identity, Comparison and emptiness works too.
+
+```python
+ls = [1,2,3,1]
+s1 = set(ls)
+s2 = s1 # alias
+s3 = set(s1) # clone
+```
+
+### Methods
+```python
+# adds element
+s.add('asdf')
+s.update(3)
+
+# remove element
+s.remove(12)
+s.discard('asdf')
+
+# removes all elements
+s.clear()
+```
+
+```python
+s = {1,2,3,4,5,6}
+t = {2,4,6}
+print(s.issuperset(t)) # is s superset of t : YES
+print(s.issubset(t)) # is s subset of t : NO
+print(s.isdisjoint(t)) # is s disjoint set of t : NO
+```
+
+### Mathematical Operations
+
+```python
+s = {1, 2, 3, 4}
+t = {3, 4, 5}
+print(s | t) # Union {1, 2, 3, 4, 5}
+print(s & t) # Intersection {3, 4}
+print(s - t) # difference {1, 2}
+print(t - s) # {5}
+print(s ^ t) # symmetric difference {1, 2, 5}
+print(s >= t) # is s superset of t : False
+```
+
+- No such thing as nested sets
+- unpack possible
+
+# UNIT 11 : Dictionaries `{}`
+---
+
+- Collection of key-value pairs separated by comma. Known as **maps** or associative arrays.
+- keys -> no duplicates, immutable
+- values -> duplicates allowed, mutable, nested
+
+```python
+d = {} # empty
+d = {1 : 'A', 2 : 'A', 1 : 'B'} # stores {1 : 'B', 2 : 'A'}
+```
+
+- Unlike sets, insertion order preserved. But still access using keys, not positions.
+
+### Iteration
+```python
+for k, v in d.items():
+	print(k, v)
+
+for k in d: # shorter for d.keys()
+	print(k)
+
+for v in d.values():
+	print(v)
+
+# for indexing
+for i, (v, k) in enumerate(d.items()):
+	print(i, v, k)
+```
+
+### Operations
+```python
+s[5] = 'C' # add or modify using key
+del(s[2])  # delete key-value pair using key
+del(s) # delete entire hashmap
+```
+
+![[Screenshot 2024-12-04 at 3.56.56 AM.png]]
+
+### Built-in Functions
+![[Screenshot 2024-12-04 at 3.58.21 AM.png]]
+
+### Methods
+![[Screenshot 2024-12-04 at 4.03.50 AM.png]]
+
+- Can nest values as dictionaries
+- unpack using `**`
+
+
+# UNIT 12 : Comprehensions
+---
+
+> Read in reverse. Declarative, not imperative
+
+Syntax:
+```python
+[expression for variable in iterable if condition]
+```
+
+> **Parameters**
+> 
+> - **`expression`**: What you want in your new list (e.g., `x`, `x+3`, `x%3`).
+> - **`for variable in iterable`**: Loops over the sequence (`range(5)` is like a for loop iterating from 0 to 4).
+> - **`if condition`** _(optional)_: Filters elements based on the condition (e.g., `x % 2 == 0`).
+
+```python
+def main():
+    x = [x for x in range(5)] # [0,1,2,3,4]
+    x = [x + 3 for x in range(5)] # [3,4,5,6,7]
+    x = [x % 3 for x in range(5)] # [0,1,2,0,1]
+    x = [x for x in range(2) for x in range(5)] # [0,1,2,3,4,0,1,2,3,4]
+    x = [y for y in range(2) for x in range(5)] # [0,0,0,0,0,1,1,1,1,1]
+    x = [x for x in range(5) if x % 2 == 0] # [0,2,4]
+```
+
+**Example 4** in c++:
+
+`for x in range(5)` means 0, 1, 2, 3, 4
+`for x in range(2) for ...` means nested for loops, i.e. twice range(5)
+`[x for x in ...]` means return actual list twice. i.e. actual value
+`[y for y in ...]` implies returning list of iterations i.e. i in case of nested loops in c++
+
+```cpp
+vector<int> x;
+for (int i = 0; i < 2; ++i)
+    for (int j = 0; j < 5; ++j)
+        x.push_back(j);
+```
+
+- For generating random 15 numbers between 5 to 55
+```python
+st = set(random.randint(5, 55) for _ in range(15))
+```
 

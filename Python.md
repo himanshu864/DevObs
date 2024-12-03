@@ -276,14 +276,14 @@ def main():
 
 ### Enumerate
 
-> ****Syntax:**** enumerate(iterable, start=0)
+> **Syntax:** enumerate(iterable, start=0)
 > 
-> ****Parameters:****
+> **Parameters:**
 > 
-> - ****Iterable:**** any object that supports iteration
-> - ****Start:**** the index value from which the counter is to be started, by default it is 0
+> - **Iterable:** any object that supports iteration
+> - **Start:** the index value from which the counter is to be started, by default it is 0
 > 
-> ****Return:**** Returns an iterator with index and element pairs from the original iterable
+> **Return:** Returns an iterator with index and element pairs from the original iterable
 
 Example:
 ```python
@@ -304,13 +304,41 @@ again [start:stop:step] similar to *for* loops
 
 ## Comprehension
 
+> Read in reverse
+
+Syntax:
+```python
+[expression for variable in iterable if condition]
+```
+
+> **Parameters**
+> 
+> - **`expression`**: What you want in your new list (e.g., `x`, `x+3`, `x%3`).
+> - **`for variable in iterable`**: Loops over the sequence (`range(5)` is like a for loop iterating from 0 to 4).
+> - **`if condition`** _(optional)_: Filters elements based on the condition (e.g., `x % 2 == 0`).
+
 ```python
 def main():
     x = [x for x in range(5)] # [0,1,2,3,4]
     x = [x + 3 for x in range(5)] # [3,4,5,6,7]
     x = [x % 3 for x in range(5)] # [0,1,2,0,1]
     x = [x for x in range(2) for x in range(5)] # [0,1,2,3,4,0,1,2,3,4]
+    x = [y for y in range(2) for x in range(5)] # [0,0,0,0,0,1,1,1,1,1]
     x = [x for x in range(5) if x % 2 == 0] # [0,2,4]
+```
+
+**Example 4** in c++:
+
+`for x in range(5)` means 0, 1, 2, 3, 4
+`for x in range(2) for ...` means nested for loops, i.e. twice range(5)
+`[x for x in ...]` means return actual list twice. i.e. actual value
+`[y for y in ...]` implies returning list of iterations i.e. i in case of nested loops in c++
+
+```cpp
+vector<int> x;
+for (int i = 0; i < 2; ++i)
+    for (int j = 0; j < 5; ++j)
+        x.push_back(j);
 ```
 
 # Let Us Python
@@ -334,29 +362,30 @@ def main():
 - Database programming
 - Component Integration (can invoke c++, frameworks, etc )
 - Machine Learning
-- Google (Web Search System), Youtube (Video Sharing), Movie animaition
+- Google (Web Search System), Youtube (Video Sharing), Movie animation
 
-**Paradigms**
+### **Paradigms**
 Style of structuring and coding
 One program may use many paradigms
-### Functional
-- Decompose problem into set of functions (taking input, returning output)
-- mathematical equations like expression (code that produces a value)
-- *Declarative* : what're u finna do? `amma beat his ass`
 
-### Procedural
+#### Procedural
 - Implements one statement at a time
 - Uses functions but treats them like statements (instruction for computer)
 - sequential - step by step
 - *Imperative* : how're u finna do it? `amma go there, and punch him 3 times`
 
-### Object-Oriented
+#### Functional
+- Decompose problem into set of functions (taking input, returning output)
+- mathematical equations like expression (code that produces a value)
+- *Declarative* : what're u finna do? `amma beat his ass`
+
+#### Object-Oriented
 - like real world, creating mini-world of objects
 - in college, objects are professors, students, staff, papers, courses, etc
-- Each Object has a state (values) and behaviour (interface / methods), from class that created it
+- Each Object has a state (values) and behaviour (interface / methods), from the class that created it.
 - Objects call each other's interface
 
-### Event-driven
+#### Event-driven
 - used for programming GUI applications containing elements (window, buttons, etc)
 - interact with elements, and emit messages via listener methods
 - Asynchronous
@@ -365,11 +394,11 @@ One program may use many paradigms
 ---
 
 ## Compiler vs Interpreter
-**Compiler** is a software that converts your entire code into machine for the computer to process.
+**Compiler** is a software that converts your entire code into machine code for the computer to process.
 
 **Interpreter**, on the other hand, is already binary.
 
-Eg: `$python hello.py`
+Eg: `$ python hello.py`
 
 Here python is the interpreter that will be stored in the memory and has two components
 - Compiler
@@ -406,22 +435,229 @@ More tools for python
 - **Spyder**: Scientific Python Development Environment
 
 ##### Python Programming Modes
-- Interactive mode: explore syntax, help and debug small: shell
-- Script mode: proper programming: \*.py
+- *Interactive mode:* explore syntax, help and debug small: shell
+- *Script mode:* proper programming: \*.py
 
 # Unit 3
 ---
 
 - Case sensitive language
 - identifier used to name a variable, function, class, module, or other objects
-- Python has 33 keywords. All lowercase except True and False
+- Python has 33 keywords. All lowercase except *True* and *False*
 
 ### Python Types
-- Basic Types: int, float, complex, bool, string, bytes
+- Basic Types: int, float, complex, bool, string, bytes : (no char datatype)
 - Container Types: list, tuple, set, dict
 - User-Defined Types: class
 
 ### Basic Types
-- **int** can be binary 0b, decimal 12, hexadecimal 0x, etc
-- **float** can be fractional or exponential
-- 
+- **int** - binary 0b, decimal 12, hexadecimal 0x, etc
+- **float** - fractional or exponential
+- **complex** - 3 + 2j
+- **bool** - True and False
+- **string** - immutable characters between ' ', " " or "" ""
+- **byte** - binary data
+
+> Use **type()** function to check data type of a value
+
+- int's have *arbitrary precision value*. Hence, no overflow
+- same with float. In approximate binary representation
+
+No need to define type of variable. Python understands from context during execution. Hence, dynamically typed.
+
+#### Multiple Variable Assignment
+```python
+a = 10; b = 20; c = "Himanshu" # use ; as statement separator
+d, e = 8, 9
+x = y = z = 5
+```
+
+### Arithmetic Operators
+- `/` - performs true division and returns float
+- `//` - performs floor on division and returns integer
+- `%` - remainder
+- `**` - exponential
+
+#### Operation Nuances
+```python
+print(10 // 3)  # 3
+print(-10 // 3) # -4. Since division is -3.33 and floor is -4
+```
+
+> **`a % b`** is evaluated as `a - (b * (a // b))`
+
+```python
+print(4 % 3)   #  1
+print(-4 % 3)  #  2
+print(4 % -3)  # -2
+print(-4 % -3) # -1
+```
+
+```python
+print(True + True)  # 2
+print(True * False) # 3
+```
+
+### Precedence and Associativity
+
+![[Screenshot 2024-12-03 at 7.09.17 PM.png]]
+
+When tie between operators of same *precedence*. Settled using *associativity*
+
+Eg: multiplication and division same precedence. Hence solve left to right
+```python
+x = 3 * 4 / 5  # (3 * 4) / 5 = 2.4
+y = 3 / 5 * 4  # (3 / 5) * 4 = 2.4
+```
+
+### Type Conversion
+
+- operation between int and float will yield float
+- int and complex -> complex
+- float and complex -> complex
+
+```python
+int("23") # 23
+int(3.33) # 3
+int(-3.33) # -3
+chr(86) # V
+ord("E") # 69
+```
+
+> use **`ord()`** function return ascii value of one character string
+
+### Build-in Functions
+```python
+abs(x)
+pow(x, y)
+min(a, b, c, ...)
+max(a, b, c, ...)
+round(x, [,n]) # returns x rounded on n digits after .
+bin(10) # returns binary equivalent of 10. i.e. 0b1010
+```
+
+### Build-in Modules
+
+- **math**: useful mathematics functions
+
+```python
+import math
+
+def main():
+    print(math.sqrt(10)) # 3.16...
+
+# maths
+pi, e  # values of constants pie and e
+sqrt(x)
+factorial(x)
+log(x) # base e
+log10(x)
+exp(x) # e raised to x
+ceil(x)
+floor(x)
+
+# trigonometry
+degrees(x)
+sin(x)
+cos(x)
+tan(x)
+```
+
+- **cmath**: performing operations of complex numbers functions
+
+- **random**: random number generation functions
+
+```python
+import random
+
+def main():
+    print(random.random()) # random number between 0 and 1
+	print(random.randint(10, 15)) # random between range (included)
+```
+
+- **decimal**: precise arithmetic operations functions
+
+### Python Type Jargon
+
+- **Collection**: a generic term for container types
+- **Iterable**: collection that can be iterated over using loop
+- **Ordered collection**: elements are stored in same order as insertion. Hence, indexing.
+- **Unordered collection**: order not preserved. can't predict. Hence, no indexing
+- **Sequence**: ordered collection
+- **Immutable**: unchangeable collection
+- **Mutable**: changeable collection
+
+```
+String - "" - ordered collection, immutable, iterable
+List - [] - ordered collection, mutable, iterable
+Tuple - () - ordered collection, immutable, iterable
+Set - {} unordered collection, mutable, iterable
+Dict - {} - unordered collection, keys immutable, value immutable, iterable
+```
+
+> start with \# for one line comments
+> type between `'''...'''` or `"""..."""` for multi-line comments
+> Indentation matters in python
+ 
+**print spaces:**
+```python
+print('''
+hello
+		asd
+''')
+```
+
+**String Literals**:
+```python
+x = "himanshu"
+print(f'hello, {x}')
+```
+
+**Multi-lining**
+- long statements can be written in multiple lines by ending each line expect last with `\`
+- multi-line statements within `[], {}, or ()` don't need `\`
+```python
+total = maths + toc + \
+		english + sst + \
+		civics + pe
+
+days = ["1asdf", "as",
+		"adf"]
+```
+
+## Classes and Objects
+
+- In Python, every type is a class. So `int, float, complex, bool, str, list, tuple, set, dict` are all ready made classes.
+
+- ***Class*** is a blueprint for creating objects.
+- It defines attributes (variables) and methods (functions) that it's object will have.
+
+```python
+class MyClass:
+    def __init__(self, name):  # Constructor
+        self.name = name      # Instance attribute
+
+    def greet(self):          # Instance method
+        return f"Hello, {self.name}!"
+```
+
+- ***Object*** is an instances of a class.
+- It has its own copy of attributes and can call methods defined in the class.
+
+```python
+obj = Myclass("Himanshu")
+
+print(obj.name) # attribute
+print(obj.greet()) # call methods
+```
+
+- **`__init__` Method**:
+    - The class constructor.
+    - Automatically called when an object is created.
+    - Used to initialize object attributes.
+- **`self`**:
+    - Refers to the current instance of the class.
+    - Must be the first parameter of instance methods.
+- **Class vs Instance**:
+    - **Class Attributes**: Shared by all instances.
+    - **Instance Attributes**: Unique to each object.

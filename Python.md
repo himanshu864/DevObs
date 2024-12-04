@@ -49,52 +49,6 @@ def main():
 
 - The clause *Try* attempts to execute a block of code and *except* executes another block of code if try fails. And *finally* runs regardless.
 
-## Lambda Function
----
-
-- Small, inline, anonymous function. Only one expression
-```python
-# Syntax
-lambda [arguments]: [expression]
-```
-
-```python
-# Example
-sum = lambda a, b: a + b
-greet = lambda name : f'hello, {name}'
-
-def main():
-    print(sum(3,5))
-    print(greet("himanshu"))
-```
-
-- Higher-order functions are functions that can accept other functions, such as lambda functions, as arguments. Example: `map()`, `filter()`, and `sorted()`.
-
-```python
-
-def higher():
-    nums = [1, 2, 3, 4, 5]
-
-    # map()
-    # returns a new list after applying given lambda function to each item in list
-    squared = list(map(lambda a : a ** 2, nums))
-    print(squared)
-
-    # filter()
-    # creates new list of elements for which given lambda function returns True
-    odd = list(filter(lambda a : a % 2 == 0, nums))
-    print(odd)
-
-    # sorted()
-    # uses lambda fns as keys for custom sorting
-    rev = sorted(nums, key=lambda x : -x) # reverses nums
-    print(rev)
-
-    students = [('A', 18), ('B', 15), ('A', 12)]
-    roll = sorted(students, key=lambda x : x[1]) # sorts based on i = 1
-print(roll)
-```
-
 # Built- In Data Structures
 ---
 
@@ -1116,12 +1070,16 @@ def main():
     x = [x for x in range(5)] # [0,1,2,3,4]
     x = [x + 3 for x in range(5)] # [3,4,5,6,7]
     x = [x % 3 for x in range(5)] # [0,1,2,0,1]
+
+	# if statement comes after
+    x = [x for x in range(5) if x % 2 == 0] # [0,2,4]
+
+	# nested comprehensions
     x = [x for x in range(2) for x in range(5)] # [0,1,2,3,4,0,1,2,3,4]
     x = [y for y in range(2) for x in range(5)] # [0,0,0,0,0,1,1,1,1,1]
-    x = [x for x in range(5) if x % 2 == 0] # [0,2,4]
 ```
 
-**Example 4** in c++:
+**Example 5** in c++:
 
 `for x in range(5)` means 0, 1, 2, 3, 4
 `for x in range(2) for ...` means nested for loops, i.e. twice range(5)
@@ -1139,4 +1097,267 @@ for (int i = 0; i < 2; ++i)
 ```python
 st = set(random.randint(5, 55) for _ in range(15))
 ```
+
+- If else comes before in list comprehensions
+```python
+a = ['!' if c in 'aeiou' else c for c in 'himanshu']
+```
+
+- **Nested comprehensions**
+```python
+# flatten a list of lists. [[1,2], [3,4,5]]
+b = [n for ele in arr for n in ele]
+
+# think of first for as outer loop and second as inner loop
+lst = [a + b for a in [1,2] for b in [4,5,6]]
+# [5,6,7,6,7,8]
+
+lst = [[a + b for a in [1,2]] for b in [3,4,5]]
+# [[4,5,6], [5,6,7]]
+```
+
+- Similarly solve set and dictionary comprehensions
+
+# UNIT 13 : Functions
+---
+
+- Python function is a block of code that performs a specific task
+	- Help us divide program into multiple tasks. Making code modular.
+	- Provide a reuse mechanism.
+- Two types:
+	- Build in. eg: `len(), sorted(), min()`, etc
+	- User-defined functions
+
+- You know about scope and flow of program
+- Communicate with functions using parameters / arguments passed to it, and values returned.
+
+### Types of Arguments
+
+- **Positional**: 'required'. Must be passed in correct positional order.
+
+```python
+def fun(i, j, s):
+	print(i + j)
+	print(s.upper())
+
+fun(10, 3, 'hi') # okay
+fun('hi', 10, 3) # not okay
+```
+
+- **Keyword**: can be passed out of order. 'required'
+
+```python
+def fun(i, j, s)
+	print(i + j)
+	print(s.upper())
+
+fun(s = 'hi', i = 10, j = 3)
+```
+
+- we can use positional as well keyword arguments. Positional must come first.
+
+ **Variable length positional arguments**
+```python
+def fun(*args):
+	for var in args:
+		print(var)
+
+print(10)
+print(10, 'as')
+```
+
+**Variable-length keyword**
+```python
+def fun(**kwargs):
+	for name, value in kwargs.items():
+		print(name, value)
+
+print(a = 10)
+print(a = 10, s = 'as')
+```
+
+- We can use any other names in place of `args` and `kwargs`
+- But can't use more than one while defining a function
+- optional arguments in order:
+```python
+1. positional arguments
+2. variable length positional
+3. keyword
+4. variable length keyword
+
+def fun(i, j, *args, x, **kwargs)
+	fn
+
+fun(10, 20, x = 15) # i = 10, j = 20, x = 15
+fun(1,2,3,4, x = 5) # i=1, j=2, args has 3, 4. x = 5
+fun(1,2,x = 5, y = 5) # now kwargs has y = 5
+fun(1,2,3,4) # error. nothing for x. args has 3,4
+```
+
+- default arguments must come at end
+
+#### Unpack arguments
+Kinda like spread operator
+`*` for iterable except `**` for dictionary
+
+```python
+def print_it(name = 'Sanjay', marks = 75):
+    print(name, marks)
+
+d = {'name': 'Anil', 'marks': 50}
+print_it(*d) # name marks
+print_it(**d) # Anil 50
+```
+
+# UNIT 14 : Recursion
+---
+
+- Function inside functions
+- Base case. Head recursion, tail recursion. Stack space. Same shit
+
+
+# UNIT 15 : Functional Programming
+---
+
+- problem is treated by evaluating one of more functions
+
+**Functions are First Class Values**
+- functions can be assigned to variables and be called
+- Can be passed as arguments
+- Can be built at execution time
+
+## Lambda Function
+
+- Small, inline, **anonymous function.** Only one expression
+- Build at execution time
+- can be any number of arguments, but only return one value
+```python
+# Syntax
+lambda [arguments]: [expression]
+```
+
+```python
+# Example
+sum = lambda a, b: a + b
+greet = lambda name : f'hello, {name}'
+
+def main():
+    print(sum(3,5))
+    print(greet("himanshu"))
+	print((lambda i : i % 2 == 0)(4)) # True
+```
+
+- **Higher-order functions** are functions that can accept other functions, such as lambda functions, as arguments or return them.
+- Example: `map()`, `filter()`, and `sorted()`.
+
+```python
+# map()
+# returns a new list after applying lambda function to each item in list
+# syntax: map(function, iterable)
+squared = list(map(lambda a : a ** 2, nums))
+
+# filter()
+# creates new list of elements for which given lambda function returns True
+odd = list(filter(lambda a : a % 2 == 0, nums))
+
+# reduce()
+# performs rolling computation of sequence. Return value
+from functools import reduce
+x = reduce(lambda a, b: a * b, [1,2,3,4,5])
+```
+
+```python
+# sorted()
+# uses lambda fns as keys for custom sorting
+rev = sorted(nums, key=lambda x : -x) # reverses nums
+print(rev)
+
+students = [('A', 18), ('B', 15), ('A', 12)]
+roll = sorted(students, key=lambda x : x[1]) # sorts based on i = 1
+print(roll)
+```
+
+- all these can be used together.
+
+# UNIT 16 : Modules and Packages
+---
+
+- A module is a `.py` file containing definitions and statements.
+- When we execute a program, it's module name is `__main__`
+```python
+print(__name__) # __main__
+```
+
+- Multiple modules for modular code. Reusing existing code. Easy development and maintenance.
+
+### Import
+```python
+import math # standard module
+import random, sys # multiple imports
+
+x = random.random()
+```
+
+```python
+import random * # imports all functions from random
+from math import sqrt # import specific functions
+
+x = randint(1,3)
+y = sqrt(2)
+```
+
+```python
+import random as rn # alias
+```
+
+**User defined modules**
+```python
+# temp.py
+
+def fucksumn(a, b):
+    print(__name__)
+    return a + b
+
+def main():
+    print("same code, different output")
+
+if __name__ == '__main__':
+    main()
+```
+
+```python
+# okay.py
+
+import temp
+
+def main():
+    print(temp.fucksumn(3, 4))
+    print(__name__)
+
+if __name__ == '__main__':
+    main()
+```
+
+Output:
+```bash
+temp
+7
+__main__
+```
+
+- temp's main() will not run when imported.
+
+### Packages
+
+- Packages help us organize sub-packages and modules
+- A directory is treated as a package if it contains `__init__.py`
+
+To import a module `mod.py` from a package `pkg`
+```python
+import pkg.mod
+pkg.mod.f1()
+```
+
+- **PyPI**: Python Package Index maintains list of third-part python packages.
+- **pip** is a package manager for installing packages downloaded from PyPI
 

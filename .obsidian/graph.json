@@ -15,13 +15,6 @@
       }
     },
     {
-      "query": "tag:#react",
-      "color": {
-        "a": 1,
-        "rgb": 6084296
-      }
-    },
-    {
       "query": "tag:#nodejs",
       "color": {
         "a": 1,
@@ -41,6 +34,13 @@
         "a": 1,
         "rgb": 14497334
       }
+    },
+    {
+      "query": "path:React  ",
+      "color": {
+        "a": 1,
+        "rgb": 3987364
+      }
     }
   ],
   "collapse-display": true,
@@ -53,6 +53,6 @@
   "repelStrength": 10.57373046875,
   "linkStrength": 1,
   "linkDistance": 250,
-  "scale": 1.3235248668424788,
+  "scale": 1.6175593503280916,
   "close": true
 }

@@ -900,7 +900,7 @@ a = [3,4,5]
 b = [1,a,2] # [1, [3, 4, 5], 5]
 ```
 
-- unpack a list using `*` operator
+- *unpack* a list using `*` operator
 ```python
 a = [3,4,5]
 b = "abc"
@@ -1026,8 +1026,8 @@ for v in d.values():
 	print(v)
 
 # for indexing
-for i, (v, k) in enumerate(d.items()):
-	print(i, v, k)
+for i, (k, v) in enumerate(d.items()):
+	print(i, k, v)
 ```
 
 ### Operations

@@ -1,6 +1,5 @@
 #react 
 
-```
 1. [[React Introduction]]
 2. [[Components]]
 3. [[Props]]
@@ -24,4 +23,3 @@
 21. [[React Backend]]
 22. [[Custom Hooks]]
 23. [[React Forms Inputs]]
-```

@@ -115,3 +115,30 @@ function Extra() {
 
 - We can maintain our code by splitting each component into multiple `.jsx` files, and import/export them accordingly
 - We can also assign CSS to each component individually, even though the **CSS will be applying globally.**
+
+# Component Life Cycles
+---
+Series of events that happen from the mounting of a React component to its Unmounting.
+
+- **Mounting**: Birth of Component
+- **Update**: Growth of Component
+- **Unmount**: Death of Component
+
+When a component is mounted. An instance is created and it's inside states are managed. Those states do not change externally as long as component remains mounted. You can update that instance externally if you want.
+
+But as soon as the component is unmounted. Due to dynamic conditions or change of key. That instance is destroyed with every state inside it.
+
+And on remounting. A new instance is created with initial value states.
+
+- React's state is scoped to the component instance.
+- React handles unmounting and remounting of components by discarding old state and re-initializing the component's state.
+
+## Methods in React Component Lifecycle
+
+- ﻿﻿The render) method is used to render HTML of the component in react. This method is required for a class based component to render the DOM. It runs during the mounting and updating of your component. Render) method should be pure ie you cannot modify state inside it!
+- ﻿﻿The componentDidMount() method runs after the component output has been rendered to the DOM.
+- ﻿﻿The componentDidUpdate() method is invoked as soon as the updating happens. The most common use case for the componentDidUpdate() method is updating the DOM in response to prop or state changes.
+- ﻿﻿The componentWillUnmount() lifecycle method is called just before the component is unmounted and destroyed. Usually used to perform cleanups
+
+![[Screenshot 2024-12-27 at 5.50.27 PM.png]]
+

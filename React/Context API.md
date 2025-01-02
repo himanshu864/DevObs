@@ -1,5 +1,7 @@
 #react 
 
+[[Boilerplate Context]]
+
 ## Prop Drilling
 
 Passing props is essential for sending data through the UI tree to the components that need it. However, it can get cumbersome when passing props deeply, leading to "prop drilling."

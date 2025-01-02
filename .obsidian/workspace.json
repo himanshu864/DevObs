@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "52d038cbc00dd52c",
+        "id": "73b7f1663aa48ee8",
         "type": "tabs",
         "children": [
           {
-            "id": "9a6677e617da3717",
+            "id": "3fe18d5c22b06cda",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "React/Context API.md",
+                "file": "Computer Networks.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Context API"
+              "title": "Computer Networks"
             }
           }
         ]
@@ -192,7 +192,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "React/Custom Hooks.md",
+                "file": "Computer Networks.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -220,11 +220,11 @@
                 }
               },
               "icon": "lucide-git-fork",
-              "title": "Graph of Custom Hooks"
+              "title": "Graph of Computer Networks"
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -239,11 +239,29 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "9a6677e617da3717",
+  "active": "3fe18d5c22b06cda",
   "lastOpenFiles": [
-    "better Context.md",
-    "React/Context API.md",
+    "Web Technology.md",
+    "Computer Networks.md",
+    "Assets/Pasted image 20250102174423.png",
+    "Assets/Pasted image 20250102174113.png",
+    "React/Components.md",
+    "Assets/Screenshot 2024-09-23 at 6.48.18 PM.png",
+    "Assets/Screenshot 2024-09-22 at 3.43.24 PM.png",
+    "Assets/Pasted image 20241223140137.png",
+    "Assets/Pasted image 20241223132725.png",
+    "Assets/Pasted image 20240924151940.png",
+    "Assets/Pasted image 20241202102852.png",
+    "Assets/Pasted image 20240923194620.png",
+    "Assets/Pasted image 20240923162820.png",
     "WebSocket.md",
+    "React/React.md",
+    "React/useEffect.md",
+    "React/useRef.md",
+    "React/React Backend.md",
+    "React/Boilerplate Context.md",
+    "React/Context API.md",
+    "better Context.md",
     "Clusters.md",
     "CORS.md",
     "Data Modelling - Mongoose.md",
@@ -254,30 +272,11 @@
     "NGINX.md",
     "NGINX Deploy NodeJS AWS Docker.md",
     "NodeJS Streams.md",
-    "Web Technology.md",
     "Theory Of Computation.md",
     "Serverless.md",
     "SSH GitHub on MacBook.md",
     "Python.md",
-    "NodeJS/NodeJS.md",
-    "NodeJS/NodeJS Introduction.md",
-    "NodeJS/Upload files with Multer.md",
-    "NodeJS/Working with files in NodeJS.md",
-    "NodeJS/User Authentication in NodeJS.md",
-    "React/React.md",
-    "React/Optimize React - Memo.md",
     "NodeJS",
-    "React/Custom Hooks.md",
-    "Assets/Pasted image 20240722165500.png",
-    "Assets/Pasted image 20240922153353.png",
-    "Assets/Pasted image 20240924123909.png",
-    "Assets/Pasted image 20240922161744.png",
-    "Assets/Pasted image 20241223124342.png",
-    "Assets/Screenshot 2024-09-26 at 2.39.59 PM 1.png",
-    "Assets/Screenshot 2024-09-26 at 2.57.42 PM.png",
-    "Assets/Screenshot 2024-09-26 at 2.48.12 PM.png",
-    "Assets/Pasted image 20240810135234.png",
-    "Assets/Pasted image 20241223163409.png",
     "React",
     "Assets"
   ]

@@ -255,7 +255,7 @@ Advantages:
 ## OSI Model
 ---
 
-- Open System Interconnection
+- **Open System Interconnection**
 - It is a model for understanding and designing a network architecture that is flexible, robust, and interoperable (exchange data b/w diff machines of diff types or OS).
 - Developed by ISO (International Standards Organization)
 - The OSI Model is not a protocol. It is only a guideline.
@@ -275,7 +275,7 @@ Advantages:
 - Eg: Ethernet Cable, USB, Bluetooth
 
 **Data Link Layer**:
-- Ensures error-free data transfer between two devices on same network
+- Ensures *error-free* data transfer between two devices on same network
 - Divides data into *frames*
 - Eg: MAC Addresses, Wi-Fi
 

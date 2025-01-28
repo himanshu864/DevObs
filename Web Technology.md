@@ -562,7 +562,7 @@ The last address is obtained by setting all the host bits (last 4 bits) to 1:
 
 **(iii) Total Number of Addresses**
 
-1. The number of addresses in a /28 block is calculated as  2^{(32 - 28)} = 2^4 = 16 .
+1. The number of addresses in a /28 block is calculated as  $2^{(32 - 28)} = 2^4 = 16$
 
 - **Total Addresses**: 16
 

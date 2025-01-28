@@ -315,3 +315,14 @@ Packet switching is the backbone of the Internet, dividing data into small piece
 2. **Fault Tolerance**: If one route fails, packets can take alternative paths.
 3. **Scalability**: Handles large amounts of traffic without crashing.
 
+
+
+# UNIT 2
+
+Data link layer is divided into two parts. MAC and LLC.
+
+Random access.
+
+Pure Aloha
+
+12

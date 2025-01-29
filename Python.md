@@ -1,7 +1,15 @@
 #dev #python
 
-# Introduction
+# Installation
+
+First download a stable version from [python.org].
+
+But PyLance might slow errors and some dependencies won't work.
+
+In that case simply Homebrew.
+
 ---
+# Introduction
 ## Hello World
 ```python
 def main():

@@ -47,5 +47,9 @@ The model derives mathematical relationship by feeding input features and predic
 **Inference**: Once satisfied with evaluation, we use models to make predictions on unlabeled examples.
 
 ---
-# NumPy
+
+# Prerequisites
+
+1. [[NumPy]]
+2. [[Pandas]]
 

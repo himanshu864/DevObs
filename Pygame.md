@@ -74,3 +74,4 @@ text_surface = test_font.render("my text", False, 'Black')
 while True:
     screen.blit(text_surface, (150, 50))
 ```
+

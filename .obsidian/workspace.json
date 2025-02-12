@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "372229febcdb2484",
+        "id": "ab5d451fab2b5040",
         "type": "tabs",
         "children": [
           {
-            "id": "38cb6156460bc790",
+            "id": "83612ea2fada9a74",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -241,15 +241,20 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "38cb6156460bc790",
+  "active": "83612ea2fada9a74",
   "lastOpenFiles": [
-    "Docker.md",
+    "python.org.md",
     "Pygame.md",
+    "Assets/Screenshot 2025-02-07 at 10.19.41 PM.png",
+    "Python.md",
+    "Boilerplate For MERN Project.md",
+    "Pandas.md",
+    "NumPy.md",
+    "Docker.md",
     "Assets/Screenshot 2025-02-05 at 3.31.10 PM.png",
     "Internet of Things.md",
     "Web Technology.md",
     "Assets/Screenshot 2025-02-02 at 2.27.34 PM.png",
-    "Python.md",
     "Machine Learning.md",
     "React/Context API.md",
     "React/React.md",
@@ -267,10 +272,6 @@
     "React/TailWind CSS.md",
     "Computer Networks.md",
     "React/Passing States.md",
-    "Pandas.md",
-    "NumPy.md",
-    "Boilerplate For MERN Project.md",
-    "NodeJS/User Authentication in NodeJS.md",
     "Assets/Screenshot 2025-01-28 at 11.17.26 PM.png",
     "Assets/Pasted image 20240723130752.png",
     "Assets/Screenshot 2025-01-02 at 5.35.58 PM.png",
@@ -279,7 +280,6 @@
     "Assets/Untitled.png",
     "ni",
     "Assets/Pasted image 20250102174423.png",
-    "Assets/Pasted image 20250102174113.png",
     "NodeJS",
     "React",
     "Assets"

@@ -2,7 +2,7 @@
 
 # Installation
 
-1. Download and install `python` from [python.org].
+1. Download and install `python` from [python.org](https://www.python.org/).
 2. Install `pygame` using `pip`.
 
 ```zsh
@@ -36,11 +36,11 @@ while True: # rendering until QUIT
 ---
 # Surface
 
-3. **Display Surface**:
+1. **Display Surface**:
 	- The game window.
 	- Is always displayed.
 	- Must be unique.
-4. **(regular) surface:**
+2. **(regular) surface:**
 	- A single image (imported), color, text.
 	- Needs to be on *display surface* to be visible.
 	- Flexible amount.
@@ -213,5 +213,134 @@ while True:
 Can work with keydowns and key ups separately for more control.
 
 ---
-# Time Management
+# Get Time
 
+```python
+curr_time = pygame.time.get_ticks()
+```
+
+---
+# Transform
+
+![[Screenshot 2025-02-07 at 10.19.41 PM.png | 500]]
+
+```python
+player_double = pygame.transform.scale2x(player_stand)
+# OR 
+player_bigger = pygame.transform.rotozoom(player_stand, 0, 2)
+```
+
+`rotozoom` takes 3 args. Surface, rotate angel, and zoom float.
+
+---
+# Set Timer
+
+**Timer**: Custom user event that is triggered in a certain time intervals.
+
+1. Create custom event.
+2. Tel `pygame` to trigger that event continuously.
+3. Add code in the event loop.
+
+```python
+# +1 on custom event to avoid conflicts
+obstacle_timer = pygame.USEREVENT + 1
+
+# Trigger intervally (custom_event, interval in ms)
+pygame.time.set_timer(obstacle_timer, 1200)
+
+while True:
+	for event in pygame.event.get():
+		if event.timer == obstacle.timer:
+			# code
+```
+
+---
+# Sprite Class
+
+A class that contains a *surface* and a *rectangle*; and it can be drawn and updated very easily.
+
+To organize all code snippets of a class into a single place. Player, all snails and flies will be their own sprite.
+
+We can't use `screen.blit()` to display sprite. Here, we need to
+1. Place all sprites inside a group or groupSingle
+2. And Draw/Update all of them at the same time.
+	- Group: A group of multiple sprites (snails and flies)
+	- GroupSingle: A group with a single sprite. (player)
+
+> Enemies with collision must be in different groups.
+
+```python
+# Create Sprite Class
+class Player(pygame.sprite.Sprite):
+    def __init__(self):
+        super().__init__() # calls parent classes constructor (Sprite)
+        self.image = pygame.image.load("graphics/Player/player_stand.png")
+        self.rect = self.image.get_rect(bottomleft=(100, GROUND_LEVEL))
+
+# Add To Groups
+player = pygame.sprite.GroupSingle()
+player.add(Player())
+
+# Draw Groups
+while True:
+	player.draw(screen)
+```
+
+By default sprites support `image` and `rect` attributes. But can create custom attributes like `self.falling_speed` and functions like `def player_jump(self):` and so on.
+
+To call all the custom functions to defined, you can use a built-in method `def update()` along with `player.draw(surface)`.
+
+```python
+class Obstacle(pygame.sprite.Sprite):
+    def __init__(self, type):
+        super().__init__()
+        self.type = type
+        self.image = self.frames[0]
+		self.rect = self.image.get_rect(bottomleft=[800, 300])
+
+	def animation(self):
+		self.rect -= ENEMY_SPEED
+
+    def destroy(self):
+        if self.rect.right < 0:
+            self.kill()
+
+    def update(self):
+        self.animation()
+        self.destroy()
+
+
+# Create group
+obstacle_group = pygame.sprite.Group()
+
+# Append enemies
+while True:
+	for event in pygame.event.get():
+		if event.type == obstacle_timer:
+			obstacle_group.add(Obstacle(choice(["SNAIL", "SNAIL", "FLY"])))
+```
+
+### Collision in sprites
+
+Use `spritecollide(sprite, group, dokill)` to check if the `sprite` is collide with which members of the `group`, and set `dokill` to true, if you want to kill member after collision.
+
+Use `player.sprite` to access player sprite.
+
+Use `obstacle_group.empty()` to clear all obstacles.
+
+---
+# Music
+
+```python
+# import sound
+jump_sound = pygame.mixer.Sound("audio/jump.mp3")
+
+# play sound
+jump_sound.play()
+# .play(loops = -1) # for infinite loops, +ve for fixed number of loops
+
+# adjust volume
+jump_sound.set_volume(0.5)
+```
+
+That's it.

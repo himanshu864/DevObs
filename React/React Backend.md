@@ -67,6 +67,7 @@ const response = await fetch("http://localhost:3000/user-places", {
 Now we can perform any action with an API.
 
 ### Optimistic Update
+
 It's necessary to reflect changes and handle errors with dealing with API.
 We might consider updating UI as soon as user requests and then hope for a positive response.
 Otherwise we simple roll back to initial State and show some kind of error message.

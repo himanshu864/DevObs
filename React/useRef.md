@@ -53,11 +53,12 @@ export default function Player() {
 ```
 
 - We need `current` property to access HTML element using DOM manipulation
-- It’s doesn’t re-render react component. It’s mutable.But don’t use this inplace of states.
+- It’s doesn’t re-render react component. It’s mutable. But don’t use this in-place of states.
 
 ![[Untitled.png]]
 
 - We can use ref to pass setTimeout variable to clearTimeout on click
+
 ```jsx
   const timer = useRef();
 
@@ -73,8 +74,9 @@ export default function Player() {
   };
 ```
 
-# ForwardRef
 ---
+# ForwardRef
+
 Call `forwardRef()` to let your component receive a ref and forward it to a child component:
 
 - **TimerChallange.jsx**
@@ -84,7 +86,7 @@ import ResultModal from "./resultModal";
 
 export default function TimerChallenge({ title, targetTime }) {
   const dialog = useRef();
-  
+
   const handleStart = () => {
     setTimeout(() => {
       dialog.current.showModal();
@@ -114,8 +116,8 @@ export default ResultModal;
 - Wrap child component function with forwardRef() and export it.
 - It takes two parameters. `Props and ref`
 
-# UseImperativeHandle
 ---
+# UseImperativeHandle
 
 When forwarding a ref. It can be troublesome to work on different components while trying to understand how refs work.
 
@@ -140,14 +142,14 @@ const ResultModal=forwardRef(function ({result,targetTime}, ref){
 export default ResultModal;
 ```
 
-here, we can creating a new ref dialog and setting it directly to element. And then using a useImepartiveHandle() hook to define `open()` function which does the thing.
+here, we can creating a new ref dialog and setting it directly to element. And then using a `useImepartiveHandle()` hook to define `open()` function which does the thing.
 
 And we simple call open() method from parent component, instead of defining action in a different component.
 
 - useRef is used for DOM manipulation in react.
 
-# Portal
 ---
+# Portal
 
 `createPortal` lets you render some children into a different part of the DOM.
 

@@ -164,7 +164,8 @@ func _on_timer_timeout() -> void:
 - `move_and_slide()`: Applies current `velocity` to character's `position` including collisions.
 - **Signals** are used for event driven programming.
 - `func _ready()` : only called when node enters scene tree for first time.
-- `func _process()`: called every frames. (game loop)
+- `func _process()`: called every frames. (game loop). Variable.
+- `func _physics_process()` runs at a constant 60 fps to avoid janky physics behaviour.
 
 ---
 # Enemy
@@ -182,7 +183,7 @@ func _on_timer_timeout() -> void:
 - Attach a script to the enemy node.
 - Add constant speed w.r.t delta to character's position.
 - Drag (and drop with holding `cmd`) both ray casts to slime script to reverse direction when hitting walls.
-- Also drag `AnimationSprite2D` to script to reverse its sprite.
+- Also drag `AnimationSprite2D` to script to update graphics to face correct direction.
 
 ```gdscript
 extends Node2D
@@ -226,7 +227,7 @@ func _on_body_entered(body: Node2D) -> void:
 	body.get_node("CollisionShape2D").queue_free() # rmv player collision
 	body.velocity.y = body.JUMP_VELOCITY # make player jump
 	timer.start()
-
+%%  %%
 func _on_timer_timeout() -> void:
 	Engine.time_scale = 1 # revert back time
 	get_tree().reload_current_scene() # restart game
@@ -235,115 +236,114 @@ func _on_timer_timeout() -> void:
 ---
 # Player 2.0
 
-While `func _process()` fps can be variable depending on the machine, `func _physics_process()` runs at a constant 60 fps to avoid janky behaviour.
+**Actions**: Create keybindings to perform certain action.
 
-- Enhance player movement and animations using states:
-	- `IDLE`, `RUNNING`, `JUMPING`, `FALLING`
-- Change animations based on player's state
-- Use `Input.is_action_pressed` for smoother control
-- Tweak velocity for better jump feel
+- Open Project > Project Settings > Input Map.
+- Add action names with keybinding(s).
+- Modify player script accordingly.
+
+Update player graphics to face the direction we're moving.
 
 ```gdscript
-enum {
-    IDLE,
-    RUNNING,
-    JUMPING,
-    FALLING
-}
+	var direction := Input.get_axis("move_left", "move_right")
 
-var state = IDLE
+	# Flip sprite
+	if direction > 0:
+		animated_sprite.flip_h = false
+	elif direction < 0:
+		animated_sprite.flip_h = true
+```
 
-func _physics_process(delta):
-    match state:
-        IDLE:
-            animated_sprite.play("idle")
-        RUNNING:
-            animated_sprite.play("run")
-        JUMPING:
-            animated_sprite.play("jump")
-        FALLING:
-            animated_sprite.play("fall")
+**Better Animation**
 
-    # Handle state transitions based on input and physics
-    if is_on_floor():
-        if Input.is_action_pressed("move_left") or Input.is_action_pressed("move_right"):
-            state = RUNNING
-        else:
-            state = IDLE
-    else:
-        if velocity.y < 0:
-            state = JUMPING
-        else:
-            state = FALLING
-
-    # Apply movement
-    var input_vector = Vector2.ZERO
-    input_vector.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
-    velocity.x = input_vector.x * SPEED
+- Add new running, jump and fall animations to player.
+- Add frames from sprite sheet.
+- Modify player script.
+```gdscript
+	if not is_on_floor():
+		if velocity.y < 0:
+			animated_sprite.play("jump")
+		else:
+			animated_sprite.play("fall")
+	else:
+		if velocity.x == 0:
+			animated_sprite.play("idle")
+		else:
+			animated_sprite.play("run")
 ```
 
 ---
 # Text
 
 - Use `Label` node for displaying text on screen
-- Create a `CanvasLayer` to keep UI elements on top
-- Add `Label` as a child of `CanvasLayer`
 - Set text property, position, and customize font (use Pixel font for retro look)
-- Control visibility based on game state
-
-```gdscript
-@onready var game_over_label: Label = $CanvasLayer/GameOverLabel
-
-func show_game_over():
-    game_over_label.show()
-
-func hide_game_over():
-    game_over_label.hide()
-```
+- Will display over background and player.
 
 ---
 # Score
 
-- Implement scoring system with a variable to store the score
-- Update score when player collects coins or performs actions
-- Display score using a `Label` node
-- Update `Label` text whenever score changes
+- Create a node named `GameMananger` as first child of Game scene.
+- Add following script to it with scoring system to add points.
 
 ```gdscript
+extends Node
+
 var score = 0
-@onready var score_label: Label = $CanvasLayer/ScoreLabel
 
-func _ready():
-    update_score_label()
+func add_point():
+	score += 1
+	print(score)
+```
 
-func add_score(points):
-    score += points
-    update_score_label()
+- Refer this function inside coins script after marking Game Manager as unique node `%`. Works because in the same scene.
 
-func update_score_label():
-    score_label.text = "Score: " + str(score)
+```gdscript
+extends Area2D
+
+@onready var game_manager = %GameManager
+
+func _on_body_entered(_body: Node2D) -> void:
+	game_manager.add_point()
+	queue_free() # coins 1+
+```
+
+- Display score using a `Label` node as a child of Game Manager.
+- Update `ScoreLabel` text whenever score changes from game manager script.
+
+```gdscript
+extends Node
+
+@onready var score_label: Label = $ScoreLabel
+
+var score = 0
+
+func add_point():
+	score += 1
+	score_label.text = "Score: " + str(score)
 ```
 
 ---
 ## Audio
 
-- Use `AudioStreamPlayer` for sound effects
-- `AudioStreamPlayer2D` for positional sound in 2D space
-- `AudioStreamPlayer3D` for positional sound in 3D space
-- Add `AudioStreamPlayer` node to the scene
-- Load audio file (`.wav` or `.ogg`)
-- Control audio with `play()` and `stop()`
+- Add `AudioStreamPlayer2D` for background music.
+- Import music, adjust, autoplay, loop and stuff.
+- Adjust volume by adding Buses at Audio tab at bottom.
 
-```gdscript
-@onready var coin_sound: AudioStreamPlayer = $CoinSound
+Now music is replay every the game restarts. To remedy that, we can use **autoloads**.
 
-func play_coin_sound():
-    coin_sound.play()
-```
+- Drag and drop Music nodes into scenes folder, and save.
+- Add that scene to Project > Project Settings > Globals > Autoload.
+
+Now music keeps playing. How to add pickup music for coins? Cool shit without coding, only animation keyframes. I'm not documenting that.
+
+- Add `AnimationPlayer` and follow the [video](https://youtu.be/LOhfqjmasi0?si=R-Dl5jXZGaLPquiG) from 1:11:30
+
+Now pickup sound should play every time you pick up a coins, and coin should be removed from scene.
 
 ---
 ## Export
 
+- Download and install export template : `Editor > Manage Exporter Template`.
 - Access export settings: `Project > Export`
 - Add desired platforms (Windows, Mac, Linux, Web)
 - Configure export settings (icon, name, etc.)
@@ -356,3 +356,5 @@ func play_coin_sound():
 	- Test game thoroughly before exporting
 	- Optimize assets for smaller file size
 	- Adjust platform-specific settings for best performance
+
+# DONE BITCH!!!

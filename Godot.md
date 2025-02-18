@@ -30,9 +30,9 @@ brackeys-2d-tutorial on  main [?]
 ---
 # Player 1.0
 
-1. Create a the game root scene:
+- Create a the game root scene:
 	- Add Root Node 2D and save renamed Game root scene in its directory.
-2. Set up player scene:
+- Set up player scene:
 	- Create new scene with node `cmd + A` named `CharacterBody2D`.
 	- Add another node named `AnimatedSprite2D` to add graphics to that character.
 	- On the right, select `Sprite Frames` under Animation tab of inspector, and add a new sprite frame.
@@ -41,7 +41,7 @@ brackeys-2d-tutorial on  main [?]
 	- Adjust animation name, fps, autoplay and position.
 	- Since physics nodes need shape to interact with objects, add `CollisionShape2D` node with circle shape under characterBody2D.
 	- Save `player` scene and drag to `game` scene.
-3. Integrate player into game:
+- Integrate player into game:
 	- Add a `Camera2D` node to `game` scene and adjust zoom. Build to see progress.
 	- Add default script to `player` scene.
 
@@ -73,7 +73,7 @@ Add camera to as a child of player node and smoothen it.
 ---
 # Platform 1.0
 
-### Static Platforms
+**Static Platforms**
 
 - Create a new scene with `AnimatableBody2D` as the root node.
 - Add a `Sprite2D` node as a child.
@@ -82,7 +82,8 @@ Add camera to as a child of player node and smoothen it.
 - Add a `CollisionShape2D` node and set its shape to a rectangle matching the platform's size. Also able "One way collision" if you wanna jump on it from below.
 - Rename the root node to "Platform" and save the scene.
 - Instance the platform in your main scene as needed.
-### Moving Platforms
+
+**Moving Platforms**
 
 - Select an instanced platform in your main scene.
 - Add an `AnimationPlayer` node as a child of the platform.
@@ -96,7 +97,7 @@ Add camera to as a child of player node and smoothen it.
 ---
 # Pickups
 
-### Coin Pickup
+**Coin Pickup**
 
 - Create a new scene with `Area2D` as the root node. (to only *detect* if colliding)
 - Add an `AnimatedSprite2D` node as a child.
@@ -108,26 +109,26 @@ Add camera to as a child of player node and smoothen it.
 - Create a script for the Coin scene
 - Delete default boilerplate and select node tab inside coin script. Connect `on_body_entered()` to detect coins colliding with any body (including moving platforms).
 - Set player to 2nd physics layer and coin to 2nd mask, to only detect player and coin collision.
-- Detect collision coin using `queue_free()`.
+- Schedule collided node for deletion using `queue_free()`.
 
 ```gdscript
 extends Area2D
 
 func _on_body_entered(body: Node2D) -> void:
-	queue_free() # coins 1+
+	queue_free() # coins +1
 ```
 
 ---
 # Dying 1.0
 
-### Death Cam
+**Death Cam**
 
 - Set a below limit to `Camera2D` to prevent camera from following player to its death.
 
-### Kill Zone
+**Kill Zone**
 
 - Create a new scene with `Area2D` as the root node.
-- Add a `CollisionShape2D` node and set its shape to world boundary to cover the area where the player should die (e.g., bottom of the screen).
+- Add a `CollisionShape2D` node and set its shape to world boundary to cover the area where the player should die (e.g., bottom of the screen). (only in game script)
 - Rename the root node to "KillZone" and save the scene.
 - Set it's mask to 2nd second to detect player collision.
 - Create a script for the KillZone with `on_body_entered()`:
@@ -153,5 +154,205 @@ func _on_timer_timeout() -> void:
 - Add a new background layer inside inspection tab of `TileMap` and fill up as you desire.
 
 ---
+# General Scripting Stuff
+
+- `delta`: It is the amount of time gone by since the last frame. Used for frame-rate independent physics calculations.
+- `Input.is_action_just_pressed()`: Checks if an input action was just pressed this frame.
+- `Input.is_action_pressed()`: Checks if an input action is being held down (hold).
+- `Input.get_axis()`: Returns a value between -1 and 1 based on the input of two opposite actions.
+- `move_toward(curr value, target value, max speed)`: Gradually changes a value towards a target at a fixed rate.
+- `move_and_slide()`: Applies current `velocity` to character's `position` including collisions.
+- **Signals** are used for event driven programming.
+- `func _ready()` : only called when node enters scene tree for first time.
+- `func _process()`: called every frames. (game loop)
+
+---
 # Enemy
 
+- Create a new scene with `Node2D` as the root node named "Slime".
+- Add the following child nodes:
+	- `AnimatedSprite2D`: For enemy graphics (add sprite sheet and animate)
+	- `Killzone`: Drag this scene for death on collision.
+		- `CollisionShape2D`: For physics interactions (rectangle).
+	- `RayCastLeft` and `RayCastRight`: To detect walls or edges.
+- Save the scene as `slime.tscn`.
+
+**Enemy Behavior Script**:
+
+- Attach a script to the enemy node.
+- Add constant speed w.r.t delta to character's position.
+- Drag (and drop with holding `cmd`) both ray casts to slime script to reverse direction when hitting walls.
+- Also drag `AnimationSprite2D` to script to reverse its sprite.
+
+```gdscript
+extends Node2D
+
+const SPEED = 60
+
+var direction = 1
+
+@onready var ray_cast_left: RayCast2D = $RayCastLeft
+@onready var ray_cast_right: RayCast2D = $RayCastRight
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+
+# Called every frame.
+# 'delta' is used for frame-rate independent calculations
+func _process(delta: float) -> void:
+	if ray_cast_left.is_colliding():
+		direction = 1
+		animated_sprite.flip_h = false
+	if ray_cast_right.is_colliding():
+		direction = -1
+		animated_sprite.flip_h = true
+		
+	position.x += SPEED * direction * delta
+```
+
+---
+# Dying 2.0
+
+- Slow down time using `Engine.time_scale = 0.5` inside KillZone script.
+- Remove the players collision shape and make him jump like Mario.
+- KillZone's function `on_body_entered(body)` gives direct access to our player.
+
+```gdscript
+extends Area2D
+
+@onready var timer: Timer = $Timer
+
+func _on_body_entered(body: Node2D) -> void:
+	print("YOU DIED!")
+	Engine.time_scale = 0.6 # Slow down time
+	body.get_node("CollisionShape2D").queue_free() # rmv player collision
+	body.velocity.y = body.JUMP_VELOCITY # make player jump
+	timer.start()
+
+func _on_timer_timeout() -> void:
+	Engine.time_scale = 1 # revert back time
+	get_tree().reload_current_scene() # restart game
+```
+
+---
+# Player 2.0
+
+While `func _process()` fps can be variable depending on the machine, `func _physics_process()` runs at a constant 60 fps to avoid janky behaviour.
+
+- Enhance player movement and animations using states:
+	- `IDLE`, `RUNNING`, `JUMPING`, `FALLING`
+- Change animations based on player's state
+- Use `Input.is_action_pressed` for smoother control
+- Tweak velocity for better jump feel
+
+```gdscript
+enum {
+    IDLE,
+    RUNNING,
+    JUMPING,
+    FALLING
+}
+
+var state = IDLE
+
+func _physics_process(delta):
+    match state:
+        IDLE:
+            animated_sprite.play("idle")
+        RUNNING:
+            animated_sprite.play("run")
+        JUMPING:
+            animated_sprite.play("jump")
+        FALLING:
+            animated_sprite.play("fall")
+
+    # Handle state transitions based on input and physics
+    if is_on_floor():
+        if Input.is_action_pressed("move_left") or Input.is_action_pressed("move_right"):
+            state = RUNNING
+        else:
+            state = IDLE
+    else:
+        if velocity.y < 0:
+            state = JUMPING
+        else:
+            state = FALLING
+
+    # Apply movement
+    var input_vector = Vector2.ZERO
+    input_vector.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
+    velocity.x = input_vector.x * SPEED
+```
+
+---
+# Text
+
+- Use `Label` node for displaying text on screen
+- Create a `CanvasLayer` to keep UI elements on top
+- Add `Label` as a child of `CanvasLayer`
+- Set text property, position, and customize font (use Pixel font for retro look)
+- Control visibility based on game state
+
+```gdscript
+@onready var game_over_label: Label = $CanvasLayer/GameOverLabel
+
+func show_game_over():
+    game_over_label.show()
+
+func hide_game_over():
+    game_over_label.hide()
+```
+
+---
+# Score
+
+- Implement scoring system with a variable to store the score
+- Update score when player collects coins or performs actions
+- Display score using a `Label` node
+- Update `Label` text whenever score changes
+
+```gdscript
+var score = 0
+@onready var score_label: Label = $CanvasLayer/ScoreLabel
+
+func _ready():
+    update_score_label()
+
+func add_score(points):
+    score += points
+    update_score_label()
+
+func update_score_label():
+    score_label.text = "Score: " + str(score)
+```
+
+---
+## Audio
+
+- Use `AudioStreamPlayer` for sound effects
+- `AudioStreamPlayer2D` for positional sound in 2D space
+- `AudioStreamPlayer3D` for positional sound in 3D space
+- Add `AudioStreamPlayer` node to the scene
+- Load audio file (`.wav` or `.ogg`)
+- Control audio with `play()` and `stop()`
+
+```gdscript
+@onready var coin_sound: AudioStreamPlayer = $CoinSound
+
+func play_coin_sound():
+    coin_sound.play()
+```
+
+---
+## Export
+
+- Access export settings: `Project > Export`
+- Add desired platforms (Windows, Mac, Linux, Web)
+- Configure export settings (icon, name, etc.)
+- Click `Export Project` and choose output location
+- Platform-specific notes:
+	- Windows: Requires `.exe` export
+	- Web: Exports to HTML5 (playable in browsers)
+	- Mobile (Android, iOS): Requires additional setup (SDKs)
+- Tips:
+	- Test game thoroughly before exporting
+	- Optimize assets for smaller file size
+	- Adjust platform-specific settings for best performance

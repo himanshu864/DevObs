@@ -1,5 +1,7 @@
 #game #dev 
 
+[[GDScript]]
+
 # Installation
 
 - Download Latest Godot from [Official Website](https://godotengine.org/)
@@ -30,7 +32,7 @@ brackeys-2d-tutorial on  main [?]
 ---
 # Player 1.0
 
-- Create a the game root scene:
+- Create the game root scene:
 	- Add Root Node 2D and save renamed Game root scene in its directory.
 - Set up player scene:
 	- Create new scene with node `cmd + A` named `CharacterBody2D`.
@@ -68,7 +70,7 @@ Now you can create an entire map for your game. But no collision.
 
 Now player can interact with the environment. But camera isn't following him.
 
-Add camera to as a child of player node and smoothen it. 
+Add camera to as a child of player node and smoothen it.
 
 ---
 # Platform 1.0
@@ -323,7 +325,7 @@ func add_point():
 ```
 
 ---
-## Audio
+# Audio
 
 - Add `AudioStreamPlayer2D` for background music.
 - Import music, adjust, autoplay, loop and stuff.
@@ -341,7 +343,7 @@ Now music keeps playing. How to add pickup music for coins? Cool shit without co
 Now pickup sound should play every time you pick up a coins, and coin should be removed from scene.
 
 ---
-## Export
+# Export
 
 - Download and install export template : `Editor > Manage Exporter Template`.
 - Access export settings: `Project > Export`
@@ -357,4 +359,88 @@ Now pickup sound should play every time you pick up a coins, and coin should be 
 	- Optimize assets for smaller file size
 	- Adjust platform-specific settings for best performance
 
-# DONE BITCH!!!
+---
+# Y-Sorting for 2.5D
+
+- Create game scene with `Node2D` named TileMap and `Camera2D`.
+- Add a player scene with `AnimationSprite2D`, `CollisionShape2D` and movement script to Game scene tree.
+- Create three `TileMapLayer` named "ground", "cliff" and "y-sort" under TileMap.
+- Enable `Y Sort` on game, player and layers.
+- Paint tiles, physics layer as well as Y Sort Origin to these layers
+
+---
+# Enemy
+
+```
+Slime: 2D Node
+	AnimatedSprite2D
+	CollisionShape2D
+	Detection_Area: Area2D
+		CollisionShape2D
+```
+
+- Add 2nd physics layer to player and both layers + mask to slime.
+- Also enable Y-Sorting
+
+```gdscript
+extends CharacterBody2D
+
+@onready var player := $"../Player"
+
+const SPEED := 100
+
+var chase_player = false
+
+func _physics_process(delta: float) -> void:
+	if chase_player:
+		var direction := global_position.direction_to(player.global_position)
+		velocity = direction * SPEED
+	else:
+		velocity = velocity.move_toward(Vector2.ZERO, SPEED * delta)
+	move_and_slide()
+
+func _on_detection_area_body_entered(_body: Node2D) -> void:
+	chase_player = true
+
+func _on_detection_area_body_exited(_body: Node2D) -> void:
+	chase_player = false
+```
+
+- Convert slime's Motion mode to "Floating" to make him not stick to player.
+- Also simply use directions, velocity and vectors. Instead of modifying position. Keep it simple.
+
+---
+
+> **Layers** determine what can detect me
+> **Masks** determine what can I detect
+
+
+# Enemy Input
+
+```gdscript
+
+# Updates movement based on input and current state.
+func _physics_process(_delta: float) -> void:
+	if current_state == State.ATTACK_SWIPE:
+		velocity = Vector2.ZERO
+	elif current_state == State.ATTACK_JUMP:
+		var progress: float = get_animation_progress()
+		if progress > 0.1 and progress < 0.45:
+			velocity = input_direction * JUMP_SPEED
+		else:
+			velocity = Vector2.ZERO
+	else:
+		# Get movement input.
+		input_direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+		if input_direction != Vector2.ZERO:
+			if Input.is_action_pressed("shift"):
+				current_state = State.RUN
+				velocity = input_direction * RUN_SPEED
+			else:
+				current_state = State.WALK
+				velocity = input_direction * WALK_SPEED
+		else:
+			current_state = State.IDLE
+			velocity = Vector2.ZERO
+	move_and_slide()
+```

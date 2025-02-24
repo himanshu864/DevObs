@@ -4,21 +4,31 @@
     "type": "split",
     "children": [
       {
-        "id": "3713ac6a543a5044",
+        "id": "f9e9515d3615786f",
         "type": "tabs",
         "children": [
           {
-            "id": "dd654e5502fe7363",
+            "id": "3509efb6425280db",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Godot.md",
+                "file": "Artificial Intelligence.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Godot"
+              "title": "Artificial Intelligence"
+            }
+          },
+          {
+            "id": "322c3ec6df274ae8",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
             }
           }
         ]
@@ -241,12 +251,28 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "dd654e5502fe7363",
+  "active": "3509efb6425280db",
   "lastOpenFiles": [
+    "React/CSS Modules.md",
+    "Artificial Intelligence.md",
+    "Assets/Screenshot 2025-02-24 at 12.51.43 PM.png",
+    "Assets/Screenshot 2025-02-24 at 12.37.38 PM.png",
+    "Assets/Screenshot 2025-02-24 at 11.50.06 AM.png",
     "Godot.md",
+    "RM Permissions.md",
     "Upload Excel.md",
-    "Docker.md",
+    "Web Technology.md",
+    "Computer Networks.md",
+    "WebSocket.md",
+    "Assets/Screenshot 2025-02-20 at 4.06.15 PM.png",
+    "Assets/Screenshot 2025-02-20 at 3.37.02 PM.png",
+    "Assets/Screenshot 2025-02-20 at 3.23.00 PM.png",
+    "Assets/Screenshot 2025-02-20 at 3.12.04 PM.png",
+    "Assets/Screenshot 2025-02-20 at 1.17.41 PM.png",
+    "Assets/Screenshot 2025-02-20 at 11.21.38 AM.png",
+    "GDScript.md",
     "I'm 10 but wanna upload csv to sql.md",
+    "Docker.md",
     "NGINX.md",
     "React/Context API.md",
     "React/React.md",
@@ -262,23 +288,7 @@
     "React/Boilerplate Context.md",
     "React/Custom Hooks.md",
     "React/Passing States.md",
-    "React/Events.md",
-    "React/Components.md",
-    "React/CSS Modules.md",
-    "Data Modelling - Mongoose.md",
-    "Engineering Economics.md",
-    "Machine Learning.md",
-    "NGINX Deploy NodeJS AWS Docker.md",
     "Assets/Screenshot 2025-02-13 at 3.45.51 PM.png",
-    "Assets/Screenshot 2025-02-07 at 10.19.41 PM.png",
-    "Assets/Screenshot 2025-02-05 at 3.31.10 PM.png",
-    "Assets/Screenshot 2025-02-02 at 2.27.34 PM.png",
-    "Assets/Screenshot 2025-01-28 at 11.17.26 PM.png",
-    "Assets/Pasted image 20240723130752.png",
-    "Assets/Screenshot 2025-01-02 at 5.35.58 PM.png",
-    "Assets/Screenshot 2025-01-25 at 9.32.32 PM.png",
-    "Assets/Screenshot 2025-01-28 at 11.08.51 PM.png",
-    "Assets/Untitled.png",
     "ni",
     "NodeJS",
     "React",

@@ -4,31 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "f9e9515d3615786f",
+        "id": "b93e9bfc822794ab",
         "type": "tabs",
         "children": [
           {
-            "id": "3509efb6425280db",
+            "id": "8cea9c1a3580b233",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Artificial Intelligence.md",
+                "file": "Power Plant Engineering.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Artificial Intelligence"
-            }
-          },
-          {
-            "id": "322c3ec6df274ae8",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "title": "Power Plant Engineering"
             }
           }
         ]
@@ -122,7 +112,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "React/Custom Hooks.md",
+                "file": "Power Plant Engineering.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -132,7 +122,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Custom Hooks"
+              "title": "Backlinks for Power Plant Engineering"
             }
           },
           {
@@ -141,12 +131,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "React/Custom Hooks.md",
+                "file": "Power Plant Engineering.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Custom Hooks"
+              "title": "Outgoing links from Power Plant Engineering"
             }
           },
           {
@@ -155,10 +145,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "React/Custom Hooks.md"
+                "file": "Power Plant Engineering.md",
+                "followCursor": false,
+                "showSearch": true,
+                "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Custom Hooks"
+              "title": "Outline of Power Plant Engineering"
             }
           },
           {
@@ -191,7 +184,9 @@
               "type": "tag",
               "state": {
                 "sortOrder": "frequency",
-                "useHierarchy": true
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-tags",
               "title": "Tags"
@@ -203,7 +198,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "Machine Learning.md",
+                "file": "Power Plant Engineering.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -231,7 +226,7 @@
                 }
               },
               "icon": "lucide-git-fork",
-              "title": "Graph of Machine Learning"
+              "title": "Graph of Power Plant Engineering"
             }
           }
         ],
@@ -251,44 +246,43 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "3509efb6425280db",
+  "active": "8cea9c1a3580b233",
   "lastOpenFiles": [
-    "React/CSS Modules.md",
-    "Artificial Intelligence.md",
-    "Assets/Screenshot 2025-02-24 at 12.51.43 PM.png",
-    "Assets/Screenshot 2025-02-24 at 12.37.38 PM.png",
-    "Assets/Screenshot 2025-02-24 at 11.50.06 AM.png",
-    "Godot.md",
-    "RM Permissions.md",
-    "Upload Excel.md",
+    "Untitled.md",
+    "Power Plant Engineering.md",
+    "Fundaments of Management.md",
+    "Assets/Screenshot 2025-03-05 at 5.18.50 PM.png",
+    "Assets/Pasted image 20250305161006.png",
+    "How I studied.md",
+    "Theory Of Computation.md",
+    "Compiler Design.md",
     "Web Technology.md",
+    "Engineering Economics.md",
+    "Artificial Intelligence.md",
+    "React/Components.md",
     "Computer Networks.md",
-    "WebSocket.md",
-    "Assets/Screenshot 2025-02-20 at 4.06.15 PM.png",
-    "Assets/Screenshot 2025-02-20 at 3.37.02 PM.png",
-    "Assets/Screenshot 2025-02-20 at 3.23.00 PM.png",
-    "Assets/Screenshot 2025-02-20 at 3.12.04 PM.png",
-    "Assets/Screenshot 2025-02-20 at 1.17.41 PM.png",
-    "Assets/Screenshot 2025-02-20 at 11.21.38 AM.png",
-    "GDScript.md",
-    "I'm 10 but wanna upload csv to sql.md",
-    "Docker.md",
-    "NGINX.md",
-    "React/Context API.md",
-    "React/React.md",
-    "React/useRef.md",
-    "React/React Forms Inputs.md",
-    "React/Side Effects.md",
-    "React/React Backend.md",
-    "React/Class-Based ErrorBoundry.md",
-    "React/Optimize React - Memo.md",
+    "Assets/Screenshot 2025-03-05 at 12.51.12 PM.png",
+    "README.md",
+    "Assets/Screenshot 2025-03-04 at 10.33.00 PM.png",
+    "Assets/Screenshot 2025-03-04 at 9.57.32 PM.png",
+    "Assets/Screenshot 2025-03-04 at 9.18.50 PM.png",
+    "Assets/Pasted image 20240817164023.png",
+    "Assets/Pasted image 20240922161854.png",
+    "Assets/Screenshot 2024-09-23 at 6.51.39 PM.png",
+    "Assets/Screenshot 2024-09-26 at 2.57.00 PM.png",
+    "Python.md",
     "SSH GitHub on MacBook.md",
-    "Compiler Design Practical.md",
-    "useReducer.md",
-    "React/Boilerplate Context.md",
-    "React/Custom Hooks.md",
-    "React/Passing States.md",
-    "Assets/Screenshot 2025-02-13 at 3.45.51 PM.png",
+    "React/React.md",
+    "React/useState and Hooks.md",
+    "React/CSS Modules.md",
+    "React/Events.md",
+    "React/useRef.md",
+    "CORS.md",
+    "RM Permissions.md",
+    "GDScript.md",
+    "Internet of Things.md",
+    "Godot.md",
+    "Upload Excel.md",
     "ni",
     "NodeJS",
     "React",

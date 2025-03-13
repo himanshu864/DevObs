@@ -52,6 +52,8 @@ This is documentation for how I studied or recommend studying for following subj
 ## Fundamentals of Management
 
 - Read my [[Fundaments of Management]] notes.
+- Ask [GPT](https://chatgpt.com/) to explain topics to you one by one.
+- Solve PYQ from [website](https://dtu-pyq.vercel.app/).
 
 ## Power Plant Engineering
 
@@ -62,4 +64,3 @@ This is documentation for how I studied or recommend studying for following subj
 ## Internet of Things (MOOC)
 
 - Read my [[Internet of Things]] notes.
-

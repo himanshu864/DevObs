@@ -322,7 +322,7 @@ A combined cycle power plant integrates two thermodynamic cycles to maximize fue
 **Turbine Work Output:**
 - **Formula:**
 $$W_{turbine} = h_1 - h_2$$
-- **Explanation:**  
+- **Explanation:**
 	$h_1$ is the enthalpy of steam at the turbine inlet, and $h_2$ is the enthalpy at the turbine exit. Their difference represents the energy converted to work.
 
 **Heat Input:**
@@ -341,13 +341,13 @@ $$\eta = \frac{W_{\text{net}}}{Q_{\text{in}}}$$
 - **Formula:**
 $$\text{Heat Rate} = \frac{Q_{\text{in}}}{W_{\text{net}}} \times 3600 \quad \text{(in kJ/kWh)}$$
 
-- **Explanation:**  
+- **Explanation:**
 	This shows how much heat energy is required to produce one unit of electrical energy. The multiplication by 3600 converts the units from kJ per kJ to kJ per kWh.
 
 **Determining Steam Quality (for Isentropic Expansion):**
 - **Formula:**
 $$s_1 = s_f + x (s_g - s_f)$$
-- **Explanation:** 
+- **Explanation:**
 	Here, $s_1$ is the entropy at the turbine inlet, $s_f$ and $s_g$ are the entropies of the saturated liquid and vapor at the turbine exit pressure, and $x$ is the steam quality (fraction of vapor). Once $x$ is known, you can find $h_2$ using:
 $$h_2 = h_f + x (h_g - h_f)$$
 
@@ -474,6 +474,7 @@ $$\text{Heat Rate} = \left(\frac{Q_{\text{in}}}{W_{\text{net}}}\right) \times 36
     - Higher ash content
     - Used for power generation and industrial fuel
 
+![[Screenshot 2025-03-07 at 2.40.45 AM.png]]
 ### Coal Beneficiation
 
 - Process to improve coal quality by reducing ash content
@@ -546,7 +547,7 @@ $$\text{Heat Rate} = \left(\frac{Q_{\text{in}}}{W_{\text{net}}}\right) \times 36
 
 ### Co-Generated (Combined Heat and Power - CHP) Plants
 
-- **Definition:**  
+- **Definition:**
     Plants that simultaneously produce electricity and capture waste heat for additional applications.
 - **Benefits:**
     - **Higher Efficiency:** Utilizes energy that would otherwise be wasted.
@@ -679,3 +680,27 @@ $$\text{Heat Rate} = \left(\frac{Q_{\text{in}}}{W_{\text{net}}}\right) \times 36
 - **Advantages and Challenges:**
     - **Advantages:** Potential for very high efficiency and lower emissions.
     - **Challenges:** High technological complexity and material constraints at extreme temperatures.
+
+---
+# Remaining Midsem
+
+## Fuel Handling System
+
+```mermaid
+flowchart TD
+    A[Fuel Storage] --> B[Fuel Handling/Feeding]
+    B --> C[Conveying System]
+    C --> D[Pulverizing/Crushing Unit]
+    D --> E[Boiler Furnace Feeding]
+    E --> F[Combustion Process]
+    F --> G[Ash Handling]
+```
+
+1. **Fuel Storage:** The starting point where fuel is stored.
+2. **Fuel Handling/Feeding:** Prepares the fuel by conditioning and sizing it.
+3. **Conveying System:** Transports the fuel to the processing stage.
+4. **Pulverizing/Crushing Unit:** Processes the fuel (especially coal) into a fine powder.
+5. **Boiler Furnace Feeding:** Delivers the processed fuel into the furnace.
+6. **Combustion Process:** The fuel is burned to produce steam.
+7. **Ash Handling:** Manages the residual ash produced from combustion.
+

@@ -262,7 +262,7 @@ Named according to protocols of TCP / IP suite.
 ![[Screenshot 2024-11-22 at 4.32.10 PM.png]]
 
 ---
-## Transmission mode
+## Transmission Media
 
 Anything that can carry information from source to destination.
 
@@ -1076,7 +1076,7 @@ The last address is obtained by setting all the host bits (last 4 bits) to 1:
 ## Routing
 
 - **Routing** is the process of selecting paths in a network along which to send network traffic.
-- Routers are the devices that perform this function by maintaining and updating routing tables, which list the routes to various network destinations.
+- Routers are the devices that perform this function by maintaining and updating *routing tables*, which list the routes to various network destinations.
 
 ### Intra-Domain Routing
 
@@ -1145,4 +1145,3 @@ The last address is obtained by setting all the host bits (last 4 bits) to 1:
     - **IS-IS (Intermediate System to Intermediate System)**
 - **Trade-offs:**
     - **Resource Intensive:** Requires more memory and CPU power to store the complete network map and perform frequent calculations.
-

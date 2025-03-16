@@ -8,17 +8,17 @@
         "type": "tabs",
         "children": [
           {
-            "id": "f9d1387242b3b566",
+            "id": "50cb84cd2e386735",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "WebSocket.md",
+                "file": "Web Sockets Simplied.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "WebSocket"
+              "title": "Web Sockets Simplied"
             }
           }
         ]
@@ -246,10 +246,18 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "f9d1387242b3b566",
+  "active": "50cb84cd2e386735",
   "lastOpenFiles": [
-    "Helpful Articles.md",
     "WebSocket.md",
+    "Machine Learning.md",
+    "Pandas.md",
+    "NumPy.md",
+    "Web Sockets Simplied.md",
+    "React/React.md",
+    "GDScript.md",
+    "Git Commands.md",
+    "MacOS Dotfiles Setup.md",
+    "Helpful Articles.md",
     "Docker.md",
     "NodeJS/NodeJS Introduction.md",
     "NodeJS/NodeJS.md",
@@ -268,22 +276,14 @@
     "Assets/Screenshot 2025-03-07 at 2.40.45 AM.png",
     "Assets/Screenshot 2025-03-06 at 11.08.04 AM.png",
     "Compiler Design.md",
-    "Engineering Economics.md",
-    "Upload Excel.md",
-    "Untitled.md",
     "Assets/Screenshot 2025-03-05 at 5.18.50 PM.png",
     "Assets/Pasted image 20250305161006.png",
-    "Artificial Intelligence.md",
-    "React/Components.md",
     "Assets/Screenshot 2025-03-05 at 12.51.12 PM.png",
-    "README.md",
     "Assets/Screenshot 2025-03-04 at 10.33.00 PM.png",
     "Assets/Screenshot 2025-03-04 at 9.57.32 PM.png",
     "Assets/Screenshot 2025-03-04 at 9.18.50 PM.png",
     "Assets/Pasted image 20240817164023.png",
     "Assets/Pasted image 20240922161854.png",
-    "Python.md",
-    "SSH GitHub on MacBook.md",
     "ni",
     "NodeJS",
     "React",

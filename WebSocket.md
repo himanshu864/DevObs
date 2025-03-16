@@ -221,9 +221,10 @@ io.sockets.on() ; //initial connection from a client.
 - **One Server, One Memory Space:** All clients connect to one server (NodeJS) instance, which holds the user data in its memory.
 - **Socket IDs as Unique Identifiers:** Socket.io automatically generates and manages these IDs for tracking connected clients. Both client and server have access to their own socket IDs.
 
-### Optional Approach to simple chatting application
+## Optional Approach to simple chatting application
 
-##### index.html
+##### `index.html` (public)
+
 ```html
 <!DOCTYPE html>
 <html>
@@ -301,7 +302,8 @@ io.sockets.on() ; //initial connection from a client.
 </html>
 ```
 
-##### script.js
+##### `script.js` (client)
+
 ```javascript
 const socket = io();
 
@@ -348,7 +350,8 @@ socket.on("user disconnect", (socketId, name) => {
 });
 ```
 
-##### server.js
+##### `server.js` (server)
+
 ```javascript
 const express = require("express");
 const { createServer } = require("node:http");
@@ -386,5 +389,7 @@ server.listen(3000);
 ```
 
 ---
-## Rooms and stuff
+# Web Dev Simplified
+
+[[Web Sockets Simplied]]
 

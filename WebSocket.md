@@ -391,5 +391,5 @@ server.listen(3000);
 ---
 # Web Dev Simplified
 
-[[Web Sockets Simplied]]
+[[Web Sockets Simplified]]
 

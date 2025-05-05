@@ -393,7 +393,8 @@ socket.on("leave-room", (room, cb) => {
 });
 ```
 
-### Callback function
+---
+## Callback function
 
 Client can emit function (always last argument) as callback function. To which Server can callback can respond after listening.
 

@@ -422,6 +422,7 @@ Minimized from of CLR(1). Less powerful. We merge same states with different loo
 
 ---
 ## Operator Precedence Grammar
+
 An operator precedence grammar is a CFG where productions do not have adjacent nonterminals, allowing clear specification of precedence and associativity among terminal operators.
 
 - **Precedence Relations:**

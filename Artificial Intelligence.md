@@ -4,7 +4,7 @@
 | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 1.       | AI Problems, Task Domains of AI, AI Techniques: search knowledge, abstraction. Introduction to Intelligent program and Intelligent agents.<br><br>**Problem Solving:** Basic Problem solving Method: state space search, problem characteristics, Production systems characteristics, issues in design of Intelligent search algorithm. |
 | 2.       | **Heuristic search Techniques**: Hill climbing techniques, Best First search, A\* Search, Problem Reduction: AO\* Search, Constraint Satisfaction, Means-End Analysis.<br><br>**Game Playing**: Game Tree, Searching procedure Minimax, alpha-beta pruning.                                                                             |
-| 3.       | **Knowledge Representation**: Knowledg[]()e Representation issues. Knowledge Representation using Predicate Logic: Unification, resolution. Rule based Systems:Forward versus backward reasoning, conflict resolution.<br><br>**Structured Knowledge Representation**: Semantic Nets, Frames, conceptual dependency, scripts.           |
+| 3.       | **Knowledge Representation**: Knowledge Representation issues. Knowledge Representation using Predicate Logic: Unification, resolution. Rule based Systems:Forward versus backward reasoning, conflict resolution.<br><br>**Structured Knowledge Representation**: Semantic Nets, Frames, conceptual dependency, scripts.               |
 | 4.       | **Programming Languages**: Fundamental and concepts of Programming languages like Prolog or Lisp.<br><br>Relationship of languages with Knowledge representation and inferences                                                                                                                                                         |
 | 5.       | **Reasoning**: Handling uncertainty Non-Monotonic Reasoning, Probabilistic reasoning, use of certainty factors, fuzzy logic.<br><br>Learning Concept of learning, learning automation, genetic algorithm, learning by inductions, neural nets.                                                                                          |
 | 6.       | **Applications:** Expert Systems: Architecture, Domain Knowledge, Knowledge Acquisition, Case Studies: MYCIN, RI, Natural language Processing: Syntactic, Semantic and Pragmatic Analysis, Robotics etc.                                                                                                                                |
@@ -269,7 +269,7 @@ $$f(n) = g(n) + h(n)$$
 *Condition of optimality*
 - Admissible heuristic : never overestimates the cost to reach goal. (optimistic). Eg: Straight line distance.
 - Consistency (monotonicity) : for every successor $n'$ of $n$ :
-	- `h(n) <= cost(n -> n') + h(n')`
+	- $h(n) \le cost(n \to n') + h(n')$
 - Problem with A\*
 	- So far, considered OR graphs i.e. single path to goal.
 
@@ -365,8 +365,8 @@ Operators:
 - Limitations: can be too slow for complex games with many possible moves.
 
 **Alpha-Beta pruning**
-- Alpha - best value that the maximizer currently can guarantee can that level or above.
-- Beta - best value that the minimizer currently can guarantee can that level or above.
+- Alpha - best value that the maximizer currently can guarantee at that level or above.
+- Beta - best value that the minimizer currently can guarantee at that level or above.
 - Initially $\alpha = -\infty$ and $\beta = \infty$.
 - Prune when $\alpha \ge \beta$.
 - Maximum node updates $\alpha$ from children, and similarly minimum updates $\beta$.
@@ -379,3 +379,320 @@ Operators:
 - If a branch's bound is worse than the best complete solution found so far, it is pruned (discarded).  
 - It employs a search strategy (such as best-first search, BFS, or DFS) to explore the most promising branches first.  
 - This method efficiently finds the optimal solution by avoiding unnecessary exploration of suboptimal branches.
+
+---
+# UNIT 3
+
+Ability to reason -> Knowledge -> Intelligence
+
+- **Logical agents**, also known as **knowledge-based agents**, are a type of AI agent that uses logic to reason about the world and make decisions.
+- Knowledge-based agents initially contain some **Knowledge Base** i.e. background knowledge which is a set of **sentences** (also known as **axiom**). Each sentence is expressed in a language called *knowledge representation language*.
+- We add new sentences to KB and query what is known through **Inferences**.
+
+**Proposition** is a declarative sentence that is either true or false.
+
+- **Premises** is a statement that supports conclusion (proposition). It is *always true*.
+- **Argument**: If a set of premises (P) yield another proposition Q (conclusion).
+- An argument is said *valid* if the conclusion Q can be derived from premises by applying rule of inference.
+$$\{P_1 \ \wedge \ P_2 \ \wedge \ \dots \ \wedge \ P_n \} \ |- Q$$
+- Propositional variables - $p, q, r, s$.
+- **Compound propositions** - new mathematical statements, derived by combining one or more propositions.
+
+1. **Negation**: NOT: $\neg P$
+2. **Conjunction**: AND: $p \wedge q$
+3. **Disjunction**: OR: $p \vee q$
+4. **Implication**:
+	- "if p, then q"
+	- Is false only for $T \to F$, otherwise true.
+	- $p \to q$; $p$ is called *hypothesis* (or premise) and q is called the *conclusion*.
+	- $q \to p$ converse
+	- $\neg p \to \neg q$ inverse
+	- $\neg q \to \neg p$ contra positive
+	- $p \to q \equiv \neg q \to \neg p$
+	- $p \to q \equiv \neg p \vee q$
+5. **Bi-conditional**:
+	- "if p then q, and conversely"
+	- $p \leftrightarrow q \equiv (p \to q) \wedge (q \to p)$
+	- Is true when both $p$ and $q$ have same values, otherwise false.
+
+- **Tautology / valid**: Proposition function which is "Always True".
+- **Contradiction / Unsatisfiable**: "Always False".
+- **Contingency**: which is neither tautology nor contradiction. $p \vee q$
+- **Satisfiable**: at least one true.
+
+**De Morgan's Law**
+$$\neg (P \wedge Q) \equiv (\neg P \vee \neg Q)$$
+$$\neg (P \vee Q) \equiv (\neg P \wedge \neg Q)$$
+
+**Properties**
+$$ (\alpha \wedge \beta) \equiv (\beta \wedge \alpha) \quad \text{commutativity of } \wedge $$
+$$ (\alpha \vee \beta) \equiv (\beta \vee \alpha) \quad \text{commutativity of } \vee $$
+$$ ((\alpha \wedge \beta) \wedge \gamma) \equiv (\alpha \wedge (\beta \wedge \gamma)) \quad \text{associativity of } \wedge $$
+$$ ((\alpha \vee \beta) \vee \gamma) \equiv (\alpha \vee (\beta \vee \gamma)) \quad \text{associativity of } \vee $$
+$$ \neg(\neg\alpha) \equiv \alpha \quad \text{double-negation elimination} $$
+$$ (\alpha \to \beta) \equiv (\neg\beta \to \neg\alpha) \quad \text{contraposition} $$
+$$ (\alpha \to \beta) \equiv (\neg\alpha \vee \beta) \quad \text{implication elimination} $$
+$$ (\alpha \leftrightarrow \beta) \equiv ((\alpha \to \beta) \wedge (\beta \to \alpha)) \quad \text{biconditional elimination} $$
+$$ \neg(\alpha \wedge \beta) \equiv (\neg\alpha \vee \neg\beta) \quad \text{De Morgan} $$
+$$ \neg(\alpha \vee \beta) \equiv (\neg\alpha \wedge \neg\beta) \quad \text{De Morgan} $$
+$$ (\alpha \wedge (\beta \vee \gamma)) \equiv ((\alpha \wedge \beta) \vee (\alpha \wedge \gamma)) \quad \text{distributivity of } \wedge \text{ over } \vee $$
+$$ (\alpha \vee (\beta \wedge \gamma)) \equiv ((\alpha \vee \beta) \wedge (\alpha \vee \gamma)) \quad \text{distributivity of } \vee \text{ over } \wedge $$
+
+**Well-found Formulas**
+
+A **sentence** (also called a _well-formed formula_) is defined inductively as follows:
+
+1. Any propositional **symbol** $S$ is a sentence.
+2. If S is a sentence, then $\neg S$ is also a sentence.
+3. If S is a sentence, then $(S)$ is also a sentence.
+4. If S and T are sentences, then each of the following is also a sentence:
+    - $S \wedge T$
+    - $S \vee T$
+    - $S \to T$
+    - $S \leftrightarrow T$
+
+### Rules of Inference
+
+- **Modus ponens**
+$$P,\;P \to Q\;\therefore\;Q$$
+- **Modus tollens**
+$$\neg Q,\;P \to Q\;\therefore\;\neg P$$
+- **Hypothetical syllogism**
+$$P \to Q,\;Q \to R\;\therefore\;P \to R$$
+- **Disjunctive syllogism**
+$$P \vee Q,\;\neg P\;\therefore\;Q$$
+- **Addition**
+$$P\;\therefore\;P \vee Q$$
+- **Simplification**
+$$P \wedge Q\;\therefore\;P$$
+- **Conjunction**
+$$P,\;Q\;\therefore\;P \wedge Q$$
+- **Resolution**
+$$P \vee Q,\;\neg P \vee R\;\therefore\;Q \vee R$$
+
+### Proposition Logic
+
+**Disadvantages**
+Too puny a language to represent complex environment in a concise way. That's where first order predicate logic comes in.
+
+## First order predicate logic
+
+**Universal Quantifiers** of a proposition function is the proposition that asserts
+
+- P(x) is true for all values of x in the universe of discourse i.e. all possible values of x.
+- $\forall_x \; P(x)$ i.e. for all values of x, P(x) is true.
+
+**Existential Quantifiers** of a proposition function is the proposition that asserts
+
+- P(x) is true for at least one value of x in the universe of discourse.
+- $\exists_x \; P(x)$ i.e. for at least one value of x, P(x) is true.
+
+**Negation**
+$$\neg [\forall_x \; P(x)] \equiv \exists_x \; \neg P(x)$$
+$$\neg [\exists_x \; P(x)] \equiv \forall_x \; \neg P(x)$$
+
+> [!Tip]
+> Read from left to right, when writing in first order predicate logic.
+
+### Conjunctive Normal Form
+
+A function is in CNF or clausal normal form if it is a conjunction of one or more clauses. (where clause is disjunction of literals). It is *AND of ORs*. Convert.
+
+### Rules of Inference
+
+Four different methods to deal with quantified sentences in first order logic.
+
+1. **Universal instantiation / Universal specialization  / Universal elimination**
+	- If "everyone likes ice cream", then "john likes ice cream".
+	- The UI rule state that we can infer any sentence $P(c)$ by substituting a ground term $c$ (a constant within a domain x) from $\forall_x \; P(x)$ for any object in the universe of discourse.
+$$\frac{\forall_x \; P(x)}{P(c)}$$
+2. **Existential instantiation**
+	- This rule states that one can infer $P(c)$ from the formula $\exists_x \; P(x)$ for a new constant symbol $c$.
+$$\frac{\exists_x \; P(x)}{P(c)}$$
+3. **Existential generalization / Existential introduction**
+	- If "Priyanka got good marks in English", then "someone got good marks in English".
+	- If there is some element $c$ in the universe of discourse which has a property $P$, then we can infer that there exists something in the universe which has a property $P$.
+	$$\frac{P(c)}{\exists_x \; P(x)}$$
+4. **Universal generalization / Universal introduction**
+	- If "A byte contains 8 bits", so for all values of x "All bytes contain 8 bits".
+	- If premise $P(c)$ is true for any arbitrary element $c$ in the universe of discourse, then we can have a conclusion as $\forall_x \; P(x)$
+$$\frac{P(c)}{\forall_x \; P(x)}$$
+
+## Forward and Backward Chaining
+
+| Forward Chaining (reasoning)                                           | Backward Chaining                                                              |
+| ---------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| Begins with what is known (basic facts)                                | Starts with a goal                                                             |
+| Moves forward (applies rules to these facts to derive new conclusions) | Moves backward (checks if current knowledge proves goal)                       |
+| **Data-driven**                                                        | **Goal-driven**                                                                |
+| Adds Knowledge                                                         | Deduces necessities (conditions for goal)                                      |
+| Stops when no further deductions can be made or goal is reached.       | Stops when it reaches beginning facts or rules, or goal is proven / disproven. |
+| Bottom-up                                                              | Top-down                                                                       |
+| **Modus Ponens** $(P \to Q) \wedge (P) \equiv Q$                       | **Modus Tollens** $(P \to Q) \wedge (\neg Q) \equiv \neg P$                    |
+| Common in real-time systems and production rule system.                | Used in diagnostic systems.                                                    |
+
+## Resolution
+
+- Resolution in Al is a logical inference rule used to deduce new information or solve problems by **finding contradictions**.
+- It involves converting logical statements into a standardized form called *clausal form*, which is a set of normalized logical expressions.
+- ﻿﻿Contradictory pairs of clauses are identified, and through a process of unification and combination, new clauses are generated.
+- ﻿﻿This process is repeated iteratively until either a contradiction is found (represented by an G empty clause) or no new information can be deduced.
+- Resolution is particularly powerful in automated theorem proving and logic programming, such as in Prolog, where it's used to infer conclusions from given facts and rules.
+- Eg: "all birds fly" and "tweety is a bird". Now we contradict that "tweety can't fly".
+
+## Knowledge Acquisition
+
+- Gathering expertise for use in expert systems, organizing it into structured formats like IF-THEN rules.
+- Also refers to absorbing information into memory (knowledge base) and focusing on effective retrieval.
+- Gather informations via Introspection, Observation, Induction, Protocol analysis, Prototyping, Interviewing.
+
+**Procedure**
+
+- *Identification*: breaks down complex issues into parts
+- *Conceptualization*: define key concepts
+- *Formalization*: organize knowledge formally for programmatic use
+- *Implementation*: code the structured knowledge
+- *Testing*: check and validate system's functionality
+
+## Knowledge Representation
+
+Study of how knowledge can be represented in computer system to mimic human thought and reasoning.
+
+- Facts: true information.
+- Representation: formal expression of facts.
+
+Ex: "Charlie is a dog" => logical representation $Dog(Charlie)$
+
+**Characteristics**
+
+- *Syntax and semantics*: clearly defined rules for structure and meaning.
+- *Expressive capacity*: ability to convey all necessary domain knowledge.
+- *Efficiency*: supports effective computing and reasoning.
+
+### Techniques
+
+- **Logic-based representation**
+	- **Propositional Logic**: uses simple true or false statements
+	- **Predicate Logic**: extends propositional logic with predicates that can express relations among objects and quantifiers to handle multiple entities.
+	- Eg: "all humans are mortal" -> $\forall_x \; (Humans(x) \to Mortal(x))$
+- ***Semantic Network***
+	- Graph structures used to represent semantic relations between concepts.
+	- *Nodes* represent objects.
+		- Circle (physical)
+		- Ellipse (concept)
+		- Rectangle (situation)
+	- *Arcs / Edges* represent relations between them. (links, arrows)
+	- *Link labels* specify relationships.
+	- Popular in AI and NLP. It represents knowledge or support reasoning. Alternative of predicate logic.
+	- Eg: "Socrates" is a "Human" and "Humans" are "Mortal".
+	- **Components**
+		1. **Lexical Components**: Nodes, links, labels.
+		2. **Structural**: links or nodes (directed)
+		3. **Semantic**: definition related to links or node.
+		4. **Procedural**: constructor (creating new links) and destructor (removing new links)
+- **Frame-based representation**
+	- Uses data-structures called frames, which are similar to objects in OOPS.
+	- Frames allow grouping of related properties and actions.
+	- Eg: "Bird" has properties "has feathers" and "can fly" and actions like "Lay eggs".
+- **Production Rules**
+	- Consists of sets of rules in the form of IF-THEN constructs that are used to derive conclusions from given data.
+	- Eg: IF hungry THEN eat food.
+- **Ontologies**
+	- Formal representations of set of concepts within a domain and relationships between those concepts. They are used to reason about entities within that domain and are often employed in semantic web applications.
+	- Eg: In medical ontology, concepts like "symptom", "disease" and "treatment" might be related in ways that define what symptoms are commonly associated with a disease.
+- **Bayesian Network**
+	- Probabilistic models that represent a set of variables and their conditional dependencies via a directed acyclic graph (DAG). These are useful for handling uncertainty in AI applications.
+	 - Example: A network might represent the probabilistic relationships between diseases and symptoms, allowing the system to infer disease probabilities given observed symptoms.
+- **Neural Network**
+	-  Although typically classified under machine learning, neural networks can represent complex relationships between inputs and outputs through learned weights and can effectively capture and model knowledge after training.
+	- Example: A neural network trained on historical weather data might predict future weather conditions.
+
+## Architecture of Knowledge Base System
+
+KBS is a system that draws upon knowledge of human experts captured in knowledge base to solve problems that normally require human expertise.
+
+**Components**
+1. Knowledge base: centralized repository of information, organized facts, heuristics, etc.
+2. **Inference Engine**: Acquires and manipulates knowledge from knowledge base to arrive at a particular solution.
+3. User Interface: Enables user to interact with knowledge base.
+
+## Knowledge Types
+
+1. **Procedural knowledge** (Imperative)
+	- Describes *how* to solve a problem
+	- Rules, strategies, tasks, etc.
+2. **Declarative Knowledge** (descriptive)
+	- Describes *what* is known about a problem
+	- Concepts, facts, objects, etc.
+3. **Meta Knowledge**
+	- Describes another knowledge
+4. **Heuristic Knowledge**
+	- Describes knowledge of some experts in a field. (rule of thumb)
+	- Past experience, approaches, etc.
+5. **Structural Knowledge**
+	- Describes relationships between various concepts
+	- Describes expert overall mental model of a problem.
+
+## Frames
+
+Collection of attributes or slots and associated values that describe some real-world entity.
+
+- Uses data-structure (records) to represent the knowledge represented in semantic N/W.
+- Each frame represents nodes as a class or an instance and each relation as slot.
+
+**Attributes attached with each slot**
+
+1. Instance - related slot with class
+2. Definition - slot value
+3. Default - slot default value
+4. Domain - slot elements domain
+5. Range - specifies class of which elements
+6. Range constraints - logical expression $6 \lt i \lt 10$
+7. To-compute - value of slot to be computed
+8. Single-values - function returns single value
+9. Inverse - slot inverse used in reasoning
+10. Transfers-though - inheritance
+
+**Reasoning actions that can be performed using frames**
+
+1. *Relating the definition*: "is an inverse link" propagation of definition to relate all information.
+2. *Inheritance*: inherited all values (including default) of slot.
+3. *Legality of value*: range constraint.
+4. *Consistency check*: verify slot value consistency before adding to frame. (domain)
+5. *Maintaining consistency*: when one slot is updated its inverse should also be updated.
+6. *Computation of value of slot*: to-compute transfers through.
+
+## Baye's Theorem
+
+Describes the probability of an event, based on prior knowledge of conditions that might be related to the event.
+
+In Probability theory it relates the conditional probability and marginal probability of two random events.
+
+> **Conditional Probability**
+> $$P(H/E) = \frac{\text{number of times H and E occured}}{\text{number of times E occured}} = \frac{P(H \; \cap \; E)}{P(E)}$$
+
+Calculate $P(B / A)$ with the knowledge of $P(A / B)$
+
+> **Baye's Theorem**
+> $$P(B/A) = \frac{P(A/B) \cdot P(B)}{P(A)}$$
+> $P(A/B)$ is *Posterior* (prob. of A when B is true)
+> $P(B/A)$ is *Likelihood* (prob. of evidence)
+> $P(A)$ is *Prior probability* (prob. of hypothesis)
+> $P(B)$ is *Marginal probability* (prob. of evidence)
+
+**Applications**
+- Robot / automatic machines
+- Forecasting weather
+- Monty Hall Problem
+
+## Bayesian Belief Network in AI
+
+It is a probabilistic graphical model which represents a set of variables and their conditional dependencies using a DAG.
+
+Consists of **DAG** and **table of conditional probabilities** (with effect of parent node).
+
+- Node -> random variable (continuous or discrete)
+- Arc / Directed arrows -> casual relationships or conditional probabilities among random variables.
+
+To propagate a belief in Bayesian N/W, initial DAG is converted to undirected-graph in which arcs can be used to transmit probabilities of direction of evidence.
+

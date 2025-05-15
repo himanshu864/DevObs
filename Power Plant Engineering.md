@@ -9,8 +9,7 @@
 | 5        | **Instrumentation and Controls in power plants**: Important instruments used for temperature, flow, pressure, water/steam conductivity measurement; flue gas analysis, drum level control, combustion control, super heater and re-heater temperature control, furnace safeguard and supervisory system (FSSS), auto turbine run-up system(ATRS).                               |
 | 6        | **Environment Pollution and Energy conservation**: Economics of power generation: load duration curves, power plant economics, pollution from power plants, disposal/management of nuclear power plant waste, concept of energy conservation and energy auditing.                                                                                                               |
 
----
-# Important Questions MIDSEM
+# IMPORTANT QUESTIONS - MIDSEM
 ### 1. Explain the Indian energy scenario and discuss the various factors to be considered for selection of power plants.
 
 **Indian Energy Scenario:**
@@ -186,7 +185,7 @@ The Rankine cycle is the fundamental thermodynamic cycle used in steam power pla
 4. **Condensation (Process 4-1):**
     The low-pressure steam is condensed back into liquid water in a condenser, releasing the remaining heat to a cooling medium.
 
- ![[Screenshot 2025-03-05 at 12.51.12 PM.png]]
+![[Screenshot 2025-03-05 at 12.51.12 PM.png]]
 
 **Improving the Efficiency of the Rankine Cycle**
 
@@ -440,68 +439,8 @@ $$\text{Heat Rate} = \left(\frac{Q_{\text{in}}}{W_{\text{net}}}\right) \times 36
 - **Heat Rate:** ~8532 kJ/kWh
 
 ---
-# MIDSEM SHIT THEORY
 
-## UNIT 1: INDIAN ENERGY SCENARIO & COAL TECHNOLOGIES
-
-### Indian Energy Scenario and Coal
-
-- Per capita energy consumption in India is low compared to developed countries (4% of USA, 20% of world average).
-- Energy demand expected to increase over next 10-15 years.
-- Coal remains dominant fuel for power generation.
-
-### Coal in India
-
-- India has world's 4th largest coal reserves
-- Coal accounts for 55% of country's energy needs
-- Gondwana coal makes up 98% of total reserves and 99% of production
-- Indigenous coal production needs expansion to meet future demand
-
-### Coal Formation and Properties
-
-- Factors determining coal composition:
-    - Accumulation and burial of plant debris
-    - Age and geographical distribution of deposits
-    - Structure and chemical composition of coal-forming plants
-    - Nature and intensity of peat decaying agencies
-
-### Coal Types and Analysis
-
-- Coking coal (metallurgical coal):
-    - High carbon content (60-90%)
-    - Low ash content
-    - Used for coke production in iron and steel industry
-- Non-coking coal (thermal coal):
-    - Lower carbon content (40-70%)
-    - Higher ash content
-    - Used for power generation and industrial fuel
-
-![[Screenshot 2025-03-07 at 2.40.45 AM.png]]
-### Coal Beneficiation
-
-- Process to improve coal quality by reducing ash content
-- Important for enhancing coal's heating value and reducing emissions
-- **Coal Beneficiation Processes:**
-    - **Gravity Separation:** Uses differences in density to separate coal from impurities.
-    - **Flotation:** Exploits differences in surface properties (hydrophobicity) to remove mineral matter.
-    - **Magnetic Separation:** Utilizes magnetic properties of certain impurities to clean the coal.
-### Heating Value Calculation
-
-- **Bomb Calorimeter:** Measures the heat released during combustion of a coal sample.
-- **Empirical Formulas (e.g., Dulong’s Formula):** Estimate heating value from the elemental composition. (carbon, hydrogen, sulfur, and ash content)
-
-### Coal Gasification
-
-- Process of producing syngas (CO, H2, CO2, CH4).
-- Involves blowing coal with oxygen and steam under heat and pressure.
-- Used for in-situ gasification and in coal refineries.
-- **Types of Gasifiers:**
-	- **Fixed-Bed Gasifiers:** Simple design for coarser fuels.
-	- **Fluidized-Bed Gasifiers:** Offer better mixing, suitable for low-grade coal.
-	- **Entrained-Flow Gasifiers:** Operate at very high temperatures and are used for fine coal particles.
-- **Syngas Composition:** Mainly consists of CO, H₂, CO₂, and CH₄, which can be used for power generation or chemical synthesis.
-
-### Fuel Handling System
+### 11. Fuel Handling System
 
 ```mermaid
 flowchart TD
@@ -521,699 +460,542 @@ flowchart TD
 6. **Combustion Process:** The fuel is burned to produce steam.
 7. **Ash Handling:** Manages the residual ash produced from combustion.
 
-### Power Plant Classification
 
-- **Base load power plants:**
-    - Operate continuously
-    - Include hydroelectric, nuclear, and steam power plants
-    - Have high load factors and low operating costs
-- **Peak load power plants:**
-    - Supply fluctuating demand
-    - Include gas turbine and pumped storage plants
-    - Quick starting and loading capability
+# IMPORTANT QUESTIONS - ENDSEM
 
-### Co-generation and Captive Power Plants
+## 1. Briefly explain coal beneficiation processes. Also mention it's advantage.
 
-- **Co-generation**: Simultaneous production of electricity and useful heat
-- **Captive** power plants:
-    - Localized power generation for industrial facilities or large offices
-    - Can operate in grid parallel or island mode
-    - Improve energy security and efficiency.
+**Coal beneficiation** (also called coal preparation or coal washing) involves removing impurities and improving the quality of raw coal. The main processes are:
 
-### Classification of Power Plants
+![[Pasted image 20250509004515.png | 445]]
 
-- **By Energy Source:**
-    - **Thermal:** Uses fossil fuels (coal, gas, oil) or biomass.
-    - **Nuclear:** Utilizes nuclear reactions for heat.
-    - **Hydro:** Employs water flow to generate power.
-    - **Renewable:** Includes solar, wind, geothermal, etc.
-- **By Operating Mode:**
-    - **Base Load Plants:** Run continuously to meet constant demand.
-    - **Intermediate/Load-Following Plants:** Adjust output as demand fluctuates.
-    - **Peak Load Plants:** Operate during periods of highest demand.
-- **By Ownership/Usage:**
-    - **Utility Power Plants:** Serve public grid requirements.
-    - **Captive Power Plants:** Set up by industries for self-consumption.
-    - **Co-generated (CHP) Plants:** Produce both electricity and useful heat.
+1. **Crushing & Screening**
+	* **Crushing**: Reduces coal to manageable sizes (e.g. < 50 mm).
+	* **Screening**: Sorts crushed coal into different size fractions for targeted cleaning.
+2. **Density Separation**
+	* **Heavy-Medium Cyclones**: Coal and inert material are separated by their differing buoyancy in a dense liquid medium (e.g. magnetite slurry); lighter coal floats, heavier ash-formers sink.
+	* **Jigs**: Pulsating water currents stratify particles by density; clean coal is drawn off the top.
+3. **Flotation**
+	* Fine coal (< 0.5 mm) is mixed with water and flotation reagents; hydrophobic coal particles attach to air bubbles and rise, while hydrophilic impurities remain in the water.
+4. **Dewatering & Drying**
+	* Removes excess water from washed coal via centrifuges, filters or thermal drying to meet moisture specifications for transport and combustion.
 
-### Base Load and Peak Load Power Stations
+### Advantage of Coal Beneficiation
 
-- **Base Load Power Stations:**
-    - **Operation:** Run continuously (24/7) to supply the constant minimum demand.
-    - **Examples:** Coal-fired, nuclear, large hydroelectric.
-    - **Selection Criteria:** High efficiency at full load, lower operational cost, long-term stability.
-- **Peak Load Power Stations:**
-    - **Operation:** Activated during high demand periods; may run intermittently.
-    - **Examples:** Gas turbines, diesel engines, open cycle gas turbines.
-    - **Selection Criteria:** Quick start-up, flexible operation, higher efficiency during peak hours, lower capital cost relative to intermittent use.
+* **Improved Fuel Quality**: Raises calorific (heating) value by reducing ash and moisture.
+* **Reduced Emissions**: Lower ash and sulfur content lead to fewer particulate and SO₂ emissions during combustion.
+* **Economic Benefits**: Lighter, higher-grade coal lowers transportation costs per unit energy and commands better market prices.
+* **Environmental Compliance**: Helps meet regulatory limits on ash, sulfur, and other pollutants from coal-fired power plants.
 
-### Co-Generated (Combined Heat and Power - CHP) Plants
+## 2. Describe fuel handling system in power plant with flow chart.
 
-- **Definition:**
-    Plants that simultaneously produce electricity and capture waste heat for additional applications.
+![[Pasted image 20250508235554.png]]
+
+1. Unload
+2. Feed
+3. Crushing
+4. Screening
+5. Convey
+6. Store
+7. Weigh
+8. Magnetic Separate
+9. Dust
+10. Boiler
+
+## MHD
+
+A **Magnetohydrodynamic (MHD) Combined Cycle Power Plant** is an advanced power generation system that combines **direct conversion of plasma energy to electricity** (via an MHD generator) with a **conventional steam cycle** to enhance overall efficiency.
+
+---
+
+### 🔧 **Working Principle (Step-by-step Explanation):**
+
+Refer to the **diagram above** for component-wise flow:
+
+---
+
+#### **1. Combustion Chamber**
+
+- **Fuel (usually coal or natural gas)** is burned with **oxygen-enriched air**.
+    
+- A **seeding material** like potassium carbonate is added to make the combustion gases **electrically conductive** (ionized gas or plasma).
+    
+
+---
+
+#### **2. MHD Generator**
+
+- The **ionized gas** flows at high speed through a **magnetic field**.
+    
+- Due to **Faraday’s law**, a voltage is induced perpendicular to both gas flow and magnetic field.
+    
+- **Electrodes** extract direct current (DC) electricity.
+    
+- **Very high exhaust temperatures** remain (2000–3000 K).
+    
+
+---
+
+#### **3. Heat Recovery – Combined Cycle Section**
+
+- The **hot gases** exiting the MHD generator enter a **heat exchanger** or **Heat Recovery Steam Generator (HRSG)**.
+    
+- This heats water into steam, which drives a **conventional steam turbine** to produce additional power (AC output).
+    
+- The gases are then cooled further before being released or reused.
+    
+
+---
+
+#### **4. Steam Turbine Generator**
+
+- Operates like a regular Rankine cycle.
+    
+- Produces additional electricity, typically alternating current (AC), improving overall plant efficiency.
+    
+
+---
+
+#### **5. Auxiliary Systems**
+
+- **Air preheaters** and **compressors** improve combustion efficiency and gas flow.
+    
+- A **converter** (inverter/rectifier) is needed to interface DC output from the MHD generator with the grid (usually AC).
+    
+
+---
+
+### ⚡ **Advantages**
+
+- **Higher Efficiency**: Can exceed 50% overall by combining MHD (~20%) and steam (~30%) cycles.
+    
+- **Fast Response**: Direct conversion is rapid, useful for load-following.
+    
+- **Reduced Moving Parts**: The MHD generator has no mechanical rotor.
+    
+
+---
+
+### ⚠️ **Challenges**
+
+- High operating temperatures and plasma chemistry require **exotic materials** and **complex cooling**.
+    
+- Electrodes suffer from **erosion** and **plasma corrosion**.
+    
+- Still largely **experimental** or pilot-scale; not widely commercialized.
+    
+
+---
+
+Would you like a breakdown of efficiency comparisons or real-world examples of MHD pilot plants?
+
+
+## PWR 
+
+![[Pasted image 20250509224858.png | 600]]
+
+### 1. Primary (Reactor) Loop
+
+1. **Reactor Vessel**
+    
+    - Fuel assemblies (uranium fuel rods) generate heat via nuclear fission.
+        
+    - **Coolant:** High-pressure water circulates through the core, removing heat.
+        
+    - **Pressure:** Typically ~155 bar (2,250 psi) to keep water liquid at ~300 °C.
+        
+2. **Pressurizer**
+    
+    - A vertical, partially-filled surge tank connected to the top of the reactor loop.
+        
+    - **Heaters** at the bottom and a **spray system** at the top maintain pressure control:
+        
+        - **Increase Pressure:** Electric heaters boil additional water into steam, raising system pressure.
+            
+        - **Decrease Pressure:** Cooler water spray condenses steam, lowering pressure.
+            
+    - **Function:** Keeps reactor-coolant pressure within safe limits to prevent boiling in the core.
+        
+3. **Hot Leg and Steam Generator Inlet**
+    
+    - Heated primary water exits the reactor (“hot leg”) and flows into the steam generator tubes.
+        
+
+---
+
+### 2. Steam Generator (Heat Exchanger)
+
+- **Primary Side (inside tubes):** Still-pressurized water at ~300 °C transfers heat to the secondary side.
+    
+- **Secondary Side (shell side):** Lower-pressure feedwater flashes to steam (~75–100 bar, ~275 °C) without mixing with the radioactive primary water.
+    
+
+---
+
+### 3. Secondary (Turbine) Loop
+
+1. **Steam Turbine**
+    
+    - High-pressure steam from the steam generator expands through the turbine, producing mechanical shaft power.
+        
+2. **Electric Generator**
+    
+    - Coupled to the turbine, converts mechanical rotation into electricity for the grid.
+        
+3. **Condenser & Feedwater Pump**
+    
+    - Exhaust steam condenses back to water in the condenser (cooled by an external water source).
+        
+    - Feedwater pump raises condensate back to steam-generator pressure (~75–100 bar) and returns it to the steam generator.
+        
+
+---
+
+### 4. Pressurizer: Why It’s Crucial
+
+- **Boiling Prevention:** By keeping the primary water under high pressure, the pressurizer ensures no phase change (boiling) occurs in the reactor core, which could compromise cooling and neutron moderation.
+    
+- **Pressure Control:** Reactors undergo power changes (startup, load-following, shutdown) that affect temperature and thus pressure. The pressurizer’s heaters and spray system quickly adjust steam volume to stabilize the loop pressure.
+    
+- **Safety Margin:** A controlled “steam bubble” in the pressurizer provides a buffer against pressure transients, preventing over-pressure trips or under-pressure conditions.
+
+---
+
+## List of the principal methods used in utility boilers to control superheat steam temperature:
+
+1. **Desuperheating (Attemperation) by Water Injection**
+    
+2. **Desuperheating by Saturated-Steam Injection**
+    
+3. **Flue-Gas Bypass (Gas-Side Control)**
+    
+4. **Steam Bypass (Steam-Side Control)**
+    
+5. **Varying Gas Flow through Final Superheater Banks**
+
+### Method 1: Water-Spray Attemperator
+
+**Principle:**  
+A fine spray of de-mineralized water is injected into the hot superheated steam; the water evaporates instantly, absorbing the excess heat and “stepping down” the steam temperature to the setpoint.
+
+```
+    ┌───────────┐   ┌────────────────┐   ┌─────────┐
+	│ Final     │──▶│ Attemperator   │──▶│ Turbine │
+	│Superheater│   │ (Water Nozzle) │   └─────────┘
+    └───────────┘   └──────┬─────────┘
+                           │
+           Control Valve───┴───► Water Spray
+```
+
+- **Control loop:** A thermocouple at the attemperator outlet feeds a PID controller, which modulates the water-spray valve to maintain the desired °C.
+- **Advantages:** Fast response, precise temperature trimming, simple retrofit.
+- **Considerations:** Water must be ultra-pure to avoid tube corrosion and carry-over.
+
+### Method 2: Flue-Gas Bypass Damper
+
+**Principle:**  
+Part of the hot flue-gas stream is diverted around (i.e. bypasses) the final superheater bank. By throttling a damper in the bypass duct, the mass-flow (and thus heat transfer) through the superheater can be reduced, lowering steam temperature.
+
+```
+  [ Boiler ]────▶┌─────────────┐────▶ Superheater ──▶ Turbine
+                 │             │
+                 │  Bypass     │
+                 │  Duct       │
+                 └─┬───▶▼───┬───┘
+                   ▲ Damper ─┘
+                   │
+                Flue Gas
+```
+
+- **Control loop:** A temperature sensor downstream of the SH outlet drives a PID that adjusts the bypass-damper position.
+    
+- **Advantages:** No water handling, no risk of carry-over, fully steam-side dry.
+    
+- **Considerations:** Requires ducting space and precise damper control; slower response than spray.
+    
+
+---
+
+## Explain with schematic diagram, combustion control in the furnace. 
+
+Combustion control in a furnace is essential for achieving optimal fuel efficiency, reducing emissions, and maintaining safe operation. It involves regulating the air-fuel mixture to ensure complete and efficient combustion.
+
+---
+
+### 🔥 **1. Purpose of Combustion Control:**
+
+* Maintain correct air-to-fuel ratio.
+* Maximize combustion efficiency.
+* Minimize pollutants (CO, NOx, unburnt fuel).
+* Adjust to load demand variations.
+
+---
+
+### ⚙️ **2. Basic Components of Combustion Control System:**
+
+1. **Fuel Flow Control Valve** – Regulates the amount of fuel entering the burner.
+2. **Air Flow Control Valve/Damper** – Controls the volume of air (especially oxygen) for combustion.
+3. **Flow Transmitters** – Measure fuel and air flow rates.
+4. **O2/CO Analyzers** – Monitor flue gas composition for excess oxygen or carbon monoxide.
+5. **Controllers (PID Loop)** – Compare actual values with setpoints and adjust accordingly.
+6. **Burner Management System (BMS)** – Ensures safe burner startup/shutdown and flame monitoring.
+
+---
+
+### 🔄 **3. Types of Combustion Control Systems:**
+
+#### a. **Single-Point Positioning (Jackshaft System):**
+
+* One actuator controls both air and fuel valves.
+* Simple, low-cost, but less accurate.
+
+#### b. **Parallel Positioning:**
+
+* Separate actuators for fuel and air, driven by a common controller.
+* More flexible and accurate.
+
+#### c. **Cross-Limiting (Lead-Lag) Control:**
+
+* Uses two PID controllers with a logic system:
+
+  * Air leads when load increases.
+  * Fuel leads when load decreases.
+* Prevents fuel-rich conditions and ensures safety.
+
+#### d. **O2 Trim Control:**
+
+* Fine-tunes air flow based on oxygen sensor in flue gas.
+* Improves efficiency and adapts to fuel quality changes.
+
+---
+
+### ✅ **4. Benefits of Good Combustion Control:**
+
+* Reduced fuel consumption.
+* Lower emissions.
+* Safer operation.
+* Prolonged equipment life.
+
+## Air Pollution from Coal-Based Thermal Power Plants
+
+Coal-fired power plants are major sources of air pollutants—both criteria pollutants and greenhouse gases. Their emissions arise primarily from the combustion of pulverized coal in boilers to generate steam. Below is a structured discussion:
+
+### 1. Major Pollutants and Their Formation
+
+| Pollutant                           | Formation Mechanism                                                                       | Typical Emissions Range |
+| ----------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------- |
+| **Sulfur Oxides (SO₂)**             | Oxidation of sulfur inherent in coal (≈0.5–3 % by weight).                                | 500–2,000 mg/Nm³        |
+| **Nitrogen Oxides (NOₓ)**           | Thermal NOₓ (from N₂/O₂ at high flame temperatures) and fuel NOₓ (from nitrogen in coal). | 200–700 mg/Nm³          |
+| **Particulate Matter (PM₂.₅/PM₁₀)** | Fly ash and unburned carbon entrained in flue gas.                                        | 50–300 mg/Nm³           |
+| **Mercury & Heavy Metals**          | Trace metals vaporize and later condense on particulates.                                 | μg/Nm³ levels           |
+| **Carbon Monoxide (CO)**            | Incomplete combustion in local fuel-rich pockets.                                         | 5–50 mg/Nm³             |
+| **Greenhouse Gas (CO₂)**            | Complete combustion of carbon in coal.                                                    | 800–1,200 g/kWh         |
+
+### 2. Environmental and Health Impacts
+
+1. **Sulfur Oxides (SO₂):**
+    
+    - Reacts in atmosphere to form sulfuric acid—acid rain, which damages forests, soils, and aquatic ecosystems.
+        
+    - Irritates respiratory airways; aggravates asthma and bronchitis.
+        
+2. **Nitrogen Oxides (NOₓ):**
+    
+    - Precursor to tropospheric ozone and photochemical smog.
+        
+    - Forms nitric acid—contributes to acid rain.
+        
+    - Causes respiratory inflammation; reduces lung function.
+        
+3. **Particulate Matter (PM):**
+    
+    - Fine particles penetrate deep into lungs and bloodstream.
+        
+    - Linked to cardiovascular disease, lung cancer, and premature mortality.
+        
+4. **Mercury & Heavy Metals:**
+    
+    - Mercury bioaccumulates in fish; neurotoxic effects on humans (especially fetuses and young children).
+        
+    - Other metals (arsenic, lead) also pose neurological and carcinogenic risks.
+        
+5. **CO and CO₂:**
+    
+    - CO binds with hemoglobin, reducing oxygen transport.
+        
+    - CO₂ is the principal anthropogenic greenhouse gas driving climate change.
+        
+
+### 3. Pollution Control Measures
+
+| Pollutant   | Control Technology                                                                             | Removal Efficiency                         |
+| ----------- | ---------------------------------------------------------------------------------------------- | ------------------------------------------ |
+| **SO₂**     | Flue-Gas Desulfurization (FGD) – wet limestone scrubbers                                       | 90–98 %                                    |
+| **NOₓ**     | Low-NOₓ burners, Selective Catalytic Reduction (SCR), Selective Non-Catalytic Reduction (SNCR) | 50–90 % (SCR)                              |
+| **PM**      | Electrostatic Precipitators (ESP), Fabric Filters (Baghouses)                                  | 99 %+                                      |
+| **Mercury** | Activated carbon injection, Hg-specific catalysts                                              | 70–95 % (with co-benefit from PM controls) |
+| **CO**      | Optimized combustion controls, adequate air staging                                            | 50–90 %                                    |
+
+### 4. Regulatory Standards and Trends
+
+- **Emission Limits:** Many countries cap stack emissions—e.g., SO₂ < 200 mg/Nm³; NOₓ < 200 mg/Nm³; PM < 50 mg/Nm³.
+    
+- **Mercury Rules:** Stringent mercury emission standards (e.g., < 0.03 mg/Nm³ in the U.S.).
+    
+- **Shift to Cleaner Fuels:** Co-firing with biomass or natural gas to lower carbon intensity.
+    
+- **Carbon Capture:** Emerging CCS (carbon capture and storage) to curb CO₂ emissions, though currently limited by cost and infrastructure.
+
+## Load Demand Curve
+
+**Construction of a Load-Duration Curve**  
+A load-duration curve (LDC) provides a clear picture of how an electrical load varies over a specified period (typically one year). To construct it, follow these steps:
+
+![[Pasted image 20250509234838.png]]
+
+1. **Data Collection**
+    - Record the system (or plant) load at regular intervals (e.g., hourly) over the chosen period.
+    - You’ll end up with N data points, where N = (number of days) × (24 hours/day), if hourly.
+        
+2. **Sorting the Loads**
+    - Arrange all NN load values in **descending** order (from highest to lowest).
+    - Label them $L_1 \ge L_2 \ge \dots \ge L_N$.
+        
+3. **Assigning Time-Fractions**
+    
+- For each ordered load LiL_i, compute its corresponding percentage of time:
+$$t_i = \frac{i}{N} \times 100\%$$
+- Here, t1t_1 is the fraction of the period during which the load is at or above L1L_1, etc.
+        
+4. **Plotting the Curve**
+    - On the **vertical axis** (ordinate), plot load in MW (or kW).
+    - On the **horizontal axis** (abscissa), plot cumulative time percentage tit_i from 0 % to 100 %.
+    - Connect the points (ti,Li)(t_i, L_i) to form a non-increasing curve.
+        
+
+> **Result:** The load-duration curve starts at the maximum observed load (at 0 % time) and gently slopes down to the minimum load (at 100 % time).
+
+---
+
+**Significance of the Load-Duration Curve**
+
+1. **Generation Planning & Sizing**
+    
+    - **Base-Load Plants:** Identify the “flat” upper portion of the curve that persists for a large fraction of time—ideal for economical, continuous-operation units (e.g., coal, nuclear).
+        
+    - **Peaking Plants:** The steep tail (right end) at low durations marks the highest peaks—suited for fast-starting, expensive units (e.g., gas turbines).
+        
+2. **Load Factor & Utilization**
+    
+    - **Load Factor** = (Average Load) / (Peak Load).
+        
+    - On the LDC, the **area under the curve** represents total energy; comparing this to a rectangle at peak load yields the load factor, a key efficiency metric.
+        
+3. **Economic Dispatch & Tariff Design**
+    
+    - Helps determine generation mix to minimize fuel costs.
+        
+    - Guides time-of-use or demand-charge tariff structures by showing how often high loads occur.
+        
+4. **Reliability & Reserve Margin**
+    
+    - By examining the curve’s steepness, planners assess how sharply demand can rise, informing reserve requirements and spinning-reserve capacities.
+        
+5. **Maintenance Scheduling**
+    
+    - Maintenance for base-load units can be timed during low-load periods (toward the right), minimizing impact on system adequacy.
+        
+6. **Investment Decisions**
+    
+    - Long-term: Sizing new plants, evaluating renewables integration (e.g., match solar output to daytime load-duration shape).
+        
+    - Short-term: Deciding when to call on demand-response or storage assets.
+        
+
+---
+
+**In Summary**  
+The load-duration curve distills vast load-time data into a simple, powerful tool. By re-ordering load data by magnitude rather than sequence, it reveals how often (and how long) different load levels occur—directly informing generation mix, economic dispatch, tariff design, and reliability planning.
+
+# Short Notes
+
+### (a) Electrostatic Precipitator (ESP)
+
+- **Purpose:** Remove fine ash particles (fly-ash) from flue gases before they exit the stack.
+    
+- **Principle:** Charged-particle collection by electrostatic attraction.
+    
+- **How it works:**
+    
+    1. **Charging Section:** Flue gas flows between discharge electrodes (thin wires) and grounded collecting plates. A high-voltage field ionizes the gas and imparts a negative charge to ash particles.
+        
+    2. **Collection Section:** Charged particles migrate to—and stick on—the grounded plates.
+        
+    3. **Rapping/Cleaning:** Periodically, mechanical raps shake the plates so ash falls into hoppers below.
+        
+- **Key Benefits:**
+    
+    - ≥99% removal efficiency for submicron particles
+        
+    - Low pressure-drop → minimal fan-power penalty
+        
+    - Handles high temperatures and large gas volumes
+        
+
+### (b) Superheaters
+
+- **Purpose:** Increase steam temperature above its saturation (boiling) point—“dry” steam boosts turbine efficiency and protects blades.
+    
+- **Types:**
+    
+    1. **Radiant Superheater:** Closest to the furnace; absorbs heat by radiation.
+        
+    2. **Convection Superheater:** In the gas-pass section; absorbs heat by convection.
+        
+- **Operation:** Saturated steam from the boiler drum passes through superheater tubes, where it picks up extra heat before going to the turbine.
+    
 - **Benefits:**
-    - **Higher Efficiency:** Utilizes energy that would otherwise be wasted.
-    - **Cost Savings:** Reduces energy costs for industries or district heating systems.
-    - **Environmental:** Lower emissions due to improved fuel utilization.
-- **Fields of Application:**
-    - Industrial processes (e.g., refineries, paper mills).
-    - District heating and cooling systems.
-    - Commercial complexes with simultaneous heat and power requirements.
-- **Selection Criteria:**
-    - Proximity to thermal energy demand.
-    - Availability of a steady fuel supply.
-    - Economic viability based on both electricity and heat demand.
+    
+    - Improves Rankine-cycle efficiency by several percentage points
+        
+    - Eliminates moisture in steam → reduces turbine blade erosion
+        
 
-### Captive Power Plants
+### (c) Energy Audit
 
-- **Definition:**  
-    Power plants built by industries or large establishments to generate electricity primarily for their own use.
+- **Definition:** A systematic inspection and analysis of energy flows in a building, process, or system—to identify savings opportunities.
+    
+- **Main Steps:**
+    
+    1. **Pre-audit (Planning):** Gather utility bills, equipment lists, operating schedules.
+        
+    2. **On-site Audit:** Measure energy consumption (meters, data loggers), inspect equipment, interview staff.
+        
+    3. **Analysis:** Compare actual performance to benchmarks; calculate savings from possible improvements (e.g., lighting retrofit, boiler tuning).
+        
+    4. **Report & Recommendations:** List measures ranked by payback, cost, and feasibility.
+        
+- **Goal:** Reduce energy use, cut costs, and lower environmental impact.
+    
+
+### (d) Combined Cycle Gas Turbine Power Plant (CCGT)
+
+- **Concept:** Combine a gas turbine cycle **and** a steam turbine cycle into one plant—using waste heat from the gas turbine to generate additional power.
+    
+- **Major Components:**
+    
+    1. **Gas Turbine (Brayton Cycle):** Air compressor → combustion chamber → gas turbine → generates power and hot exhaust gases.
+        
+    2. **Heat Recovery Steam Generator (HRSG):** Captures exhaust heat to produce steam.
+        
+    3. **Steam Turbine (Rankine Cycle):** Steam expands through turbine, producing extra electricity.
+        
 - **Advantages:**
-    - **Reliability:** Ensures a stable and uninterrupted power supply.
-    - **Cost Control:** Mitigates risks associated with grid power fluctuations and tariffs.
-    - **Customization:** Tailored to specific load requirements of the facility.
-- **Fields of Application:**
-    - Manufacturing industries (e.g., steel, cement, textiles).
-    - Large commercial complexes and institutions.
-    - Remote locations with unreliable grid connectivity.
-- **Selection Criteria:**
-    - Energy consumption patterns and load profile.
-    - Cost-effectiveness compared to grid purchase.
-    - Regulatory and environmental considerations.
-    - Fuel availability and logistics.
+    
+    - **High Efficiency:** Up to ~60% (vs. ~35–40% for simple cycles)
+        
+    - **Lower Emissions:** Burns natural gas cleanly; uses waste heat
+        
+    - **Flexibility:** Fast start-up and load-following capabilities
+        
 
-### Overall Selection Criteria for Power Plant Types
-
-- **Economic Factors:**
-    - Capital investment vs. operational cost.
-    - Payback period and return on investment.
-- **Technical Factors:**
-    - Plant efficiency and reliability.
-    - Flexibility in ramping up or down.
-    - Compatibility with available fuel types.
-- **Environmental and Regulatory Factors:**
-    - Emission norms and pollution control.
-    - Regulatory approvals and environmental impact assessments.
-- **Operational Factors:**
-    - Load demand profile (base, intermediate, or peak).
-    - Proximity to consumption points.
-    - Fuel supply stability and infrastructure availability.
-
-## UNIT 2: STEAM GENERATORS & BOILER TECHNOLOGIES
-
-### Natural vs. Forced Circulation Boilers
-
-- **Natural Circulation:**
-    - Relies on the density difference between heated (steam–water mix) and cooler water to drive circulation.
-    - Simpler design with no circulation pumps, but less effective in very high-capacity or high-pressure boilers.
-- **Forced Circulation:**
-    - Uses pumps to force the water–steam mixture through the boiler tubes.
-    - Allows for higher operating pressures and capacities, with more controlled circulation.
-
-### Cyclone Furnace
-
-- **Working Principle:**
-    - Pulverized coal and air are introduced tangentially to create a cyclone effect.
-    - This enhances fuel–air mixing, leading to more efficient and complete combustion.
-- **Advantages:**
-    - Improved flame stability and combustion efficiency.
-    - Reduced formation of pollutants due to better mixing.
-
-### Emission Control Devices
-
-- **Electrostatic Precipitators (ESPs):**
-    - **Function:** Remove fine particulate matter from flue gases by charging the particles and collecting them on oppositely charged plates.
-    - **Key Benefit:** High removal efficiency for particulate pollutants.
-- **Wet Scrubbers:**
-    - **Function:** Use a scrubbing liquid (often water with additives) to capture particulates and gaseous pollutants.
-    - **Key Benefit:** Effective for removing both particulates and soluble gases like SO₂.
-
-### Boiler Efficiency Calculations
-
-- **Heat Loss Analysis:**
-    - Efficiency is determined by comparing the heat input (fuel energy) to the useful heat absorbed (steam generation).
-    - Losses include radiation, convection, incomplete combustion, and unaccounted heat in flue gases.
-- **Efficiency Formula:**
-$$\eta = \frac{\text{Useful Heat Output}}{\text{Total Heat Input}} \times 100\%$$
-- Often determined experimentally or through energy balance calculations.
-
-### Water Treatment in Boilers
-
-- **Purpose:**
-    - Prevents scale formation, corrosion, and deposition of impurities.
-- **Common Treatments:**
-    - **Demineralization:** Removes dissolved minerals from feedwater.
-    - **Chemical Additives:** Such as oxygen scavengers and pH adjusters to protect boiler metal surfaces.
-    - **Filtration and Softening:** Reduces suspended solids and hardness.
-
-## UNIT 3: COMBINED CYCLE & ADVANCED POWER PLANT CYCLES
-
-### Binary Vapour Cycles
-
-- **Concept:**
-    - Uses two fluids with different boiling points.
-    - The primary fluid generates vapor from low-grade heat, which then transfers energy to a secondary working fluid for power production.
-- **Application:**
-    - Particularly useful in geothermal or low-temperature waste heat recovery systems.
-
-### Coupled Cycles
-
-- **Definition:**
-    - Integration of two or more thermodynamic cycles to maximize overall efficiency.
-    - Example: Combining a gas turbine (Brayton cycle) with a steam turbine (Rankine cycle) in a combined cycle power plant.
-
-### Gas Pipeline Control in Power Plants
-
-- **Role:**
-    - Ensures stable and efficient fuel gas supply to gas turbines.
-    - Involves regulating gas pressure, flow rate, and composition.
-- **Importance:**
-    - Critical for maintaining turbine performance and overall plant efficiency.
-
-### MHD-Steam Power Plants
-
-- **Magnetohydrodynamic (MHD) Generation:**
-    - **Working Principle:**
-        - Uses the high-temperature, ionized gas (plasma) produced by burning fuel.
-        - This plasma flows through a magnetic field, generating electrical power directly by electromagnetic induction.
-    - **Follow-on Steam Cycle:**
-        - The exhaust heat from the MHD generator is then used to produce steam, driving a conventional steam turbine.
-- **Advantages and Challenges:**
-    - **Advantages:** Potential for very high efficiency and lower emissions.
-    - **Challenges:** High technological complexity and material constraints at extreme temperatures.
-
----
-# UNIT 4 - ENDGAME
-
-## 1. Nuclear Power Plants
-
-### 1.1 How It Works: From Atom to Steam
-
-1. **Fission Reaction**
-	* A neutron hits a uranium‑235 nucleus → it splits into two smaller nuclei + 2–3 neutrons + \~200 MeV of heat.
-	* Those extra neutrons go on to split more nuclei (chain reaction), as long as enough fuel and neutrons remain.
-2. **Key Components & Flow**
-	* **Fuel Rods:** Ceramic UO₂ pellets in long metal tubes (“fuel assemblies”).
-	* **Moderator:** Usually light water; slows neutrons so fission stays efficient.
-	* **Control Rods:** Made of boron or cadmium; inserted to soak up neutrons (slows/stops fission).
-	* **Coolant Loop:** Hot water (or liquid sodium) circulates through the core, picks up heat, and carries it away.
-	* **Steam Side (PWR vs BWR):**
-		* **PWR:** Coolant stays liquid under \~155 bar. It flows through a **steam generator** to boil water in a separate loop → steam spins the turbine.
-		* **BWR:** Coolant boils right inside the reactor vessel at \~70 bar. That steam, after moisture separation, goes straight to the turbine.
-	* **Containment Building:** Thick concrete/steel “shell” around the reactor vessel to trap any radioactive leaks.
-3. **Safety & Shutdown**
-	* **Scram (Emergency Shutdown):** All control rods slam in within seconds.
-	* **Emergency Core Cooling:** Backup pumps or gravity‑fed water flood the core if pressure or flow drops.
-	* **Containment Spray:** Cools and filters any gases before venting.
-
-### 1.2 Reactor Types at a Glance
-
-| Feature               | BWR                                 | PWR                                 | FBR                                  |
-| --------------------- | ----------------------------------- | ----------------------------------- | ------------------------------------ |
-| **Where steam forms** | Inside reactor vessel               | In separate steam generator         | In steam generator after sodium loop |
-| **Typical pressure**  | \~70 bar                            | \~155 bar                           | \~0.5–1.5 bar (steam side)           |
-| **Coolant**           | Light water                         | Light water                         | Liquid sodium                        |
-| **Pros**              | Fewer heat‑exchangers, simpler loop | Radioactivity confined; proven tech | Breeds more fuel (Pu‑239)            |
-| **Cons**              | Radio‑active steam lines            | High pressure → thick walls         | Sodium reacts with air/water         |
-
-## 2. Hydroelectric Power Plants
-
-### 2.1 Types by Storage & Head
-
-* **Storage (Reservoir):** Big dam creates lake; release water on demand.
-* **Run‑of‑River:** Little storage—power follows river flow hour‑to‑hour.
-* **Pumped‑Storage:** Two reservoirs at different elevations—pump up at night, generate in day.
-
-**Hydraulic Head Categories**
-
-* **Low‑head:** < 30 m → Kaplan turbines (adjustable blades).
-* **Medium‑head:** 30–300 m → Francis turbines (mixed‑flow).
-* **High‑head:** > 300 m → Pelton turbines (impulse jets).
-
-### 2.2 How a Reservoir Plant Operates
-
-1. **Intake & Trashrack:** Screens out debris.
-2. **Penstock:** Water falls through a large pipe—gains pressure proportional to height drop.
-3. **Surge Tank:** A buffer to absorb sudden pressure changes (“water hammer”).
-4. **Turbine & Generator:** High‑pressure water spins the turbine blades; the connected generator makes electricity.
-5. **Draft Tube & Tailrace:** Slows water down smoothly back to the river.
-
-> **Power Formula:**
-> $P = \eta\,\rho\,g\,Q\,H$,
-> where
-> • η = overall efficiency (85–95 %),
-> • ρ = water density (1 000 kg/m³),
-> • g = 9.81 m/s²,
-> • Q = flow rate (m³/s),
-> • H = net head (m).
-
-## 3. Tidal Power Plants
-
-### 3.1 Main Schemes
-
-1. **Tidal Barrage:** Dam across estuary with turbines in the gates.
-2. **Tidal Stream Turbines:** Underwater “windmills” in strong tidal currents.
-3. **Tidal Lagoons / Dynamic T‑Dams:** Enclosed areas or long perpendicular piers that harness phase differences without full blockage.
-
-### 3.2 Barrage Operation Steps
-
-1. **Flood Phase:** Gates open as tide rises; basin fills.
-2. **Hold Phase:** Gates close at high tide—stores potential energy.
-3. **Ebb Generation:** Water released through turbines as tide falls → electricity.
-4. **(Optional) Two‑Way:** Run turbines on both in‑flow and out‑flow with reversible runners.
-
-> **Energy per Cycle:**
-> $\displaystyle E = \tfrac12\,\rho\,g\,A\,R^2$
-> where
-> • A = basin area,
-> • R = tidal range (m).
-
-## 4. Diesel & Gas Power Plants
-
-### 4.1 Diesel Engine‑Generator Sets
-
-* **Four‑Stroke Cycle:** Intake → Compression → Combustion → Exhaust.
-* **Fuel Injection:** High‑pressure spray auto‑ignites in hot compressed air.
-* **Typical Efficiency:** 35–45 %.
-* **Use Cases:** Emergency backup, remote locations, peaking power.
-
-### 4.2 Gas Turbines
-
-#### A. Simple (Open) Cycle
-
-1. **Compressor:** Pressurizes air to \~15–25 bar.
-2. **Combustion Chamber:** Burns gas at \~1 300–1 600 °C.
-3. **Turbine:** Extracts work—drives compressor & generator.
-4. **Exhaust:** Hot gases vent out (sometimes to provide heat to nearby buildings).
-
-* **Efficiency:** 30–40 %. Fast start, compact.
-
-#### B. Combined Cycle (CCGT)
-
-* **HRSG:** Captures turbine exhaust (\~550 °C) to make steam.
-* **Steam Turbine:** Generates extra power.
-* **Overall Efficiency:** 50–60 %.
-
-## 5. Quick Comparison & When to Use What
-
-| Plant Type        | Key Advantage                          | Main Drawback                        |
-| ----------------- | -------------------------------------- | ------------------------------------ |
-| Nuclear (PWR)     | Very high output, low fuel cost        | High capital & safety systems        |
-| Hydro (Reservoir) | Low running cost, long life            | Depends on geography & rainfall      |
-| Tidal Barrage     | Predictable, renewable                 | Very high upfront cost, local impact |
-| Gas (CCGT)        | High efficiency, moderate capital cost | CO₂ emissions, needs gas supply      |
-| Diesel GenSets    | Extremely fast start, flexible sizing  | High fuel cost, high emissions       |
-
----
-# UNIT 5
-
-## 1. Measurement Instruments
-
-| Measured Variable                                                     | Common Instruments                                                    |
-| --------------------------------------------------------------------- | --------------------------------------------------------------------- |
-| **Temperature**                                                       | • Thermocouple (TC)                                                   |
-| • Resistance Temperature Detector (RTD)                               |                                                                       |
-| • Infrared Pyrometer                                                  | • TC: Seebeck effect; wide range (–200 to +1 800 °C), rugged          |
-| • RTD: Resistance vs. temperature; high accuracy, limited to \~600 °C |                                                                       |
-| • Pyrometer: Non‑contact; for burners, superheater outlets            |                                                                       |
-| **Flow (Water/Steam/Fuel/Oil)**                                       | • Orifice Plate / Venturi / Nozzle                                    |
-| • Turbine Flowmeter                                                   |                                                                       |
-| • Electromagnetic Flowmeter                                           |                                                                       |
-| • Coriolis Mass Flowmeter                                             | • Differential pressure across restriction → volumetric flow          |
-| • Turbine: Rotational speed ∝ flow; simple                            |                                                                       |
-| • Magnetic: Faraday’s law; for conductive fluids                      |                                                                       |
-| • Coriolis: Mass flow directly; highest accuracy                      |                                                                       |
-| **Pressure (Gauge, Differential)**                                    | • Bourdon Tube Gauge                                                  |
-| • Diaphragm / Capsule                                                 |                                                                       |
-| • Strain‑gauge Transducer                                             |                                                                       |
-| • Piezoelectric Sensor                                                | • Mechanical deflection (Bourdon/diaphragm) → pointer / strain gauge  |
-| • Strain gauge: electrical signal, good for DCS                       |                                                                       |
-| • Piezo: dynamic pressure (rapid transients)                          |                                                                       |
-| **Level (Drum, Condensate, Fuel)**                                    | • Differential Pressure Level                                         |
-| • Capacitance Level Probe                                             |                                                                       |
-| • Float‐and‐Displacer (Mag‐Float)                                     |                                                                       |
-| • Ultrasonic / Radar Level                                            | • DP: head difference between top & bottom taps                       |
-| • Capacitive: dielectric constant change                              |                                                                       |
-| • Mag‑float: simple, robust for steam drums                           |                                                                       |
-| • Ultrasonic/Radar: non‑contact, for closed vessels                   |                                                                       |
-| **Conductivity (Water/Steam)**                                        | • Two‑electrode                                                       |
-| • Four‑electrode (Toroidal)                                           |                                                                       |
-| • Inductive Conductivity Probe                                        | • 2‑electrode: inexpensive, polarization issues                       |
-| • 4‑electrode: mitigates polarization, wide range                     |                                                                       |
-| • Inductive: no direct contact; measures high‑purity water            |                                                                       |
-| **Pressure & Draft in FGD / ESP**                                     | • Aspirated Pitot Tube                                                |
-| • Baffle & Orifice for draft measurement                              | • Draft control essential for boiler heat‑balance and ESP performance |
-| **Flue Gas Analysis**                                                 | • Electrochemical O₂ Cell                                             |
-| • NDIR CO₂ Analyzer                                                   |                                                                       |
-| • Chemiluminescence NOₓ Analyzer                                      |                                                                       |
-| • Paramagnetic O₂ Analyzer                                            | • O₂: measures excess air; drives combustion control                  |
-| • NDIR CO₂/CO: infrared absorption bands                              |                                                                       |
-| • NOₓ: chemiluminescence from NO + O₃ → NO₂\* → emission              |                                                                       |
-
----
-
-## 2. Drum Level Control
-
-### 2.1 Why It Matters
-
-* **Steam‑water separation:** Too low level → expose tubes, loss of steam quality; too high → carry‑over and turbine erosion.
-
-### 2.2 Control Strategies
-
-| Scheme             | Inputs                              | Control Action                               | Pros / Cons                                     |
-| ------------------ | ----------------------------------- | -------------------------------------------- | ----------------------------------------------- |
-| **Single‑Element** | Drum level (downcomer DP)           | Control feedwater flow                       | Simple; poor disturbance rejection              |
-| **Two‑Element**    | Drum level + steam flow             | Feedwater valve + feed‑pump                  | Better at load changes; no steam temp feedback  |
-| **Three‑Element**  | Drum level + steam flow + feed flow | Cascade: level controller sets flow setpoint | Best disturbance rejection; handles flash tanks |
-
-* **Implementation:**
-
-  1. Level transmitter(s) feed into cascaded PID loops.
-  2. Feedwater control valve modulates water flow.
-  3. Boiler feed pumps follow valve demand.
-
----
-
-## 3. Combustion Control
-
-### 3.1 Objective
-
-Maintain optimal fuel–air ratio to maximize efficiency, minimize CO/NOₓ and prevent unburnt fuel.
-
-### 3.2 Control Loops & Instruments
-
-1. **Drum‑Pressure Control**
-
-   * Boiler drum pressure → master setpoint for fuel flow.
-
-2. **Fuel Flow Control**
-
-   * **Firing Rate:** Controlled via pulverizer feed (coal mills) or fuel oil/gas valves.
-   * **Fuel Flow Measurement:** Flowmeters on pulverized coal (DP type), fuel oil (mass or volumetric).
-
-3. **Air Flow Control**
-
-   * **Primary Air (PA):** Carries pulverized coal; DP flowmeters + dampers.
-   * **Secondary Air (SA):** For complete combustion; measured by orifice or vane‑axial flow.
-   * **Over‑Fire Air (OFA):** Adjusted to stage combustion, reduce NOₓ.
-
-4. **O₂ Trim Loop**
-
-   * **O₂ Analyzer** in flue gas → PID trim to SA flow or FD (forced draft) fan speed → maintain 2–3 % O₂.
-
-5. **Excess Air Control**
-
-   * Master–slave configuration:
-
-     * Master loop: drum pressure → firing rate
-     * Slave loop: O₂ trim on SA damper
-
----
-
-## 4. Superheater & Reheater Temperature Control
-
-### 4.1 Importance
-
-* Protect tubes from overheating.
-* Ensure steam meets turbine inlet spec (temp, dryness).
-
-### 4.2 Control Methods
-
-1. **Spray (Desuperheater) Control**
-
-   * **Water Spray Nozzles** downstream of superheater tubes.
-   * **Control Loop:**
-
-     * **PV:** Superheater outlet T (thermocouples)
-     * **MV:** Spray water flow (control valve) → inject water to desuperheat.
-   * **Considerations:**
-
-     * Water quality (use condensate, deaerated water).
-     * Fast‑acting valves to avoid temperature oscillations.
-
-2. **Bypass Control**
-
-   * Divert a portion of steam around superheater or reheater.
-   * **Control Valve** on bypass line regulates fraction.
-
-3. **Gas‑Side Dampers**
-
-   * Modulate flue‐gas flow through superheater banks.
-
----
-
-## 5. Furnace Safeguard & Supervisory System (FSSS)
-
-### 5.1 Purpose
-
-Protect against unsafe furnace conditions, prevent explosions, tube damage.
-
-### 5.2 Key Functions & Instruments
-
-| Function                      | Instrument / Device                                             |
-| ----------------------------- | --------------------------------------------------------------- |
-| **Flame Detection**           | UV / IR Flame Scanners; Photocells                              |
-| **High/Low Temperature Trip** | Thermocouple arrays in furnace walls                            |
-| **Gas Leakage**               | Combustible gas detectors in burner areas                       |
-| **Over‑Pressure Protection**  | Furnace pressure transmitters + safety relief vents             |
-| **Burner Management Logic**   | Interlocks for sequencing: pilot light → main flame → ID fan    |
-| **Supervisory Logic**         | PLC/DCS with hardwired safety relays → reactor shutdown or trip |
-
-* **Sequence Enforcement:** Ensure correct order (purge → ignition → flame prove → to full firing).
-* **Interlocks & Trips:** Once a critical fault (e.g., loss of flame, over‑temperature) is detected, shut off fuel supply and initiate emergency purge.
-
----
-
-## 6. Auto Turbine Run‑Up System (ATRS)
-
-### 6.1 Objective
-
-Provide safe, automated start‑up, synchronization and loading of steam (or gas) turbines.
-
-### 6.2 Main Stages
-
-1. **Lube Oil & Hydraulic System Checks**
-
-   * Verify oil pressure, temperature, filter status.
-
-2. **Rolling & Warm‑Up**
-
-   * **Start Motor / Turning Gear:** Slowly rotate shaft to distribute oil, warm bearings.
-   * Monitor bearing temperature.
-
-3. **Accelerating to Turning Gear Speed**
-
-   * Control feedwater & steam admission (for steam turbines) via control valves.
-
-4. **Speed Control & Governors**
-
-   * **Hydraulic or Electronic Governor:** Follows speed setpoint ramp (e.g. 0 – 3 000 rpm in defined secs).
-   * **Sequence Control** via DCS/PLC.
-
-5. **Synchronization**
-
-   * **Sync‑Check Relay:** Verifies phase, voltage, frequency match with grid.
-   * **Auto‑Sync Controller:** Closes breaker at zero‑phase angle difference.
-
-6. **Loading**
-
-   * **Load Setter:** Ramp generator load to target MW/MVar according to grid/Q demands.
-
-7. **Interlocks & Protection**
-
-   * Overspeed trip, low oil pressure, vibration monitors, thrust bearing position.
-
----
-
-### 7. General Control Architecture
-
-* **DCS (Distributed Control System):**
-
-  * Houses PID loops, interlocks, permits operator override, trend logging.
-* **PLC / Safety I\&C:**
-
-  * Hardwired safety logic (SIS) for FSSS, overspeed, high/low trips.
-* **SCADA / HMI:**
-
-  * Operator panels, mimic diagrams, alarms, historical trends.
-
----
-
-### Key Exam Tips
-
-1. **Know Instrument Principles:** Be able to sketch an orifice plate DP cell, explain Seebeck vs. RTD behavior.
-2. **Loop Tuning:** Recall P, PI, PID roles; effects of gain, integral and derivative terms.
-3. **Control Schematics:** Practice drawing three‑element drum level control and O₂ trim loops.
-4. **Trip Logic:** Summarize FSSS interlock sequences in a table or flowchart.
-5. **Safety vs. Regulatory:** Distinguish between alarm (alert) and trip (automatic shutdown).
-
-These notes, combined with hand‑drawn diagrams of control loops and instrument installations, will give you confidence in any instrumentation or controls question. Good luck!
-
-# UNIT 6
-
-## 1. Economics of Power Generation
-
-### 1.1 Load Duration Curves (LDC)
-
-* **Definition:** A plot of system load (power demand) sorted in descending order against time (hours in a year).
-* **Construction Steps:**
-
-  1. Record load at short intervals (e.g., every 15 min) over a year → 8,760 data points.
-  2. Sort demands from highest to lowest.
-  3. Plot demand (y‑axis) vs. cumulative hours (x‑axis).
-* **Key Features:**
-
-  * **Base‑load Region:** Leftmost flat section—high‐capacity, low‐cost plants run continuously.
-  * **Mid‑merit Region:** Middle—intermediate‐cost units meet variable load.
-  * **Peaking Region:** Rightmost steep tail—peaking units (e.g., gas turbines) run few hours.
-* **Uses:**
-
-  * Optimal capacity mix: match plant types to segments.
-  * Estimate annual energy production by area under curve for each plant capacity.
-  * Calculate **Plant Utilization Factor (CUF)**:
-
-    $$
-    \text{CUF} = \frac{\text{Annual energy generated}}{\text{Installed capacity} \times 8760}\times100\%
-    $$
-
-### 1.2 Power Plant Economics
-
-* **Cost Categories:**
-
-  1. **Fixed (Capital) Costs:**
-
-     * **Investment Cost (IC):** Plant construction, land, finance.
-     * **Interest During Construction (IDC)**
-     * **Fixed O\&M Cost:** Salaries, insurance, taxes (independent of output).
-  2. **Variable Costs:**
-     * **Fuel Cost (FC):** $C_f \times \text{fuel consumption}$.
-     * **Variable O\&M:** Consumables, minor maintenance (proportional to run hours).
-* **Levelized Cost of Electricity (LCOE):**
-  $$
-  \text{LCOE} = \frac{\sum_t (I_t + F_t + O_t)}{\sum_t E_t}
-  $$
-  where $I_t$=annualized investment, $F_t$=fuel cost, $O_t$=O\&M cost, $E_t$=energy generated.
-* **Tariff Components:**
-
-  * **Capacity Charge:** Covers fixed costs; paid on declared capacity.
-  * **Energy Charge:** Based on actual units generated; covers fuel & variable costs.
-* **Economic Dispatch:**
-
-  * Rank committed units by short‐run marginal cost (SRMC = fuel + variable O\&M).
-  * Dispatch lowest‐cost units first to meet load stepwise.
-
----
-
-## 2. Pollution from Power Plants
-
-### 2.1 Thermal (Coal/Oil/Gas) Plants
-
-* **Air Emissions:**
-
-  * **SO₂:** From sulfur in fuel → acid rain, respiratory issues.
-  * **NOₓ:** Thermal, fuel, and prompt NOₓ → photochemical smog, ozone.
-  * **Particulate Matter (PM):** Fly ash, soot → health impacts.
-  * **CO₂:** Greenhouse gas—climate change.
-* **Control Technologies:**
-
-  * **Electrostatic Precipitator (ESP) / Bag Filters:** Remove fly ash.
-  * **Flue Gas Desulfurization (FGD):** Wet limestone/gypsum process for SO₂.
-  * **Selective Catalytic Reduction (SCR):** Ammonia injection over catalyst for NOₓ.
-  * **Low‑NOₓ Burners, Over‑fire Air:** Reduce NOₓ formation.
-* **Water Pollution:**
-
-  * **Thermal Discharge:** Elevated water temperature → aquatic stress.
-  * **Effluent Contaminants:** Oil, grease, heavy metals, treatment‐plant discharge.
-* **Solid Waste:**
-
-  * **Fly Ash & Bottom Ash:** Reuse in cement, brick, landfill.
-  * **Slag:** From coal gasification or integrated gasification CC.
-
-### 2.2 Nuclear Power Plants
-
-* **Routine Releases:**
-
-  * **Gaseous:** Noble gases (Xe, Kr), small tritium.
-  * **Liquid:** Low‐activity coolant effluent (diluted).
-* **Radiological Impact Controls:**
-
-  * **Containment Structures, HEPA Filters, Delay Tanks.**
-  * **ALARA Principle:** Keep exposures “As Low As Reasonably Achievable.”
-
----
-
-## 3. Disposal & Management of Nuclear Waste
-
-### 3.1 Waste Classification
-
-1. **Low‐Level Waste (LLW):** Contaminated clothing, filters.
-2. **Intermediate‐Level Waste (ILW):** Resins, reactor components.
-3. **High‐Level Waste (HLW):** Spent fuel assemblies, vitrified waste.
-
-### 3.2 Management Strategies
-
-* **Onsite Handling:**
-
-  * Cooling pools for spent fuel (years).
-  * Interim storage in dry casks (steel/concrete).
-* **Processing & Conditioning:**
-
-  * **Vitrification:** HLW immobilized in borosilicate glass.
-  * **Encapsulation:** Cement/inert matrix for ILW.
-* **Final Disposal:**
-
-  * **Near‐Surface Facilities:** LLW trenches or engineered vaults.
-  * **Deep Geological Repositories:** HLW/ILW in stable rock formations (\~500 m depth), multiple barriers (waste form, canister, buffer, host rock).
-
-### 3.3 Safeguards & Monitoring
-
-* **Radiation Monitoring:** Continuous surveillance of air, water, soil.
-* **Institutional Controls:** Access restrictions, waste tracking.
-* **Post‐Closure Assessments:** Performance modeling for >10⁴ years.
-
----
-
-## 4. Energy Conservation & Energy Auditing
-
-### 4.1 Concept of Energy Conservation
-
-* **Definition:** Reducing energy consumption through efficient technologies & behavior change without sacrificing service.
-* **Strategies:**
-
-  * **Demand‐Side Management (DSM):** Peak load shifting, interruptible tariffs.
-  * **Efficient Equipment:** High‐efficiency motors, LED lighting, variable‐speed drives.
-  * **Behavioral Measures:** Awareness campaigns, thermostat setbacks.
-
-### 4.2 Energy Audit
-
-* **Purpose:** Identify energy use patterns, inefficiencies, savings opportunities.
-* **Types of Audit:**
-
-  1. **Preliminary (Walk‐through) Audit:** Visual inspection, utility bill analysis.
-  2. **Detailed (General) Audit:** Submetering, data logging, process analysis.
-  3. **Investment‐Grade Audit:** Detailed cost–benefit, project feasibility.
-* **Audit Steps:**
-
-  1. **Data Collection:** Historical energy bills, process maps.
-  2. **Site Survey:** Measure flows, temperatures, equipment performance.
-  3. **Data Analysis:** Baseline energy consumption, benchmarking.
-  4. **Identify Measures:** Technical (e.g., heat recovery), operational, organizational.
-  5. **Financial Analysis:** Simple payback, NPV, IRR.
-  6. **Report:** Recommendations, implementation plan, monitoring.
-
-### 4.3 Key Performance Indicators (KPIs)
-
-* **Specific Energy Consumption (SEC):** kWh/unit production.
-* **Energy Use Index (EUI):** kWh/m²·year for buildings.
-* **Load Factor:** Average load/peak load.
-* **Power Factor Improvement:** Corrective capacitors or synchronous condensers.
-
----
-
-### 5. Exam‑Ready Tips
-
-* **LDC Sketch:** Practice drawing and labeling all regions.
-* **Cost Calculations:** Be comfortable deriving LCOE and tariff splits.
-* **Pollution Control Flowsheets:** Sketch FGD, ESP, SCR.
-* **Waste Management Diagrams:** Draw multi‐barrier repository concept.
-* **Audit Case Study:** Work through a small boiler or compressed‐air system audit.

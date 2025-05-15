@@ -51,9 +51,9 @@ This is documentation for how I studied or recommend studying for following subj
 
 ## Fundamentals of Management
 
-- Read my [[Fundaments of Management]] notes.
+- Study PYQ's from [website](https://dtu-pyq.vercel.app/).
 - Ask [GPT](https://chatgpt.com/) to explain topics to you one by one.
-- Solve PYQ from [website](https://dtu-pyq.vercel.app/).
+- Read my [[Fundamentals of Management]] for short notes.
 
 ## Power Plant Engineering
 

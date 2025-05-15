@@ -4,12 +4,13 @@
   "promptDelete": false,
   "autoConvertHtml": true,
   "pdfExportSettings": {
-    "includeName": true,
+    "includeName": false,
     "pageSize": "A4",
     "landscape": false,
     "margin": "1",
     "downscalePercent": 100
   },
   "showLineNumber": false,
-  "livePreview": true
+  "livePreview": true,
+  "defaultViewMode": "preview"
 }

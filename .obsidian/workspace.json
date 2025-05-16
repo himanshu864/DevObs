@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Compiler Design.md",
+                "file": "Artificial Intelligence.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Compiler Design"
+              "title": "Artificial Intelligence"
             }
           }
         ]
@@ -248,8 +248,14 @@
   },
   "active": "1efd31be066108a6",
   "lastOpenFiles": [
-    "Code optimization.md",
+    "Assets/Pasted image 20250517002459.png",
+    "Assets/Pasted image 20250517002441.png",
+    "Assets/Pasted image 20250516231523.png",
     "Compiler Design.md",
+    "Theory Of Computation.md",
+    "Template/Template.md",
+    "Assets/Screenshot 2025-02-28 at 10.14.57 AM.png",
+    "Code optimization.md",
     "Assets/Screenshot 2025-05-15 at 3.30.54 PM.png",
     "Assets/Screenshot 2025-05-15 at 3.07.36 PM.png",
     "Artificial Intelligence.md",
@@ -262,10 +268,7 @@
     "Engineering Economics.md",
     "Assets/Pasted image 20250509224858.png",
     "Assets/Pasted image 20250509005611.png",
-    "Assets/Pasted image 20250509004515.png",
-    "Assets/Screenshot 2025-03-07 at 2.40.45 AM.png",
     "How I studied.md",
-    "Assets/Pasted image 20250508235554.png",
     "QuestionBank.md",
     "Computer Networks.md",
     "Python.md",
@@ -281,9 +284,6 @@
     "Web Sockets Simplified.md",
     "useReducer.md",
     "SQL.md",
-    "I'm 10 but wanna upload csv to sql.md",
-    "Fundaments of Management.md",
-    "FOM Gemini.md",
     "Template",
     "ni",
     "NodeJS",

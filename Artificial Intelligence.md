@@ -438,7 +438,7 @@ $$ \neg(\alpha \vee \beta) \equiv (\neg\alpha \wedge \neg\beta) \quad \text{De M
 $$ (\alpha \wedge (\beta \vee \gamma)) \equiv ((\alpha \wedge \beta) \vee (\alpha \wedge \gamma)) \quad \text{distributivity of } \wedge \text{ over } \vee $$
 $$ (\alpha \vee (\beta \wedge \gamma)) \equiv ((\alpha \vee \beta) \wedge (\alpha \vee \gamma)) \quad \text{distributivity of } \vee \text{ over } \wedge $$
 
-**Well-found Formulas**
+## Well-found Formulas
 
 A **sentence** (also called a _well-formed formula_) is defined inductively as follows:
 
@@ -451,7 +451,7 @@ A **sentence** (also called a _well-formed formula_) is defined inductively as f
     - $S \to T$
     - $S \leftrightarrow T$
 
-### Rules of Inference
+## Rules of Inference
 
 - **Modus ponens**
 $$P,\;P \to Q\;\therefore\;Q$$
@@ -470,7 +470,7 @@ $$P,\;Q\;\therefore\;P \wedge Q$$
 - **Resolution**
 $$P \vee Q,\;\neg P \vee R\;\therefore\;Q \vee R$$
 
-### Proposition Logic
+## Proposition Logic
 
 **Disadvantages**
 Too puny a language to represent complex environment in a concise way. That's where first order predicate logic comes in.
@@ -496,7 +496,7 @@ $$\neg [\exists_x \; P(x)] \equiv \forall_x \; \neg P(x)$$
 
 ### Conjunctive Normal Form
 
-A function is in CNF or clausal normal form if it is a conjunction of one or more clauses. (where clause is disjunction of literals). It is *AND of ORs*. Convert.
+A function is in CNF or clausal normal form if it is a conjunction of one or more clauses. (where clause is disjunction of literals). It is *AND of ORs*.
 
 ### Rules of Inference
 
@@ -505,10 +505,11 @@ Four different methods to deal with quantified sentences in first order logic.
 1. **Universal instantiation / Universal specialization  / Universal elimination**
 	- If "everyone likes ice cream", then "john likes ice cream".
 	- The UI rule state that we can infer any sentence $P(c)$ by substituting a ground term $c$ (a constant within a domain x) from $\forall_x \; P(x)$ for any object in the universe of discourse.
-$$\frac{\forall_x \; P(x)}{P(c)}$$
+	$$\frac{\forall_x \; P(x)}{P(c)}$$
 2. **Existential instantiation**
-	- This rule states that one can infer $P(c)$ from the formula $\exists_x \; P(x)$ for a new constant symbol $c$.
-$$\frac{\exists_x \; P(x)}{P(c)}$$
+	- "there exists a person who likes pizza" means "$c$ likes pizza".
+	- This rule states that one can infer $P(c)$ from formula $\exists_x \; P(x)$ for a constant symbol $c$.
+	$$\frac{\exists_x \; P(x)}{P(c)}$$
 3. **Existential generalization / Existential introduction**
 	- If "Priyanka got good marks in English", then "someone got good marks in English".
 	- If there is some element $c$ in the universe of discourse which has a property $P$, then we can infer that there exists something in the universe which has a property $P$.
@@ -516,11 +517,10 @@ $$\frac{\exists_x \; P(x)}{P(c)}$$
 4. **Universal generalization / Universal introduction**
 	- If "A byte contains 8 bits", so for all values of x "All bytes contain 8 bits".
 	- If premise $P(c)$ is true for any arbitrary element $c$ in the universe of discourse, then we can have a conclusion as $\forall_x \; P(x)$
-$$\frac{P(c)}{\forall_x \; P(x)}$$
-
+	$$\frac{P(c)}{\forall_x \; P(x)}$$
 ## Forward and Backward Chaining
 
-| Forward Chaining (reasoning)                                           | Backward Chaining                                                              |
+| Forward Chaining                                                       | Backward Chaining                                                              |
 | ---------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
 | Begins with what is known (basic facts)                                | Starts with a goal                                                             |
 | Moves forward (applies rules to these facts to derive new conclusions) | Moves backward (checks if current knowledge proves goal)                       |
@@ -544,7 +544,7 @@ $$\frac{P(c)}{\forall_x \; P(x)}$$
 
 - Gathering expertise for use in expert systems, organizing it into structured formats like IF-THEN rules.
 - Also refers to absorbing information into memory (knowledge base) and focusing on effective retrieval.
-- Gather informations via Introspection, Observation, Induction, Protocol analysis, Prototyping, Interviewing.
+- Gather information via Introspection, Observation, Induction, Protocol analysis, Prototyping, Interviewing.
 
 **Procedure**
 
@@ -575,7 +575,7 @@ Ex: "Charlie is a dog" => logical representation $Dog(Charlie)$
 	- **Propositional Logic**: uses simple true or false statements
 	- **Predicate Logic**: extends propositional logic with predicates that can express relations among objects and quantifiers to handle multiple entities.
 	- Eg: "all humans are mortal" -> $\forall_x \; (Humans(x) \to Mortal(x))$
-- ***Semantic Network***
+- ## **Semantic Network**
 	- Graph structures used to represent semantic relations between concepts.
 	- *Nodes* represent objects.
 		- Circle (physical)
@@ -612,7 +612,7 @@ Ex: "Charlie is a dog" => logical representation $Dog(Charlie)$
 KBS is a system that draws upon knowledge of human experts captured in knowledge base to solve problems that normally require human expertise.
 
 **Components**
-1. Knowledge base: centralized repository of information, organized facts, heuristics, etc.
+1. **Knowledge base**: centralized repository of information, organized facts, heuristics, etc.
 2. **Inference Engine**: Acquires and manipulates knowledge from knowledge base to arrive at a particular solution.
 3. User Interface: Enables user to interact with knowledge base.
 
@@ -635,7 +635,7 @@ KBS is a system that draws upon knowledge of human experts captured in knowledge
 
 ## Frames
 
-Collection of attributes or slots and associated values that describe some real-world entity.
+Collection of attributes or **slots** and associated values that describe some **real-world entity**.
 
 - Uses data-structure (records) to represent the knowledge represented in semantic N/W.
 - Each frame represents nodes as a class or an instance and each relation as slot.
@@ -685,7 +685,7 @@ Calculate $P(B / A)$ with the knowledge of $P(A / B)$
 - Forecasting weather
 - Monty Hall Problem
 
-## Bayesian Belief Network in AI
+## Bayesian Belief Network
 
 It is a probabilistic graphical model which represents a set of variables and their conditional dependencies using a DAG.
 
@@ -695,4 +695,93 @@ Consists of **DAG** and **table of conditional probabilities** (with effect of p
 - Arc / Directed arrows -> casual relationships or conditional probabilities among random variables.
 
 To propagate a belief in Bayesian N/W, initial DAG is converted to undirected-graph in which arcs can be used to transmit probabilities of direction of evidence.
+
+## Fuzzy Logic System
+
+**Fuzzy Set Theory** - Mathematical tool for dealing with concepts used in natural language.
+
+**Fuzzy Logic** - Multivalued logic that allows intermediate logic values to be defined between conventional equations. (resembles human reasoning involving possibilities b/w YES and NO).
+
+Mathematical tool to represent uncertainty and vagueness.
+
+**Characteristics**
+- Exact reasoning is viewed as limited case of approximate reasoning.
+- Everything is a matter of degree.
+- Knowledge is represented as collection of variables.
+- Any logical system can be fuzzified.
+
+### Architecture
+
+![[Pasted image 20250516231523.png]]
+
+1. **Fuzzifier**
+	- It transforms the system inputs, which are crisp numbers, into fuzzy sets. It splits the input signal into five steps.
+		- LP - Large positive
+		- MP - Medium positive
+		- S - Small
+		- SN - small negative
+		- MN - Medium negative
+		- LN - Large negative
+2. **Intelligence (Inference Engine)**
+	- It simulates the human reasoning process by making fuzzy inference on the inputs and IF-THEN rules.
+	- Determines matching degree of inputs w.r.t rules.
+3. **Fuzzy Rule Base**
+	- Set of rules and IF-THEN conditions provides by experts to help decision making.
+4. **Defuzzifier**
+	- It transforms the fuzzy set obtained by the inference engine into a crisp value.
+
+## Membership function in Fuzzy Systems
+
+**Degree of Truth:** Generalizes the classical “indicator” function (0 or 1) to a continuous scale $[0,1]$.
+**Vagueness & Uncertainty:** Captures how strongly a given crisp input $x$ belongs to a fuzzy set $A$.
+**Human‑style Reasoning:** Enables inference with partial truths (“somewhat hot,” “very tall,” etc.).
+
+#### Mathematical Notation
+
+A fuzzy set $A$ over universe $X$ is written as:
+$$A = \{\, (x,\;\mu_A(x)) \mid x\in X \}$$
+> $\mu_A: X \to [0,1]$ is the **membership function**
+> $X$ is **membership space** (universe of discourse)
+#### Key Features
+
+For any fuzzy set $A$ with membership function $\mu_A(x)$:
+
+| Feature                      | Definition                       | Notation                 |
+| :--------------------------- | :------------------------------- | :----------------------- |
+| **Support**                  | All $x$ with non‑zero membership | $\{x\mid \mu_A(x)>0\}$   |
+| **Core**                     | All $x$ fully in the set         | $\{x\mid \mu_A(x)=1\}$   |
+| **Crossover** (α‑cut at 0.5) | All $x$ where $\mu_A(x)=0.5$     | $\{x\mid \mu_A(x)=0.5\}$ |
+| **Boundary**                 | Region between support and core  | $\{x\mid 0<\mu_A(x)<1\}$ |
+
+![[Pasted image 20250517002441.png]]
+
+**Types of Membership function**
+![[Pasted image 20250517002459.png | 450]]
+
+---
+## Learning
+
+- Learning is Specialized form of knowledge acquisition.
+- fact 1 --> fact 2 --> conclusion.
+- It is constructing or modifying representation of what is being experienced.
+
+**Components of Learner system**
+
+1. **Learning component** - (Main) Acquire knowledge, make changes/improvements to system depending on performance.
+2. **Performance component** - Task is performed by choosing action to be taken.
+3. **Problem Generator** - Suggests problems or actions that would lead to generation of new examples to improve learning.
+4. **Critic** - gives feedback to the learner system.
+
+**Learning can be achieved by**
+
+- Taking advice
+- observations
+- examples
+- direct instructions
+- analyzing differences
+- deduction
+- explaining experience
+- using relevant information
+- correcting mistakes
+- by recording cases
 

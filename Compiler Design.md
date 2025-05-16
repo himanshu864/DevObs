@@ -97,7 +97,7 @@ Identifiers encountered during scanning are stored in a symbol table along with 
 - **Patterns:** Defined using regular expressions that specify the format of each token type (identifiers, numbers, keywords, etc.).
 
 1. Converts a raw stream of characters from the source code into a structured stream of tokens, which are easier for the parser to handle.
-2. Tokens include *identifiers* (variables, function names), operators (`+`, `=`), keywords, symbols, literals, and constants (e.g., int, float).
+2. Tokens include *identifiers* (variables, function names), operators (`+, =`), keywords, symbols, literals, and constants (e.g., int, float).
 3. LA eliminates comments and white spaces from program.
 4. Gives error message by providing row no. and column no.
 
@@ -511,7 +511,7 @@ TAC is a type of intermediate code where each instruction can have at most 3 ope
 It simplifies complex operations into sequence of simple statements, supporting various operators of arithmetic, logic or boolean operations.
 
 Eg: $(a + b) * (a + b + c)$ into
-```
+```c
 t1 = a + b
 t2 = a + b
 t3 = t2 + c
@@ -579,24 +579,6 @@ t4 = t1 * t3
 
 > Execution order follows the Pointer Table (1→3→2), allowing reordering without renumbering triplets.
 
-### One Dimensional Array
-
-- $B$ is base address of array
-- $W$ is size of each element
-- $i$ is index of element
-- Lower bound is index of first element of array
-- Upper bound is index of last element of array
-
-Address of element at $i^{th}$ index
-$$a[i] = B + W * (i - \text{Lower bound}) = B + W * (i - 1)$$
-In TAC:
-$$t_1 = W * i$$
-$$t_2 = Address_A - W$$
-$$A[i] = t_2[t_1]$$
-
-## **wtf nigga!! switch case**
----
-
 **Binary Tree Generation thingy**
 ![[Screenshot 2025-05-14 at 8.05.55 PM.png]]
 
@@ -608,7 +590,7 @@ $$A[i] = t_2[t_1]$$
 
 ![[Screenshot 2025-05-14 at 8.15.33 PM.png]]
 
-### SDT of Boolean Expression (BS?)
+### SDT of Boolean Expression
 
 | Production        | Semantic Actions                                                     |
 | ----------------- | -------------------------------------------------------------------- |
@@ -619,9 +601,7 @@ $$A[i] = t_2[t_1]$$
 | **E → TRUE**      | `E.place = newtemp();`<br>`Emit(E.place = '1');`                     |
 | **E → FALSE**     | `E.place = newtemp();`<br>`Emit(E.place = '0');`                     |
 
-### Fuck SDT for Flow Control, Switch Case, and Backpatching for now
-
-`6:00:00`
+> Study STD for flow control and switch casing
 
 ---
 # UNIT 4
@@ -734,21 +714,20 @@ Symbol Table maintains uniqueness of each identifier's declaration and scope-rel
 | **Variable Accessibility** | Determined by code blocks and functions.  | Influenced by function call order.        |
 | **Common Usage**           | Preferred in most modern languages.       | Less common; found in older languages.    |
 
-### Run-Time Administration
-
-Implementation of simple stack allocation scheme
+---
+## Activation Record
 
 The activation record is crucial for handling data necessary for a procedure's single execution. When a procedure is called, this record is pushed onto the stack, and it's removed once control returns to the calling function.
 
 > **procedure** refers to a reusable block of code that performs a specific task, while **record** refers to a data structure that groups related data items together.
 
-- **Return Value**: The value a procedure sends back to its caller.
-- **Actual Parameters**: The inputs the caller gives to the procedure when calling it.
-- **Control Link**: A pointer back to the caller’s activation record.
-- **Access Link**: A pointer to activation records that hold non‑local data.
-- **Saved Machine Status**: The CPU state (e.g., registers, flags) saved before the call.
-- **Local Data**: Variables and data used only within that procedure.
-- **Temporaries**: Short‑lived storage for intermediate calculation results.
+1. **Local Data**: Variables and data used only within that procedure.
+2. **Temporaries**: Short‑lived storage for intermediate calculation results.
+3. **Saved Machine Status**: The CPU state (e.g., Program counter, registers) saved before the call.
+4. **Control Link**: A pointer back to the caller’s activation record. (what functions is called inside)
+5. **Access Link**: A pointer to activation records that hold non‑local data. (where the function is defined)
+6. **Actual Parameters**: The inputs the caller gives to the procedure when calling it.
+7. **Return Value**: The value a procedure sends back to its caller.
 
 ---
 ## Memory-allocation Methods in Compilation
@@ -795,7 +774,7 @@ The activation record is crucial for handling data necessary for a procedure's s
 - **Lack of flexibility**: cannot handle dynamic data structures like linked lists, trees, etc.
 
 #### Example
-```
+```c
 int x;     // memory for x is allocated at compile time
 float y;   // memory for y is allocated at compile time
 ```
@@ -1053,7 +1032,7 @@ Loop unrolling is a simple optimization that replicates the loop body multiple t
 
 > **Example:**
 
-```c++
+```cpp
 // Original loop
 int i = 1;
 while (i <= 100) {
@@ -1075,7 +1054,7 @@ while (i <= 100) {
 
 Moves computations that yield the same result on every iteration out of the loop. This reduces redundant work inside the loop and can significantly improve performance.
 
-```c++
+```cpp
 // Before code motion
 for (int i = 0; i < n; ++i) {
     int t = a + b;        // loop-invariant computation
@@ -1090,7 +1069,7 @@ for (int i = 0; i < n; ++i) {
 ```
 
 ---
-## Optimization of Basic blocks
+## Machine Independent Code Optimization
 
 ### Constant Folding
 
@@ -1098,7 +1077,9 @@ Replacing value of expression before compilation.
 
 ```c
 x = a + 2 * 3 + 4
-x = a + 10    // optimized
+
+// optimized
+x = a + 10
 ```
 
 ### Constant Propagation
@@ -1130,8 +1111,46 @@ Avoiding the evaluation of any expression more than once.
 ```c
 x = a + b
 y = b + a
-y = x    // optimized
+
+// optimized
+y = x
 ```
+
+### Algebra Simplification
+
+```c
+x + 0  ==>  x
+x * 1  ==>  x
+```
+
+---
+## Peephole Optimization - Machine Dependent
+
+A **peephole** pass scans short instruction sequences (“windows”) and replaces them with faster or shorter equivalents.
+
+### Workflow
+
+1. Slide a small window (2–5 instructions) over the instruction stream.
+2. Match known inefficient patterns.
+3. Replace with optimized sequence.
+
+### Simple Example
+
+```armasm
+;; Before
+MOV R1, #0       ; R1 ← 0
+ADD R1, R1, R2   ; R1 ← R1 + R2
+
+;; After
+MOV R1, R2       ; direct move
+```
+
+### Common Patterns
+
+* **Redundant Load/Store Elimination**
+* **Strength Reduction:** e.g. `mul #8` → `lsl #3`
+* **Branch Simplification:** invert or combine jumps
+* **Instruction Combining:** fuse shift+add into a single “LEA”‑style op (on x86)
 
 ---
 ## Directed Acyclic Graph (DAG)
@@ -1180,35 +1199,6 @@ x  = t3;
 * **Liveness Exposure:** clearer use‑def chains aid register allocation
 
 ---
-## Peephole Optimization
-
-A **peephole** pass scans short instruction sequences (“windows”) and replaces them with faster or shorter equivalents.
-
-### Workflow
-
-1. Slide a small window (2–5 instructions) over the instruction stream.
-2. Match known inefficient patterns.
-3. Replace with optimized sequence.
-
-### Simple Example
-
-```asm
-;; Before
-MOV R1, #0       ; R1 ← 0
-ADD R1, R1, R2   ; R1 ← R1 + R2
-
-;; After
-MOV R1, R2       ; direct move
-```
-
-### Common Patterns
-
-* **Redundant Load/Store Elimination**
-* **Strength Reduction:** e.g. `mul #8` → `lsl #3`
-* **Branch Simplification:** invert or combine jumps
-* **Instruction Combining:** fuse shift+add into a single “LEA”‑style op (on x86)
-
----
 ## Algebraic Rewrites in a DAG
 
 By applying **commutativity** and **associativity**, the DAG can be restructured to expose more sharing, constant‑folding, and strength‑reduction opportunities.
@@ -1228,7 +1218,7 @@ y = a * b * c;
 	* N0=`a`, N1=`b`, N2=`c`
 	* N3=`N0 * N1`
 	* N4=`N3 * N2`
-2. **Reassociated:**
+2. **Re-associated:**
 	* N5=`N1 * N2`
 	* N6=`N0 * N5`
 	* If `b*c` recurs, N5 is shared.

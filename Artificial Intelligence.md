@@ -614,7 +614,7 @@ KBS is a system that draws upon knowledge of human experts captured in knowledge
 **Components**
 1. **Knowledge base**: centralized repository of information, organized facts, heuristics, etc.
 2. **Inference Engine**: Acquires and manipulates knowledge from knowledge base to arrive at a particular solution.
-3. User Interface: Enables user to interact with knowledge base.
+3. **User Interface**: Enables user to interact with knowledge base.
 
 ## Knowledge Types
 
@@ -674,7 +674,7 @@ In Probability theory it relates the conditional probability and marginal probab
 Calculate $P(B / A)$ with the knowledge of $P(A / B)$
 
 > **Baye's Theorem**
-> $$P(B/A) = \frac{P(A/B) \cdot P(B)}{P(A)}$$
+> $$P(A/B) = \frac{P(B/A) \cdot P(A)}{P(B)}$$
 > $P(A/B)$ is *Posterior* (prob. of A when B is true)
 > $P(B/A)$ is *Likelihood* (prob. of evidence)
 > $P(A)$ is *Prior probability* (prob. of hypothesis)
@@ -719,7 +719,6 @@ Mathematical tool to represent uncertainty and vagueness.
 		- LP - Large positive
 		- MP - Medium positive
 		- S - Small
-		- SN - small negative
 		- MN - Medium negative
 		- LN - Large negative
 2. **Intelligence (Inference Engine)**
@@ -784,4 +783,74 @@ For any fuzzy set $A$ with membership function $\mu_A(x)$:
 - using relevant information
 - correcting mistakes
 - by recording cases
+
+### Prologs
+
+**Facts** - describe explicit relationship. eg: "anchal is a girl"
+**Rules** - defines implicit relationships. eg: "megha is a daughter of shaam if shaam is a father of megha"
+**Queries** - by asking questions. eg: "is megha daughter of shaam?"
+
+- Names of properties/relationships begin with lowercase letters.
+- Relationships must appear at first.
+- A period "." should end a fact.
+- Objects also begin with lower case letters, digits or string.
+- Eg: "color(pink, red)" is a clause
+
+```prolog
+:-  ==>  if or implied by
+,   ==>  and / conjuction
+;   ==>  or / disconjuction
+/== ==> not equals to
+```
+
+**Rules**
+X is the father of Y if X is a parent of Y and X is a male.
+
+```
+father(X, Y) :- parent(X, Y) , male(X).
+```
+
+**Goals or Query**
+
+ Is pizza a food ?
+```
+? - food(pizza).
+```
+
+## Conceptual Dependency
+
+Conceptual dependency is a theory by schank , tells us about how to show the type of knowledge in events ,usually found in natural language sentences . shows knowledge in a way that : 
+
+1. Helps make conclusions from the sentence 
+2. Doesnt depend on the language of the sentence .
+
+Conceptual primitives : determines the action taken to execute a statement 
+
+1. ATRANS: Abstract transfer 
+2. PTRANS : Physical transfer 
+3. PROPEL ,MOVE ,INGEST , SPEAK etc
+
+ex) man took a book from someone
+
+Idhar p matlab person , o matlab object , atrans matlab ek abstract concept(book) ka transfer hua h
+
+ADVANTAGE:
+- Using these primitives involves fewer inference rules
+- Many inference rules are alr present in conceptual dependency structure
+- Holes in initial structure helps us to focus on points yet to be established 
+DISADVANTAGE:
+- Knowledge must be decomposed to low level primitives
+- Difficult to find correct set of primitives 
+- Lot of inference may still be required (despite being fewer than original)
+- Requires lot of storage due to complex representations 
+
+## Non-monotonic reasoning
+
+## Confusion Matrix
+
+## Neural Network
+
+### Genetic Algorithm
+
+![[Pasted image 20250517201443.png | 500]]
 

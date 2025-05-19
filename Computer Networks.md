@@ -1,4 +1,12 @@
-#core 
+---
+tags:
+  - core
+references:
+  - https://youtu.be/q3Z3Qa1UNBA?si=kaPNZNFluH2qnIOK
+date_created: 2025-03-21
+date_modified: 2025-05-20
+---
+---
 
 # Syllabus
 
@@ -744,7 +752,6 @@ By IEEE: Go down at 0 and up at 1.
 - **Packetize** payload by adding essential headers.
 - Checks for **error and flow control**.
 - Manages **network congestion**.
-
 ## IPv4
 
 Operates as an unreliable connectionless datagram protocol, offering a best-effort delivery service which doesn't guarantee packet safety or order.
@@ -1076,7 +1083,23 @@ The last address is obtained by setting all the host bits (last 4 bits) to 1:
 ## Routing
 
 - **Routing** is the process of selecting paths in a network along which to send network traffic.
+- While taking a packet and sending it to a path is actually switching.
 - Routers are the devices that perform this function by maintaining and updating *routing tables*, which list the routes to various network destinations.
+
+- Routing table contains network information and helps determine the best interface to send incoming packets to reach their destination.
+- **Static Table** has manual entries. knows all routers in the network. Not possible.
+- **Dynamic Table** is automatically updated without human intervention when there's a change in the internet, such as topology or traffic.
+
+**Flooding**
+- Send packet to all possible routes and then we can be sure that at least one packet will reach the destination.
+- No routing algorithm required, shortest path guaranteed, highly reliable.
+- Duplicate packets will arrive at destination, High traffic.
+
+### Unicast Routing Protocols
+
+Unicast means the transmission from a single sender to a single receiver. It is a point-to-point communication between the sender and receiver.
+
+They share routing tables with one another. Eg: Distance Vector, Link-state, Path-Vector.
 
 ### Intra-Domain Routing
 
@@ -1084,7 +1107,7 @@ The last address is obtained by setting all the host bits (last 4 bits) to 1:
 - **Characteristics:**
     - Focus on fast convergence and efficient use of resources within the domain.
     - Typically uses protocols designed for relatively smaller, controlled environments.
-- **Examples:** OSPF (Open Shortest Path First), RIP (Routing Information Protocol), EIGRP (Enhanced Interior Gateway Routing Protocol).
+- **Examples:** OSPF (Open Shortest Path First), RIP (Routing Information Protocol).
 
 ### Inter-Domain Routing
 
@@ -1094,10 +1117,16 @@ The last address is obtained by setting all the host bits (last 4 bits) to 1:
     - Emphasizes policy, security, and scalability over rapid convergence.
 - **Examples:** BGP (Border Gateway Protocol).
 
+> RIP treats all routes the same and cost of each hop is 1. While OSPF gives us the administration to assign cost for passing through a network and choose most optimal path.
 ### Distance-Vector Routing
 
+![[Screenshot 2025-05-19 at 4.51.00 PM.png | 550]]
+
 - **Basic Principle:**
-    - Each router periodically sends its entire routing table (the “distance vector”) to its directly connected neighbors.
+	- Each node maintains a vector (table) of minimum distance to every node.
+	- `TO | COST | NEXT`
+    - Each router periodically sends its routing table (`TO | COST`) to its directly connected neighbors.
+	- *Triggered Update* A node sends its two-column routing table to its neighbors anytime there is a change in its routing table. (update or failure)
     - Routers update their tables based on the best information received from neighbors.
 - **Key Features:**
     - **Simplicity:** Relatively easy to implement with low overhead.
@@ -1132,6 +1161,8 @@ The last address is obtained by setting all the host bits (last 4 bits) to 1:
 
 ### Link State Routing
 
+![[Screenshot 2025-05-19 at 4.51.43 PM.png]]
+
 - **Basic Principle:**
     - Unlike distance-vector routing, each router using a link state protocol maintains a complete map of the network topology.
 - **How It Works:**
@@ -1145,3 +1176,788 @@ The last address is obtained by setting all the host bits (last 4 bits) to 1:
     - **IS-IS (Intermediate System to Intermediate System)**
 - **Trade-offs:**
     - **Resource Intensive:** Requires more memory and CPU power to store the complete network map and perform frequent calculations.
+
+| Distance-Vector Routing (DVR)                                                                                     | Link-State Routing (LSR)                                                                                      |
+| ----------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| In the distance-vector routing algorithm, each router tells its neighbors what it knows about the whole internet. | In the link-state routing algorithm, each router tells the whole internet what it knows about its neighbours. |
+| Based on the idea of Local Knowledge                                                                              | Based on the idea of Global Knowledge                                                                         |
+| Bandwidth requirement is less                                                                                     | Bandwidth requirement is high                                                                                 |
+| Roughly based on the idea of Bellman‑Ford algorithm                                                               | Directly based on the idea of Dijkstra’s algorithm                                                            |
+| Traffic is usually less                                                                                           | Traffic is usually high                                                                                       |
+| Converges slowly                                                                                                  | Converges faster                                                                                              |
+| Counts to infinity                                                                                                | No count to infinity                                                                                          |
+| RIP                                                                                                               | OSPF                                                                                                          |
+
+---
+# UNIT 4 : TRANSPORT LAYER
+
+## Congestion
+
+- **Definition**: Occurs when offered load > network capacity, leading to queue buildup, delay, and packet loss.
+- **Symptoms**: High latency, jitter, dropped packets, throughput collapse.
+
+When network demand exceeds capacity, packets queue up, causing delays and losses. Effective congestion control prevents or reacts to overload, ensuring smooth and fair data flow.
+
+### 1. Open‑Loop (Preventive) Control
+
+**Goal:** Shape traffic *before it enters* the network to limit bursts and smooth peaks.
+
+* **Leaky Bucket**
+	* **Mechanism:** Packets enter a queue and exit at a constant rate. If the queue is full when a new packet arrives, it’s dropped.
+	* **Effect:** Eliminates sudden spikes; enforces a strict, steady output rate.
+	* **Analogy:** A bucket with a small hole—water drips out evenly regardless of how fast it’s poured in.
+* **Token Bucket**
+	* **Mechanism:** Tokens accumulate at a set rate up to a maximum. Sending a packet consumes a token; if none are available, packets wait or are discarded.
+	* **Effect:** Allows occasional bursts (up to stored tokens) while enforcing a long‑term average rate.
+	* **Analogy:** Earning tokens in a jar—you can spend them in a burst but refill happens steadily.
+* **Traffic Policing & Shaping**
+	* **Policing:** Drops or marks packets that exceed a rate limit.
+	* **Shaping:** Buffers excess packets and releases them at the allowed rate to smooth traffic.
+* **Random Early Detection (RED)**
+	* **Mechanism:** Monitors average queue length. When it crosses a lower threshold, randomly drops or marks incoming packets (increasing probability as the queue grows). Above a higher threshold, it drops all.
+	* **Effect:** Signals congestion early, preventing sudden buffer overflows.
+	* **Analogy:** A traffic cop who warns drivers before the road is jammed.
+* **Queuing Disciplines**
+	* **Priority Queuing:** Higher‑priority flows go first, delaying lower‑priority traffic.
+	* **Fair Queuing:** Splits capacity evenly among flows, ensuring no single flow dominates.
+
+### 2. Closed‑Loop (Reactive) Control
+
+**Goal:** Hosts adjust send rates based on feedback (losses, delays, or explicit marks) received from the network *after it happens.*
+
+#### 2.1 TCP’s AIMD Algorithm
+
+* **Additive Increase:** After each round‑trip time (RTT) with no congestion, increase congestion window (cwnd) by one Maximum Segment Size (MSS).
+* **Multiplicative Decrease:** On detecting packet loss, halve cwnd.
+
+**Balance:** Gentle growth to find available bandwidth; quick back‑off on congestion.
+
+#### 2.2 TCP Phases
+
+1. **Slow Start**
+	* cwnd starts small (e.g., 1 MSS).
+	* Doubles each RTT until loss or a preset threshold (ssthresh).
+2. **Congestion Avoidance**
+	* Switch to AIMD when cwnd ≥ ssthresh.
+	* Linear growth: cwnd += 1 MSS per RTT, halve on loss.
+3. **Fast Retransmit & Recovery**
+	* On three duplicate ACKs: immediately retransmit the missing segment without waiting for timeout.
+	* Set cwnd to half of its value before loss (instead of full collapse), then resume AIMD from there.
+
+**Example:**
+* Start: cwnd = 1 MSS
+* After 5 RTTs without loss: cwnd = 6 MSS
+* On loss: cwnd → 3 MSS, then growth resumes.
+
+### 3. Summary
+
+| Technique    | Burst Handling        | Long‑Term Rate   | Complexity     |
+| ------------ | --------------------- | ---------------- | -------------- |
+| Leaky Bucket | Blocks/drops excess   | Fixed output     | Simple         |
+| Token Bucket | Allows bursts up to B | Enforces average | Moderate       |
+| RED          | Early, random drops   | Adaptive         | Moderate       |
+| TCP AIMD     | Adapts to feedback    | Probes capacity  | Built into TCP |
+
+---
+## Transport Layer Service
+
+- Network layer protocol only enables communication as computer-level (device-to-device).
+- Transport layer delivers message to appropriate process (PORT). Providing end to end communication.
+- **Connectionless** TL treats each segment as independent packet and delivers while **Connection-oriented** establishes connection before delivery.
+- Three common transport layer protocols.
+	- UDP - connectionless and unreliable.
+	- TCP and SCTP are connection oriented and reliable.
+
+### Addressing: Port Number
+
+- For communication, we must define local-host (Private IP), local-process, remote-host (Public IP), remote-process.
+- To define processes inside a host, we need secondary identifiers called **port numbers**. They are 16-bits integers ranging from $0$ to $2^{16} - 1$.
+- IANA (Internet Assigned Number Authority) has divided the port numbers into tree ranges.
+	- **Well-Known** 
+		- 0 to 1023
+		- Reserved for widely used services and protocols.
+		- Eg: 80 (HTTP), 443 (HTTPS), 53 (DNS).
+	- **Registered** 
+		- 1024 to 49151
+		- Assigned to specific applications or services by organizations.
+	- **Dynamic/Private** 
+		- 49152 t 65355
+		- Used for temporary connections and can be used by any process.
+		
+The combination of an IP address and a port number is called **Socket Address**. Require pair of client and server socket address to communicate.
+
+---
+## TCP
+
+TCP is stream transfer protocol. It creates environment between two processes to share data. Providing flow control, error control and congestion control.
+
+### TCP Header
+
+Segment consists of 20-60 byte header, followed by data from application program.
+
+![[Pasted image 20250519173608.png]]
+
+- 16 bits for source and destination port address.
+- **Sequence Number (32 bits)**
+	- To ensure connectivity, each byte is numbered in the range $[0, 2^{32} - 1]$.
+- **Acknowledgement Number (32 bits)**
+	- Next expected byte from the other side; valid only when the ACK flag is set.
+- **HLEN**
+	- Header Length. Scaling factor = 4.
+- **Reserved (6 bits)**
+    - Must be zero; reserved for future use.
+- **Flags (6 bits)**
+    - **URG** (Urgent): urgent pointer field is significant
+    - **ACK** (Acknowledgment): acknowledgment number is significant
+    - **PSH** (Push): push function for data
+    - **RST** (Reset): reset the connection
+    - **SYN** (Synchronize): synchronize sequence numbers (connection setup)
+    - **FIN** (Finish): no more data from sender, terminate connection
+- **Window Size (16 bits)**
+    - Advertised receive window; flow control for how many bytes can be sent beyond the acknowledged sequence. (how much receiver can receive)
+- **Checksum (16 bits)**
+    - Covers TCP header, payload, and a pseudo‑header from IP; ensures integrity.
+- **Urgent Pointer (16 bits)**
+    - Offset (from sequence number) where urgent data ends; only valid if URG flag = 1.
+
+## TCP Connection
+
+![[Pasted image 20250519181440.png | 600]]
+
+A TCP “three‑way handshake” establishes a reliable connection between a client and server before any data is exchanged. Here’s the step-by-step:
+
+1. **SYN (Client → Server)**
+	* **State transition**: `CLOSED` → `SYN‑SENT`
+	* **Flags**: `SYN=1`, all others = 0
+	* **Sequence Number**: `Seq = ISN_C` (client’s chosen initial sequence)
+	* **Acknowledgment Number**: not valid (usually 0)
+	* **Purpose**: “Hey server, let’s open a connection; here’s my ISN.”
+2. **SYN‑ACK (Server → Client)**
+	* **State transition**: `LISTEN` → `SYN‑RECEIVED`
+	* **Flags**: `SYN=1`, `ACK=1`
+	* **Sequence Number**: `Seq = ISN_S` (server’s chosen ISN)
+	* **Acknowledgment Number**: `Ack = ISN_C + 1` (confirms client’s SYN)
+	* **Purpose**: “I agree to connect; here’s my ISN, and I’ve got your SYN.”
+3. **ACK (Client → Server)**
+	* **State transition**: client moves from `SYN‑SENT` → `ESTABLISHED`; server moves from `SYN‑RECEIVED` → `ESTABLISHED`
+	* **Flags**: `ACK=1` (only)
+	* **Sequence Number**: `Seq = ISN_C + 1` (next byte after client’s SYN)
+	* **Acknowledgment Number**: `Ack = ISN_S + 1` (confirms server’s SYN)
+	* **Purpose**: “Connection confirmed—let’s start sending data.”
+
+These three messages guarantee both endpoints have agreed on each other’s initial sequence numbers and are synchronized for reliable, in‑order data transfer. Now bi-directional data transfer takes place.
+
+---
+## User Datagram Protocol (UDP)
+
+- **Connectionless**: No handshake; datagrams are sent independently.
+- **Unreliable**: No guarantees of delivery, ordering, or duplicate protection.
+- **Lightweight**: Minimal protocol overhead; suitable for low‑latency communications.
+- **Stateless**: Endpoints maintain no session state in the protocol itself.
+
+**UDP Header (8 bytes)**
+
+- **Source Port (16 bits)**: Optional; identifies sending application.
+- **Destination Port (16 bits)**: Identifies receiving application.
+- **Length (16 bits)**: UDP header + payload in bytes (min = 8).
+- **Checksum (16 bits)**: Covers header, payload, and IP pseudo‑header; optional in IPv4 (mandatory in IPv6).
+
+**Typical Applications**
+
+- **Real‑time Media**: VoIP, video conferencing (e.g., RTP over UDP).
+- **Streaming**: Live audio/video broadcasts where timeliness > completeness.
+- **DNS**: Quick query/response protocol for name resolution.
+- **DHCP**: Bootstrap IP configuration; uses broadcasts.
+- **SNMP**: Simple network management queries/traps.
+- **Gaming**: Fast updates in multiplayer games (state updates rather than guaranteed delivery).
+- **Tunneling & VPNs**: Encapsulation protocols (e.g., GRE, VXLAN).
+
+---
+## Data Compression
+
+- **Reduce Size**: Minimize bits needed to represent data.
+- **Compression Ratio**:
+$$\text{ratio} = \frac{\text{original size}}{\text{compressed size}}$$
+- **Throughput & Latency**: Trade‑off between speed of (de)compression and amount of reduction.
+
+### Types of Compression
+
+1. **Lossless**
+    - **Definition**: Exact reconstruction of original data.
+    - **Use‑cases**: Text, executables, archives, some images (e.g., PNG).
+    - Run-length encoding, Huffman coding, Lempel Ziv Encoding.
+    - Lower compression ratio.
+2. **Lossy**
+    - **Definition**: Some information discarded; reconstruction is an approximation.
+    - **Use‑cases**: Audio (MP3), images (JPEG), video (MPEG).
+    - Higher compression ratio.
+
+### Run‑Length Encoding (RLE)
+
+- **Idea**: Replace repeated “runs” of the same symbol with a single count + symbol.
+- **Good for**: Data with long homogeneous runs (e.g. simple bitmaps, fax, icons).
+- **Example**: `AAAAABBBCC` → `5A3B2C`.
+- **Pros**: Extremely simple, very fast.
+- **Cons**: Can inflate data with few repeats; not adaptive.
+
+### Huffman Coding
+
+![[Screenshot 2025-05-19 at 9.18.32 PM.png | 500]]
+
+- **Idea**: Build a variable‑length prefix code based on symbol frequencies—more frequent symbols get shorter codes.
+- **Steps**:
+    1. Count frequencies of each symbol.
+    2. Build a binary tree by repeatedly merging lowest‑frequency nodes.
+    3. Assign 0/1 edges; leaf depths = code lengths.
+- **Good for**: Text, any data where symbol probabilities vary.
+- **Pros**: Optimal (minimum average length) for known static distribution.
+- **Cons**: Needs two passes (count then encode) or adaptation; overhead to store tree.
+
+### Lempel–Ziv (LZ)
+
+![[Screenshot 2025-05-19 at 9.20.21 PM.png | 500]]
+
+- **Idea**: Replace repeated substrings with references to previous occurrences (sliding window or growing dictionary).
+- **LZ77**: Uses a fixed‑size look‑back window; encodes matches as `(offset, length, next_symbol)`.
+- **LZ78 / LZW**: Builds an explicit dictionary of substrings; emits dictionary indices.
+- **Good for**: General-purpose (text, binaries, images).
+- **Pros**: Single‑pass, adaptive (no prior knowledge of data).
+- **Cons**: Window/dict size vs. memory trade‑off; pointer overhead.
+
+### JPEG (Joint Photographic Experts Group)
+
+- **Pipeline**:
+    1. **Color space**: Convert RGB → YCbCr; downsample chroma.
+    2. **Block DCT**: 8×8 blocks → frequency coefficients.
+    3. **Quantization**: Divide by quant table; many high‑freq terms → zero.
+    4. **Entropy coding**: Run‑length + Huffman on zig‑zag–ordered coefficients.
+- **Good for**: Photographs, complex images.
+- **Pros**: Adjustable quality vs. size; widely supported.
+- **Cons**: Block artifacts at high compression; not suitable for sharp edges/text.
+
+### MPEG (Moving Picture Experts Group)
+
+- **Pipeline**:
+    1. **Spatial compression**: JPEG‑style DCT on individual frames.
+    2. **Temporal compression**: Predictive coding between frames (I, P, B frames).
+    3. **Motion estimation/compensation**: Encode block motions.
+    4. **Entropy coding**: VLC (variable‑length codes) on residuals and motion vectors.
+- **Good for**: Video (DVD, streaming, broadcast).
+- **Pros**: High compression by exploiting inter‑frame redundancy.
+- **Cons**: Encoder complexity; error propagation if packets lost.
+
+### MP3 (MPEG‑1 Audio Layer III)
+
+- **Pipeline**:
+    1. **Psychoacoustic model**: Remove inaudible components (masking).
+    2. **Filter bank**: Split audio into subbands.
+    3. **MDCT transform**: Further decompose; quantize coefficients.
+    4. **Huffman coding**: Compress quantized data.
+- **Good for**: Music, voice where perfect fidelity isn’t required.
+- **Pros**: Very high ratio; ubiquitous support.
+- **Cons**: Compression artifacts at low bitrates (pre‑echo, “warbling”).
+
+![[Screenshot 2025-05-19 at 9.25.44 PM.png]]
+
+---
+## Cryptography
+
+- **Purpose**: Ensure confidentiality, integrity, authentication, and non‑repudiation of data.
+- **Plaintext vs. Ciphertext**:
+    - Plaintext: readable data.
+    - Ciphertext: encrypted (unreadable) data.
+- **Key**: secret value(s) used by algorithms to encrypt/decrypt.
+
+### Symmetric Key Cryptography
+
+![[Pasted image 20250519220640.png | 500]]
+
+- **Definition**: Same secret key is used for both encryption and decryption.
+- **Core Concepts**
+    - **Shared Secret**: Both parties must securely share and keep the key secret.
+    - **Speed**: Very fast; suitable for large volumes of data.
+- **Common Algorithms**
+    - **DES** (Data Encryption Standard) – outdated, 56‑bit key
+    - **AES** (Advanced Encryption Standard) – modern standard, 128/192/256‑bit keys
+    - **Blowfish**, **Twofish**, **3DES** (Triple DES)
+- **Types**
+	- **Block Cipher**:
+		- Converts plain text to cipher text by taking plain text's block at a time.
+		- Uses 64 bits or more.
+		- Uses confusion as well as diffusion.
+		- Simple but slow.
+		- Works on transposition techniques like rail-fence technique, columnar transposition technique, etc.
+	- **Stream Cipher**:
+		- Converts the plain text into cipher text by taking 1 bit plain text at a time.
+		- Uses 8 bits.
+		- Only uses confusion.
+		- Complex but fast.
+		- While stream cipher works on substitution techniques like Caesar cipher, polygram substitution cipher, etc.
+- **Advantages**
+    - High throughput (fast).
+    - Lower computational overhead.
+- **Disadvantages**
+    - **Key Distribution Problem**: securely sharing the secret key is challenging.
+    - **Scalability**: with n parties, $\tfrac{n(n-1)}{2}$ keys are needed for pairwise secure channels.
+- **Typical Use Cases**
+    - Bulk data encryption (e.g., disk encryption, VPN tunnels).
+    - Secure TLS session once keys have been exchanged.
+### DES
+
+It’s a way to scramble data in 64‑bit chunks so nobody can read it without the secret key.
+
+**How it works, step by step:**
+
+1. **Shuffle the bits**: First, DES shuffles the 64 bits of your message in a fixed pattern.
+2. **Split it in two**: You get a left half and a right half (32 bits each).
+3. **Repeat 16 times**:
+	* Take the right half and stretch it out from 32 to 48 bits.
+	* Mix in 48 bits of the secret key (you do a simple “exclusive OR”).
+	* Pass that through lookup tables (called S‑boxes) that swap each 6‑bit piece for 4 different bits.
+	* Shuffle those 32 bits again.
+	* Then you “XOR” that with the left half, swap sides, and move to the next round.
+4. **Swap one last time**: After 16 rounds, swap left and right back.
+5. **Unshuffle**: Finally, DES reverses the original shuffle to give you the encrypted block.
+
+**The key**
+You start with a 56‑bit secret. Each round the key gets rotated and sliced so you use a different 48‑bit piece every time.
+
+**Why it matters**
+When it came out, this was super secure. Today, a 56‑bit key is easy to guess, so DES is mostly a teaching tool or used inside stronger systems (like Triple DES).
+
+### Asymmetric (Public‑Key) Cryptography
+
+- **Definition**: Uses a key pair—one public, one private.
+    - **Public Key**: freely distributed; for encryption or signature verification.
+    - **Private Key**: kept secret; for decryption or signature creation. (with receiver)
+- **Core Concepts**
+	- **One‑Way Functions**: easy to compute in one direction (key generation → encryption) but hard to invert without the private key.
+	- **Key Distribution Solved**: public key can be shared openly.
+* **How it works, step by step:**
+	1. **Key pair creation**: You generate a matching public/private duo.
+	2. **Encryption**:
+		* If Alice wants to send you a secret, she grabs your public key and uses it to scramble her message.
+		* Only your private key can un‑scramble (decrypt) it.
+	3. **Digital Signature** (the flip side):
+		* You write a message and “sign” it with your private key—this creates a special code.
+		* Anyone can check that code with your public key to prove it really came from you and wasn’t tampered with.
+	    - Provides **authentication** and **non‑repudiation**.
+* **Why it matters**
+  It’s the backbone of HTTPS, email signing, code signing, and basically any system where you need to talk securely without first shaking hands in person. But it’s slower than simple swaps or shuffles, so in practice you often use it just to agree on a fast symmetric key, then switch to that for bulk data.
+- **Advantages**
+    - Solves key distribution (no secret sharing needed).
+    - Supports digital signatures.
+- **Disadvantages**
+    - Computationally slower.
+    - Larger key sizes and overhead.
+
+### Digital Signature
+
+![[Pasted image 20250520003005.png | 600]]
+
+- **What it is:** A digital “hand‐stamp” you add to a message to prove it really came from you and hasn’t been messed with.
+- **How it works, in plain steps:**
+    1. **Hash the message:** You run the original data through a hash function (e.g. SHA‑256) to get a fixed‑size fingerprint.
+    2. **Sign the hash:** You encrypt that fingerprint with your private key. That encrypted blob is the digital signature.
+    3. **Send both:** You send the original message plus your signature to the recipient.
+    4. **Verify:**
+        - Recipient runs the same hash function on the received message.
+        - They decrypt your signature with your public key to recover the signed‑hash.
+        - If the two hashes match, the message is genuine (didn’t change) and it really came from you (since only your public key can decrypt that signature).
+- **Why it matters:**
+    - **Authentication:** “Yep, this was me.”
+    - **Integrity:** “No one tampered with it.”
+    - **Non‑repudiation:** “I can’t later deny I sent it.”
+- **Application:s**
+	- Document Signing
+	- Financial Transaction
+	- Legal proceedings
+
+### Integrity vs. Confidentiality
+
+- **Confidentiality:**
+	- Encrypt with receivers public key and decrypt with receivers private key.
+    - **Meaning:** Keeping data secret—only the right people can read it.
+    - **In practice:** Encrypting emails, using TLS/HTTPS so eavesdroppers can’t snoop, setting file permissions so only you access your files.
+    - **Goal:** Prevent unauthorized disclosure.
+- **Integrity:**
+	- Encrypt with senders private key and decrypt with senders public key.
+    - **Meaning:** Ensuring data isn’t altered or corrupted—what you send is exactly what the recipient gets.
+    - **In practice:** Using checksums, message hashes, digital signatures, and MACs (Message Authentication Codes) so any change is detected.
+    - **Goal:** Prevent unauthorized modification (and detect mistakes or tampering).
+- Can perform both together.
+
+### Substitution Encryption
+
+* **What is it?**
+  You take each letter (or group of letters) in your message and swap it for another letter based on a secret chart.
+* **How it works, step by step:**
+	1. **Make your secret chart**: For example, you decide A→Q, B→W, C→E, … Z→M.
+	2. **Encrypt**: Look at each letter in “HELLO.” H becomes whatever H maps to (say, X), E→T, L→S, L→S, O→G → you get “XTSSG.”
+	3. **Decrypt**: The receiver uses the same chart backwards (X→H, T→E, S→L, G→O) to put it back.
+* **Key idea**
+  It’s all about that one secret chart—you must keep it hidden or anyone can read your messages.
+* **Why it matters**
+  Super simple to set up, but if someone studies enough messages and letter frequencies (E is most common in English), they can break it.
+
+### Transposition Encryption
+
+* **What is it?**
+  You keep the original letters of your message but shuffle their positions around in a secret way.
+* **How it works, step by step:**
+	1. **Pick your shuffle method**:
+		* **Rail Fence**: Write your message in a zig‑zag across, say, 3 lines.
+		* **Column Shuffle**: Write your message in rows under a secret column order (like “3142”), then read down columns in that secret order.
+	2. **Encrypt**:
+		* For “HELLOWORLD” with 3‑rail zig‑zag you’d write:
+		```
+		H   L   O   L
+		E L W R D
+		L   O   _   _
+		```
+		Then you read row‑by‑row (“HLOL ELWRD LO”) → jumbled text.
+	3. **Decrypt**: Receiver repeats the same zig‑zag or column steps in reverse to restore the original.
+* **Key idea**
+  You’re not changing letters—just where they sit. Without knowing how you zig‑zagged or which columns you picked, it’s just a confusing mess.
+* **Why it matters**
+  Beats frequency analysis (since letters stay the same), but if someone figures out your shuffle pattern, they undo it easily—so often you combine this with substitution.
+
+### RSA
+
+#### Key Generation
+
+1. **Pick two large prime numbers**, $p$ and $q$.
+2. **Compute**
+	* $n = p \times q$.
+	* $\phi(n) = (p-1)\times(q-1)$.
+3. **Choose a public exponent** $e$ such that $1 < e < \phi(n)$ and $\gcd(e,\,\phi(n)) = 1$.
+4. **Compute the private exponent** $d$, the modular inverse of $e$ mod $\phi(n)$, so that
+$$d \times e \equiv 1 \;(\bmod\;\phi(n)).$$
+5. **Publish** the **public key** $(n, e)$. **Keep secret** the **private key** $(n, d)$.
+
+#### Encryption
+
+To send a message $m$ (where $0 < m < n$) to the key‑owner:
+
+1. Convert your message into a number $m$.
+2. Compute the cipher text
+$$ c = m^e \bmod n. $$
+3. Send $c$.
+
+#### Decryption
+
+When the key‑owner receives $c$:
+
+1. Compute
+$$m = c^d \bmod n.$$
+2. Convert $m$ back into the original message.
+
+#### Why It’s Secure
+
+* Multiplying two large primes is easy; factoring the product back into $p$ and $q$ is (currently) computationally infeasible.
+* Without knowing $p$ and $q$, you can’t compute $\phi(n)$, so you can’t derive $d$ from $e$.
+* Even if someone intercepts $c$ and knows $(n,e)$, recovering $m$ by computing the modular root is infeasible for large keys.
+
+#### Putting It All Together
+
+* **Public key** $(n,e)$ → used by everyone to **encrypt**.
+* **Private key** $(n,d)$ → used only by you to **decrypt**.
+* This “one‑way” trapdoor function (easy forward, hard backward) is what makes RSA a pillar of secure communications.
+
+---
+# UNIT 5 : APPLICATION LAYER
+
+Enables users to access the network and provide services like electronic mail, file access and transfer, surfing www, etc. Communication requires two programs.
+
+## Electronic Mail
+
+Electronic Mail is a method of exchanging messages over the internet.
+
+- **Multimedia** - text, audio, image, video (even Hyperlinks & HTML) based communication.
+- **Multiple Recipients** - emails can be send to many people at once using *Carbon Copy (CC)* and *Blind Carbon Copy (BCC)*.
+- **Encryption and Security** - uses advanced security protocols like SSL/TLS.
+- **Filter** and sort into **Folders**
+- **Integration** with calendars, task managers, AI tools, etc.
+
+Email is send and received using a couple different protocols.
+
+- **SMTP** is used for sending email
+- **IMAP** and **POP3** is used for receiving email
+
+#### Email basics
+
+1. **Email address** unique identifier for each user
+2. **Email Client**: Software program used to send, receive and message email
+3. **Email Server**: Computer system responsible for storing and forwarding email
+
+#### Components of E-Email System:
+
+1. **User Agency (UA):** Program used to send, receiver, reply and read emails.
+2. **Messaging Transfer Agency (MTA):**
+    - Transfers mail from one system to another.
+    - To send a mail, a system must have both client and system MTA
+    - It transfers mail to mailboxes of recipients if they share a machine
+    - Delivers to main to peer MTA if destination mailbox is in another machine using _Simple Mail Transfer Protocol_.
+3. **Mailbox:** Fall on local hard drive to collect mails.
+
+#### After email reaches SMTP server
+
+1. Server will validate the emails contents in accordance to protocol.
+2. Now server will lookup IP address of recipients email server on DNS.
+3. Now server will establish a connection, and send email is packets.
+4. Which will be re-assembled at recipients server and scan email for virus or spam.
+5. Finally server will put email to recipients mail box, for him to read.
+
+![[Screenshot 2024-12-01 at 10.45.48 PM.png]]
+### POP3 vs IMAP
+
+- POP3 is simple. Only downloads contents on Inbox folder. While IMAP (_Internet Message Access Protocol_) syncs everything throughout all devices
+- POP3 offline emails on device. While IMAP keeps everything on server.
+- You can only view emails on POP3. While IMAP can also sent items, drafts, delete items, etc.
+
+**MIME** - Multipurpose Internet Mail Extensions is a supplementary protocol that allows non-ASCII data to be send through email.
+
+**Web-Based Mail**
+- Mail transfer from Sender's browser to her mail server is done through HTTP.
+- Transfer of message from mail server to mail server is still done through SMTP.
+- Finally message is receiver at browser via HTTP.
+- Client needs to login on website to access mail.
+
+---
+## File Transfer Protocol (FTP)
+
+- Client/server protocol that allows you to transmit and receive files from a host computer.
+- FTP authentication may be done via usernames and passwords.
+- Uses PORT 20 for data and 21 for control connection.
+- Use TCP for File transfer.
+- But no encryption and no security.
+- Use _SFTP_ for security (add a secure socket layer b/w FTP and TCP)
+- Data connection is non-persistent. Control is persistent
+- Stable
+
+![[Pasted image 20250520015737.png]]
+
+**Control Connection**  
+For sending control information like user identification, password, commands to change the remote directory, commands to retrieve and store files, etc., FTP makes use of a control connection. The control connection is initiated on port number 21.
+
+**Data connection** For sending the actual file, FTP makes use of a data connection. A data connection is initiated on port number 20. FTP sends the control information out-of-band as it uses a separate control connection. Some protocols send their request and response header lines and the data in the same TCP connection. For this reason, they are said to send their control information in-band. HTTP and SMTP are such examples.
+
+---
+## BS
+
+**WWW**
+- World Wide Web is a distributed Client Server service.
+- Where client using a browser can access a service using server.
+
+**Browser**
+- program with GUI for navigating web pages.
+- Components - controller (input - keyboard, mouse), client protocol and interpreters (display). 
+
+**URL**
+- Uniform Resource Locator to uniquely identify web pages.
+- Need four identifiers - Protocol (HTTP, FTP), Host (IP address), Port (pre-defined) and Path (route).
+
+**Cookie**
+- Small block of data created by web server and saved on your browser for remember personal information for revisit.
+
+**HyperText Transfer Protocol:** protocols used to exchange data on internet.
+- Widely used to fetch the webpages on www
+- Isn't reliable itself, but uses TCP for reliability.
+- Inband Protocol. (since data and commands transfer on the same port, unlike FTP)
+- PORT 80
+- _Stateless_
+- Client server architecture - uses URL
+- Media Independent
+- HTTP 1.0 Non-persistent (connection based. sessions)
+- HTTP 1.1 Persistent (connectionless. open)
+- HTTPS: added Secure Socket Layer (_SSL_)
+- Commands (head, get, post, put, delete, connect)
+
+---
+## Domain Name System (DNS)
+
+DNS is the Internet’s “phonebook.” It turns human‑friendly names (like `www.example.com`) into machine‑friendly IP addresses (like `93.184.216.34`) so your browser can find servers.
+
+![[Pasted image 20250520024131.png | 600]]
+### DNS Hierarchy & Namespace
+
+DNS is organized as an inverted tree of domains:
+
+- **Root (.)**
+    - The invisible top‑level node.
+    - Managed by root servers around the world.
+- **Top‑Level Domains (TLDs)**
+    - Right under root:
+        - **Generic TLDs**: `.com`, `.org`, `.net`, etc.
+        - **Country‑code TLDs**: `.us`, `.uk`, `.in`, etc.
+- **Second‑Level Domains**
+    - Directly under a TLD, e.g. `example` in `example.com`.
+- **Subdomains**
+    - Further subdivisions, e.g. `www` (the host) in `www.example.com`, or `mail.example.com`.
+
+### How DNS Works (Resolution Process)
+
+1. **User enters** `www.example.com` in a browser.
+2. **Cache check**
+    - Browser checks its own cache, then the OS cache, then the local DNS resolver (often at your ISP).
+    - If the name → IP mapping is cached and unexpired, return it immediately.
+3. **Recursive query to resolver**
+    - If not cached, the browser asks your recursive resolver to find it.
+4. **Resolver queries root**
+    - “Who handles `.com`?”
+    - Root server replies with a list of `.com` TLD servers.
+5. **Resolver queries TLD server**
+    - “Who handles `example.com`?”
+    - TLD server replies with the authoritative server for `example.com`.
+6. **Resolver queries authoritative server**
+    - “What is `www.example.com`?”
+    - Authoritative server returns the IP address.
+7. **Resolver returns IP** to the browser and caches it (for the record’s Time‑To‑Live).
+8. **Browser connects** to that IP to fetch the webpage.
+
+### Key DNS Server Types
+
+- **Recursive Resolver**
+    - Does the full lookup on your behalf.
+    - Caches responses to speed up future queries.
+- **Root Name Servers**
+    - The starting points (“.”).
+    - Know where all TLD servers live.
+- **TLD Name Servers**
+    - Handle one TLD (like `.com`).
+    - Point to domain’s authoritative server.
+- **Authoritative Name Servers**
+    - Hold the actual DNS records (A, AAAA, CNAME, MX, etc.) for their domain.
+
+### Domain Name Space
+
+- A **global, distributed database** organized in that hierarchical tree.
+- Each node (domain) can have its own zone file listing subdomains and records.
+- **Delegation**: Parent zones delegate control of subtrees to other name servers via NS records.
+
+---
+## More BS
+
+### Telnet
+
+- Telecommunication Network
+- Telnet is a network protocol that allows you to remotely connect to a computer and establish a two-way text-based communication between two computers.
+- Creates remote sessions using TCP / IP protocols, controlled by logged in user to access privileged data and applications on that computer.
+- Single operated port, hence only one connection at a time.
+- Very old technology, no encryption and low security. Replaced by SSH.
+- uses PORT 23
+
+### ARPANET
+
+- Created in 1969 by the **Advanced Research Projects Agency (ARPA)** in the U.S.
+- Aimed to connect researchers and share data.
+- Introduced packet switching (splitting data into packets to send faster and more efficiently).
+- First node-to-node communication happened in October 1969 between UCLA and Stanford.
+
+### X.25
+
+- Old protocol for Wide area networks.
+- Includes features like error checking, virtual circuit setup, usage-based billing, etc.
+- Widely used for applications like credit card processing and ATMs.
+- Slow data rates.
+
+### Simple Network Management Protocol (SNMP)
+
+- Common tool for managing and monitoring network devices.
+- Client-server model with SNMP managers and agents.
+- Operates over UDP. (GET, SET, TRAP, etc)
+- Scalable and used for real-time monitoring.
+
+### Voice over IP
+
+- VoIP allows versatile communication including voice calls and multimedia over IP networks.
+- Relies of Stable Internet connection and computer hardware.
+- Susceptible to delays and security risks.
+
+---
+## Remote Procedure Call (RPC)
+
+![[Pasted image 20250520030013.png | 550]]
+
+- Allows programs to execute procedures (functions) on a remote server, as if they were local. Facilitating Distributed computing.
+- Operates over TCP or HTTP.
+- May include authentication and encryption for security.
+- Can introduce complexities like network latency and failure handling.
+
+Steps and Roles
+
+1. **Client Stub Invocation**
+    - **Client** calls a local “stub” function instead of calling the remote procedure directly.
+    - The stub has the same interface as the remote function.
+2. **Marshaling (Packing Parameters)**
+    - **Client Stub** collects the procedure’s input parameters, serializes them into a standardized message format, and packages them for transmission.
+3. **Request Transmission**
+    - **Client** sends the marshaled request over the network to the **server**’s RPC runtime.
+4. **Unmarshaling & Server Stub Invocation**
+    - **Server RPC runtime** receives the message, passes it to the **server stub**, which deserializes parameters.
+    - **Server Stub** then calls the actual procedure implementation on the server.
+5. **Execution & Result Marshaling**
+    - **Server** executes the procedure with the provided arguments.
+    - **Server Stub** marshals (serializes) the return values or exceptions into a response message.
+6. **Response Transmission & Unmarshaling**
+    - **Server RPC runtime** sends the response back to the **client RPC runtime**.
+    - **Client Stub** unmarshals (deserializes) the result into the client’s address space.
+7. **Client Receives Result**
+    - **Client** resumes execution as if the remote call returned locally, using the unpacked result.
+
+---
+## Firewalls
+
+1. **Significance of Firewalls**
+    - **Access Control**: Enforce security policies by allowing/blocking traffic based on IPs, ports, protocols.
+    - **Threat Prevention**: Stop unauthorized access, probe attempts, and certain malware from entering or leaving the network.
+    - **Monitoring & Logging**: Record traffic patterns and suspicious activity for auditing and incident response.
+2. **Types of Firewalls**
+    - **Packet‑Filtering Firewall**
+        - Operates at Layer 3/4 (IP, TCP/UDP).
+        - Inspects packet headers; applies rules (allow/block by source/dest IP, port).
+    - **Stateful Inspection Firewall**
+        - Tracks active connections; makes decisions based on connection state (e.g., only allow packets that belong to an established session).
+    - **Proxy (Application‑Level) Firewall**
+        - Acts as an intermediary at Layer 7 (HTTP, FTP, SMTP).
+        - Can inspect application data (e.g., URLs, email headers) for deeper filtering.
+    - **Next‑Generation Firewall (NGFW)**
+        - Combines stateful inspection with intrusion prevention, application awareness, and user‑identity integration.
+3. **Role in Email Traffic Filtering**
+    - **Spam Prevention**:
+        - Block connections from known spammer IPs (DNS-based blacklists).
+        - Inspect SMTP headers/content for spam keywords or patterns.
+    - **Malware Defense**:
+        - Scan attachments for viruses, malicious macros, or payloads at the gateway before delivery.
+        - Enforce content‑type restrictions (e.g., block `.exe` or script files).
+    - **Policy Enforcement**:
+        - Enforce Data Loss Prevention (DLP) by scanning outgoing mail for sensitive data (SSNs, credit‑card numbers).
+        - Rate‑limit bulk mail to prevent compromised hosts from sending spam floods.
+    - **Logging & Alerts**:
+        - Log suspicious email attempts for forensic analysis.
+        - Generate real‑time alerts on detected threats or policy violations.
+
+---
+## Final BS
+
+**Repeater** - boosts strength of signals as it travels through a communication channel. Don't interpret data.
+
+**Hub** - Network hardware device to connect multiple Ethernet devices together. Sends data to all ports.
+
+**Bridge** - Used to connect two different LANs. Works at Data Link Layer.
+
+**Switch** - connects multiple devices on a network and uses MAC address to send data directly to the right device. Smart as sends only to specific devices.
+
+**Router** - moves data between different networks, directly it based on destination information using routing table.
+
+**Gateway** - Networking hardware or software for telecommunication network that allows data to flow from one discrete network to another. Can communicate using more than one protocols to connect multiple networks and can operate any of the seven layers of OSI Model.
+
+**Gateway vs. Router**
+
+|Aspect|Gateway|Router|
+|---|---|---|
+|**OSI Layer**|Application / Transport (Layers 4–7)|Network (Layer 3)|
+|**Function**|Protocol & data‐format translation|Packet forwarding based on IP|
+|**Address Translation**|Yes (NAT, DHCP, etc.)|Generally no (unless router also does NAT)|
+|**Complexity**|Higher—may inspect and modify payloads|Lower—typically handles headers only|
+|**Use Case**|Connecting heterogeneous systems|Linking similar IP networks|

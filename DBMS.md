@@ -1,6 +1,7 @@
 ---
 tags:
   - backend
+  - core
 references:
   - https://youtu.be/HXV3zeQKqGY?si=CbO_L1udwspvQ_TR
   - https://youtu.be/dl00fOOYLOM?si=DFfMg_7QUuTq7-xv

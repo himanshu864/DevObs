@@ -786,7 +786,7 @@ For any fuzzy set $A$ with membership function $\mu_A(x)$:
 
 ### Prologs
 
-**Facts** - describe explicit relationship. eg: "anchal is a girl"
+**Facts** - describe explicit relationship. eg: "megha is a girl"
 **Rules** - defines implicit relationships. eg: "megha is a daughter of shaam if shaam is a father of megha"
 **Queries** - by asking questions. eg: "is megha daughter of shaam?"
 
@@ -801,6 +801,7 @@ For any fuzzy set $A$ with membership function $\mu_A(x)$:
 ,   ==>  and / conjuction
 ;   ==>  or / disconjuction
 /== ==> not equals to
+? - ==> query
 ```
 
 **Rules**
@@ -853,4 +854,13 @@ DISADVANTAGE:
 ### Genetic Algorithm
 
 ![[Pasted image 20250517201443.png | 500]]
+
+---
+# IMPORTANT
+
+- syllabus for AI  for end sem For clarification, solving/numerical type question for end sem can be taken from Propositional/Predicate Logic, Neural Networks.
+- Small numerical from Genetic algorithms, probabilistic reasoning/certainty factors . 
+- Rest Unit 3 part b, unit 4 and unit 6 will be covered as theoretical short note type questions.
+ - 10-15 marks from midsem syllabus will be there in end sem.
+
 

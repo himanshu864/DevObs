@@ -600,10 +600,10 @@ Email is send and received using a couple different protocols.
 
 #### After email reaches SMTP server
 1. Server will validate the emails contents in accordance to protocol.
-2. Now server will lookup IP address of recipients email server on DNS.
-3. Now server will establish a connection, and send email is packets.
-4. Which will be re-assembled at recipients server and scan email for virus or spam.
-5. Finally server will put email to recipients mail box, for him to read.
+	1. Now server will lookup IP address of recipients email server on DNS.
+2. Now server will establish a connection, and send email is packets.
+3. Which will be re-assembled at recipients server and scan email for virus or spam.
+4. Finally server will put email to recipients mail box, for him to read.
 
 ![[Screenshot 2024-12-01 at 10.45.48 PM.png]]
 
@@ -660,7 +660,7 @@ Disadvantage:
 - data connection is non-persistent. Control is persistent
 - Stable
 
-![Lightbox](https://media.geeksforgeeks.org/wp-content/uploads/FTP.jpg)
+![[Pasted image 20250520015737.png]]
 
 **Control Connection**
 For sending control information like user identification, password, commands to change the remote directory, commands to retrieve and store files, etc., FTP makes use of a control connection. The control connection is initiated on port number 21.

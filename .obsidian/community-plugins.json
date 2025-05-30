@@ -1,6 +1,6 @@
 [
   "obsidian-git",
-  "obsidian-vimrc-support",
   "omnisearch",
-  "dataview"
+  "dataview",
+  "obsidian-vimrc-support"
 ]

@@ -230,3 +230,21 @@ For authentication, NextJS can integrate with libraries like [Clerk](https://cle
 - Wrapping your application or layout with an authentication provider.
 - Using middleware (in `src/app/middleware.ts`) to protect routes.
 - Leveraging server-side rendering for secure session management.
+
+---
+
+## App vs Page Routing
+
+| Feature                | App Router                           | Page Router                                         |
+| ---------------------- | ------------------------------------ | --------------------------------------------------- |
+| File-based routing     | Uses nested folders to define routes | Files directly represent routes                     |
+| Components             | Server Components by default         | Client Components by default                        |
+| Data fetching          | fetch function for data fetching     | getServerSideProps, getStaticProps, getInitialProps |
+| Layouts                | Layouts can be nested and dynamic    | Layouts are static                                  |
+| Dynamic routes         | Supported, but syntax differs        | Supported                                           |
+| Client-side navigation | Supported with router.push           | Supported with Link component                       |
+| Priority               | Takes precedence over Page Router    | Fallback if no matching route in App Router         |
+
+Page Router treats all files with`.js` and `.tsx` inside `/pages` directory as routes.
+While App Router treats all directories with `/app` as routes.
+

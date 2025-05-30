@@ -6,14 +6,26 @@ references:
   - https://youtu.be/HXV3zeQKqGY?si=CbO_L1udwspvQ_TR
   - https://youtu.be/dl00fOOYLOM?si=DFfMg_7QUuTq7-xv
 date_created: 2024-06-06
-date_modified: 2025-03-28
+date_modified: 2025-05-30
 ---
 ---
+# What is DBMS?
+ **Data**: Collection of raw bytes. $\rightarrow$ Process $\rightarrow$ Meaning $\rightarrow$ **Information**.
 
-Software for creating, managing, and interacting with databases.
+This information helps understand context and decision making.
 
-- Perform **CRUD** operations (Create Read Update Delete).
-- Ensures data consistency, integrity, and security.
+**Database**: Electronic place/system where data is stored. Interrelated data.
+
+**DBMS**: Software to perform CRUD operations on database. Generally referred together with DB.
+
+**File Systems Disadvantages over DBMS**
+- Data Redundancy and inconsistency.
+- Difficulty in accessing data and querying.
+- Data isolation.
+- Integrity problems.
+- Atomicity problems.
+- Concurrent-access anomalies.
+- Security problems.
 
 **Key Components:**
 - Hardware, software, data, procedures, and users.
@@ -26,17 +38,27 @@ Software for creating, managing, and interacting with databases.
 	- **Object-Oriented:** Stores objects with attributes and methods.
 
 **Advantages:**
-- Data abstraction and independence.
-- Reduced redundancy.
-- Improved data integrity.
-- Enhanced security.
+- Data abstraction and independence (hiding complex details and giving simple concise output).
+- Reduced redundancy (repetition of same data in multiple tables).
+- Improved data integrity (information remains accurate, complete and consistent).
+- Enhanced security (authorization).
 - Backup and recovery mechanisms.
 
 **ACID Properties:** Atomicity, Consistency, Isolation, Durability.
-- **Atomicity:** Ensures all operations in a transaction complete successfully or none do.
-- **Consistency:** Guarantees transactions transition the database between valid states.
-- **Isolation:** Keeps concurrent transactions independent to avoid interference.
-- **Durability:** Once committed, transaction changes persist even after failures.
+- **Atomicity:**
+	- Ensures all operations in a transaction complete successfully or none do.
+	- Eg: During a 100$ transactions, $A$'s balance should be reduce and $B$'s balance should increment at the same time. During failure, both balances should return to normal.
+- **Consistency:**
+	- Guarantees transactions transition the database between valid states.
+	- Eg: Ones balance shouldn't be negative. Hence a 100$ transaction from an account with balance 50$ failed due to consistency violation.
+- **Isolation:**
+	- Keeps concurrent transactions independent to avoid interference.
+	- *Dirty read* - when a transaction reads data that has been modified by another transaction but that transaction has not yet committed its changes.
+	- *Non-repeatable read* - when a transaction reads the same row twice, but the second read retrieves different values than the first.
+	- *Phantom read* - when a transaction re-executes a query and finds that the results have changed due to the insertion or deletion of rows by another transaction, even though the initial transaction hadn't modified anything itself.
+- **Durability:**
+	- Once committed, transaction changes persist even after failures.
+	- By using *Write-Ahead Logging* and replication, making changes permanent.
 
 **Normalization:** 1NF, 2NF, 3NF to reduce redundancy.
 - **First Normal Form (1NF):**
@@ -75,26 +97,6 @@ Software for creating, managing, and interacting with databases.
 - **Date/Time:** `DATE, TIME, TIMESTAMP`.
 - **Binary:** `BLOB, VARBINARY`.
 - **Boolean:** `BIT, BOOL`.
-
----
-# What is DBMS?
-
-**Data**: Collection of raw bytes. $\rightarrow$ Process $\rightarrow$ Meaning $\rightarrow$ **Information**.
-
-This information helps understand context and decision making.
-
-**Database**: Electronic place/system where data is stored. Interrelated data.
-
-**DBMS**: Software to perform CRUD operations on database. Generally referred together with DB.
-
-**File Systems Disadvantages over DBMS**
-- Data Redundancy and inconsistency.
-- Difficulty in accessing data and querying.
-- Data isolation.
-- Integrity problems.
-- Atomicity problems.
-- Concurrent-access anomalies.
-- Security problems.
 
 ---
 # DBMS Architecture

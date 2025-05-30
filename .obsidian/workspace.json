@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "React/Passing States.md",
-                "mode": "preview",
+                "file": "DBMS.md",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Passing States"
+              "title": "DBMS"
             }
           }
         ]
@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "fbe0f968a63722db",
@@ -167,6 +168,12 @@
   },
   "active": "b0eaba52a0c32684",
   "lastOpenFiles": [
+    "DBMS.md",
+    "Helpful Articles.md",
+    "NextJS.md",
+    "How I studied.md",
+    "Engineering Economics.md",
+    "React/Passing States.md",
     "SQL.md",
     "Artificial Intelligence.md",
     "Computer Networks.md",
@@ -186,12 +193,6 @@
     "NGINX Deploy NodeJS AWS Docker.md",
     "Pandas.md",
     "MacOS Dotfiles Setup.md",
-    "Internet of Things.md",
-    "How I studied.md",
-    "Helpful Articles.md",
-    "DNS.md",
-    "I'm 10 but wanna upload csv to sql.md",
-    "React/React.md",
-    "React/useReducer.md"
+    "Internet of Things.md"
   ]
 }

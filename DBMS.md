@@ -141,7 +141,7 @@ This information helps understand context and decision making.
 
 ### Database Languages
 
-- **Data Definition Language (DLL)**: to define / specify DB schema.
+- **Data Definition Language (DLL)**: to define/specify DB schema.
 - **Data manipulation language (DML)**: to perform DB queries and updates (CRUD).
 - SQL provides features of both languages.
 
@@ -164,20 +164,19 @@ This information helps understand context and decision making.
 
 ### Database Application Architecture
 
-#### Tier-1 Architecture
-
+**Tier-1 Architecture**
 - Client, server and database on the same machine.
 
-#### Tier-2 Architecture
+**Tier-2 Architecture**
 
 - Client communication with DB server. No third party.
 - API standards like ODBC and JDBC are used interact.
 
-![[Pasted image 20250328140730.png | 300]]
+![[Pasted image 20250328140730.png | 400]]
 
-#### Tier-3 Architecture
+**Tier-3 Architecture**
 
-![[Pasted image 20250328142004.png | 300]]
+![[Pasted image 20250328142004.png | 400]]
 
 - Different client, server, and database.
 - For business applications. Scalable, Data Integrity, Security.
@@ -196,12 +195,13 @@ High level data model based on a perception of a real world that consists of a c
 **Attribute**
 An entities property(s). Has a set permitted values called *domain* or value set.
 
-Types of Attributes:
+**Types of Attributes:**
+
 1. **Simple**: can't be divided further. Eg: Phone number.
 2. **Composite**: can be divided into further attributes. Eg: Address.
 3. **Single-valued**: one value attribute. Eg: Student ID.
 4. **Multi-valued**: more than one value. Eg: Phone number.
-5. **Derived**: can be derived from other related attributes. Eg: Age.
+5. **Derived**: can be derived from other related attributes. Eg: Age from DOB.
 
 Attributes takes null value when no value for it. Eg: Middle name (not applicable). Can also indicate value is unknown (data inconsistency).
 
@@ -213,14 +213,14 @@ Attributes takes null value when no value for it. Eg: Middle name (not applicabl
 - **Weak** relationship: between weak entity and it's owner/strong entity. Eg: payment.
 - **Degree of relationship**: number of entities participating in a relationship.
 	1. *Unary*: only one entity participates. Eg: employee manages employee.
-	2. **Binary**: two entity participates. Eg: student takes course.
+	2. *Binary*: two entity participates. Eg: student takes course.
 	3. *Ternary*: three entity. Eg: Teacher teaches student, teacher teaches subject.
 - **Relationship constraints**
 	- Mapping cardinality / cardinality ratio:
 		1. *One to one*: Entity A associates with at most one entity B and vice-versa. Eg: Citizen has Aadhar-card.
 		2. *One to many*: Entity A associates with N entity B. While entity B associates with at most one entity A. Eg: Citizen has vehicle.
-		3. *Many to one*: opposite of one-many.
-		4. *Many to many*: Entity A associates with N entity B. and vice-versa.
+		3. *Many to one*: opposite of one-many. Eg: employee and department.
+		4. *Many to many*: Entity A associates with N entity B. and vice-versa. Eg: Students and course.
 	- Participation Constraints: Minimum cardinality constraints. Types:
 		1. *Partial participation*: not all entities are involved in the relationship instance.
 		2. *Total participation*: each entity must be involved in at least one relationship instance.

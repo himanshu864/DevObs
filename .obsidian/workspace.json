@@ -169,6 +169,7 @@
   "active": "b0eaba52a0c32684",
   "lastOpenFiles": [
     "DBMS.md",
+    "Compiler Design.md",
     "Helpful Articles.md",
     "NextJS.md",
     "How I studied.md",
@@ -192,7 +193,6 @@
     "NumPy.md",
     "NGINX Deploy NodeJS AWS Docker.md",
     "Pandas.md",
-    "MacOS Dotfiles Setup.md",
-    "Internet of Things.md"
+    "MacOS Dotfiles Setup.md"
   ]
 }

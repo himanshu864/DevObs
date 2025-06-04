@@ -14,7 +14,7 @@
               "type": "markdown",
               "state": {
                 "file": "DBMS.md",
-                "mode": "source",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
@@ -168,7 +168,13 @@
   },
   "active": "b0eaba52a0c32684",
   "lastOpenFiles": [
+    "Artificial Intelligence.md",
     "DBMS.md",
+    "Screenshot 2025-06-04 at 12.59.38 PM.png",
+    "Screenshot 2025-06-04 at 12.52.42 PM.png",
+    "Screenshot 2025-06-04 at 12.47.32 PM.png",
+    "Amazon HackOn.md",
+    "Screenshot 2025-06-01 at 12.15.19 PM.png",
     "Compiler Design.md",
     "Helpful Articles.md",
     "NextJS.md",
@@ -176,7 +182,6 @@
     "Engineering Economics.md",
     "React/Passing States.md",
     "SQL.md",
-    "Artificial Intelligence.md",
     "Computer Networks.md",
     "Upload Excel.md",
     "TypeScript.md",
@@ -191,8 +196,6 @@
     "Power Plant Engineering.md",
     "NodeJS Streams.md",
     "NumPy.md",
-    "NGINX Deploy NodeJS AWS Docker.md",
-    "Pandas.md",
-    "MacOS Dotfiles Setup.md"
+    "NGINX Deploy NodeJS AWS Docker.md"
   ]
 }

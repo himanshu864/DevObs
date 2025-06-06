@@ -6,7 +6,7 @@ references:
   - https://youtu.be/HXV3zeQKqGY?si=CbO_L1udwspvQ_TR
   - https://youtu.be/dl00fOOYLOM?si=DFfMg_7QUuTq7-xv
 date_created: 2024-06-06
-date_modified: 2025-05-30
+date_modified: 2025-06-06
 ---
 ---
 # What is DBMS?
@@ -447,3 +447,111 @@ Again split tables to `model | color` and `model | style`.
 
 > It must be possible to describe the table as being the logical result of joining some other tables together.
 
+---
+# Transactions
+
+**Transactions** - Logical unit of work that contains one or more SQL statements. Sequence is important. Either the transaction is completely successful (all changes made are permanent) or failure at point results in rollback (all changes done are undone).
+
+**ACID Properties:** Atomicity, Consistency, Isolation, Durability.
+- **Atomicity:**
+	- Ensures all operations in a transaction complete successfully or none do.
+	- Eg: If money is deducted from your account but failed to transfer. Money should rollback.
+- **Consistency:**
+	- Guarantees transactions transition the database between valid states.
+	- Eg: Total balance after transaction should remain the same. No loss of money.
+- **Isolation:**
+	- Keeps concurrent transactions independent to avoid interference.
+	- Eg: DB should know how to handle transactions from/to same account at the same time.
+- **Durability:**
+	- Once *committed*, transaction changes persist even after failures.
+
+### Transaction States
+
+![[Screenshot 2025-06-06 at 4.36.07 PM.png]]
+
+1. **Active State**: The very first state of the life cycle of the transaction, all the *read and write* operations are being performed. If they execute without any error the T comes to Partially committed state. Although if any error occurs then it leads to a Failed state.
+2. **Partially committed state**: After transaction is executed the changes are saved in the buffer in the main memory. If the changes made are permanent on the DB then the state will transfer to the committed state and if there is any failure, the T will go to Failed state.
+3. **Committed state**: When updates are made permanent on the DB. Then the T is said to be in the committed state. Rollback can’t be done from the committed states. New consistent state is achieved at this stage.
+4. **Failed state**: When T is being executed and some failure occurs. Due to this it is impossible to continue the execution of the T.
+5. **Aborted state**: When T reaches the failed state, all the changes made in the buﬀer are reversed. After that the T rollback completely. T reaches abort state after rollback. DB’s state prior to the T is achieved.
+6. **Terminated state**: A transaction is said to have terminated if has either committed or aborted.
+
+## Recovery Mechanism (Atomicity and Durability)
+
+### Shadow-Copy Scheme
+
+* **Core Idea**: Maintain two full DB copies—a “current” and a “shadow.”
+* **Workflow**:
+	1. Copy the entire current DB to a new working copy.
+	2. Apply all updates only to the new copy.
+	3. **Commit**: Flush new copy’s pages, atomically switch the on‐disk pointer to the new copy, then delete the old.
+	4. **Abort**: Delete the new copy; original remains unchanged.
+* **Atomicity**: If a failure/abort occurs before pointer switch, new copy is discarded ⇒ no partial updates.
+* **Durability**: Once the pointer switch completes (after all new‐copy pages are on disk), changes persist even if a crash follows.
+
+### Log-Based Recovery
+
+* **Core Idea**: Record every update in a write‐ahead log (old‐ and new‐values) before modifying DB pages.
+* **Key Principles**:
+  * **Write‐Ahead Logging (WAL)**: Log entry must reach stable storage before its data‐page write.
+  * **UNDO/REDO**:
+	* **UNDO** (using old‐values) for uncommitted transactions whose pages might have “stolen” writes.
+	* **REDO** (using new‐values) for committed transactions whose updates might not have hit disk.
+* **Variants**:
+	1. **Deferred‐Write (No‐Steal, No‐Force)**: Delay all page writes until commit—only REDO needed.
+	2. **Immediate‐Write (Steal, Force/No‐Force)**: Allow dirty pages to be written early—requires both UNDO and REDO.
+* **Atomicity & Durability**:
+	* Before commit, effects can be undone; after commit (log on stable storage), effects are relaunched on crash (redo) or persist on disk (force).
+
+---
+# Indexing
+
+**Indexing** creates a separate data structure (*index*) that stores sorted copies of selected table columns, with pointers to the actual data, allowing for *faster data retrieval* by avoiding full table scans.
+
+![[Pasted image 20250606181426.png | 500]]
+
+- **Search Key**: copy of primary key or candidate key or anything else.
+- **Data Reference**: Pointer holding the address of disk block where the value of the corresponding key is stored.
+- Indexing is **optional** but is always **sorted**.
+
+## Types of Indexing
+
+### Primary Indexing (Clustering)
+
+Used when all files are **ordered** sequentially on some search key (*primary index*). It could be Primary Key or non-primary key
+
+- **Dense Indexing**
+	- The dense index contains an index record for every search key value in the data file.
+- **Sparse Indexing**
+	- An index record appears for only some of the search-key values.
+
+Primary Indexing can be based on Data file is sorted w.r.t Primary Key attribute or non-key attributes.
+
+- **Sorted w.r.t key attribute**
+	- PK will be used as search key in index.
+	- Sparse index will be formed.
+- **Sorted w.r.t non-key attribute**
+	- This is dense index as, all unique non-key attribute values have an entry in the index file.
+	- All attributes with same values will be clustered together.
+	- E.g., Clustering indexing should be created for all employees who belong to same dept.
+
+**Multi-level Index**
+
+- Index with two or more levels.
+- If the single level index become enough large that the binary search it self would take much time, we can break down indexing into multiple levels.
+
+### Secondary Index (Non-clustering)
+
+Secondary indexing is a database indexing technique used to improve the performance of query operations on non-primary key attributes.
+
+- Data is unsorted. Hence, primary indexing is not possible.
+- Can be done on key as well as non-key attribute.
+- Always dense indexing (one index entry per record or per record‐pointer).
+
+**Key Points:**
+- **Purpose**: Enhances data retrieval speed for non-primary key columns.
+- **Structure**: Comprises a secondary index file containing pointers to data records in the primary index.
+
+After secondary indexing, key becomes sorted and thus increases performance.
+
+---

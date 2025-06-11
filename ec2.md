@@ -76,7 +76,7 @@ npm start
 Alternatively, use a process manager like PM2 to keep your app running:
 
 ```bash
-npm install -g pm2
+sudo npm install -g pm2
 pm2 start app.js
 pm2 startup
 pm2 save
@@ -85,8 +85,9 @@ pm2 save
 ### Step 8: Configure Security Group to Allow Traffic
 
  **Update Security Group**:
-    - Go to the EC2 Dashboard, select your instance, and click on the associated Security Group.
-    - Edit the inbound rules to allow traffic on port 3000 (or whichever port your app is running on). Custom TSP.
+ 
+- Go to the EC2 Dashboard, select your instance, and click on the associated Security Group.
+- Edit the inbound rules to allow traffic on port 3000 (or whichever port your app is running on). Custom TSP.
 
 ### Step 9: Access Your Application
 

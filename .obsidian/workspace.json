@@ -8,7 +8,7 @@
         "type": "tabs",
         "children": [
           {
-            "id": "b0eaba52a0c32684",
+            "id": "eff7a985e860a24c",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -166,13 +166,19 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "b0eaba52a0c32684",
+  "active": "eff7a985e860a24c",
   "lastOpenFiles": [
-    "Pasted image 20250606181426.png",
+    "Screenshot 2025-06-11 at 11.56.41 PM.png",
+    "w.md",
     "DBMS.md",
+    "ec2.md",
+    "NGINX Deploy NodeJS AWS Docker.md",
+    "Serverless.md",
+    "Docker.md",
+    "React/useEffect.md",
+    "Pasted image 20250606181426.png",
     "Screenshot 2025-06-06 at 4.36.07 PM.png",
     "SQL.md",
-    "Docker.md",
     "Artificial Intelligence.md",
     "Screenshot 2025-06-04 at 12.59.38 PM.png",
     "Screenshot 2025-06-04 at 12.52.42 PM.png",
@@ -192,12 +198,7 @@
     "Web Sockets Simplified.md",
     "WebSocket.md",
     "Web Technology.md",
-    "Serverless.md",
     "README.md",
-    "RM Permissions.md",
-    "Pygame.md",
-    "Power Plant Engineering.md",
-    "NodeJS Streams.md",
-    "NumPy.md"
+    "RM Permissions.md"
   ]
 }

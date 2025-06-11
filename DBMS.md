@@ -3,7 +3,6 @@ tags:
   - backend
   - core
 references:
-  - https://youtu.be/HXV3zeQKqGY?si=CbO_L1udwspvQ_TR
   - https://youtu.be/dl00fOOYLOM?si=DFfMg_7QUuTq7-xv
 date_created: 2024-06-06
 date_modified: 2025-06-06
@@ -555,3 +554,130 @@ Secondary indexing is a database indexing technique used to improve the performa
 After secondary indexing, key becomes sorted and thus increases performance.
 
 ---
+# NoSQL
+
+Non-tabular databases that provide **flexible** schema and **scale** easily with **large amounts of data** and high user load.
+
+**Advantages**
+
+- **Flexible** - no pre-defined schema, add or remove column without any trouble.
+- **Horizontal scaling** - since data is self-contained, scaling out i.e. sharing load is possible.
+- **High Availability** - auto-replication helps using failure.
+- **Easy insert and read operation** - No joining and flexible schema, helps retrieve and insert data quickly. But updating or deleting data takes longer time.
+- **Caching**.
+- Useful for **Cloud** applications.
+
+Useful for fast paced development, modern applications.
+
+Provides relationships and sometimes even ACID transactions.
+
+**Types**
+
+1. **Key-value** Stores: efficient indexing, caching. Redis. Oracle NoSQL.
+2. **Column-oriented** / **C-store**: read by column.
+3. **Document Based Stores**: JSON - MongoDB, supports ACID.
+4. **Graph Based Stores**: focus on relationship b/w data elements. optimized search. Fraud detection.
+
+**Disadvantages**
+- Costly update/delete operations.
+- Data redundancy and inconsistency.
+- Selective use case.
+- Large storage requirement.
+- Acid generally not supported.
+
+> - Vertical (scale-up) for SQL and horizontal (scale-out) for NoSQL
+> - SQL requires *object-relational* mapping while NoSQL doesn't require ORMs.
+
+---
+# Types of DBMS
+
+1. **Relational Database**: popular, optimizes, strong but fails to scale out.
+2. **Object-oriented data models**: based on OOPS. stores everything in objects. Provides inheritance, abstraction, etc. With attribute (tables) and methods (code). Complex.
+3. **NoSQL DB**: not only sql.
+4. **Hierarchical DB**: Fixed tree-like structure with root parent. Advantage in disk storage. Disadvantage in relationships between children.
+5. **Network DB**: extension of hierarchical with child records freedom to relationship with parent. Graph structure. Slow.
+
+---
+# Clustering
+
+Set of servers - replica sets
+
+1. Redundancy
+2. Load Balancing
+3. High Availability
+
+---
+# Partitioning and Sharding
+
+When data is large and too many requests, we distribute data.
+
+**Partition** is a horizontal scaling where we divide stores database objects into separate servers.
+
+- **Vertical Partitioning** - need to access different servers to get complete tuples.
+- **Horizontal Partitioning** - independent chucks on tuples stored on different servers.
+
+**Advantages** Increase parallelism, availability, performance, manageability, reduced cost.
+
+**Distributed DB**: A single logical database that is, spread across multiple locations (servers) and logically interconnected by network.
+
+**Sharding**
+- Horizontal partitioning
+- We split it up and introduce a **Routing layer** so that we can forward the request to the right instances that actually contain the data.
+
+**Disadvantages**
+- Complex partitioning maps.
+- Non-uniformity -> Reshard.
+- Not suitable for analytical type of query.
+
+---
+# CAP Theorem
+
+Useful properties to know to design efficient distributed systems.
+
+1. **Consistency**: all nodes see same data. (most recent write operation)
+2. **Availability**: every request should get response. regardless of individual state of node.
+3. **Partition Tolerance**: system doesn't fail even if there is a break in nodes communication.
+
+> **CAP theorem** states that a distributed system can only provide **two of three properties** simultaneously.
+> 
+> The theorem formalizes the **tradeoff between consistency and availability when there’s a partition**.
+
+![[Screenshot 2025-06-11 at 11.56.41 PM.png | 400]]
+
+1. **CA** - Single node or no partition databases. (impractical). can't deliver fault tolerance. MySQL
+2. **CP** - Only one primary node receives all write requests and other replicate. If primary fail, secondary stands in until fixed. MongoDB. eg: banking.
+3. **AP** - on partition (break) all nodes are available, but not with most recent update, until partition is resolved. Hence, eventually consistent databases. Eg: facebook, Amazon DynamoDB.
+
+### BASE Properties
+
+**Basically Available** - always available, even if inconsistent
+**Soft State** - temporary inconsistency allowed.
+**Eventually Consistent** - might show inconsistent results sometimes, but eventually gets correct.
+
+---
+# Master Slave Architecture
+
+Master-Slave is a general way to optimize IO in a system where number of requests goes way high that a **single DB** server is not able to handle it efficiently.
+
+**Master** node handles all the write operations (since it has most recent updates) and **slave** node replicates it to perform read operations.
+
+**Replication**
+1. Asynchronous - Data gets updated after a short delay. Eg: youtube comment.
+2. Synchronous - Data updated instantly. Eg: Banking.
+
+> What if slave gets update?
+1. Ignore/Don't Allow slave to accept updates
+2. Allow it and somehow update master.
+
+**Advantages**
+- Bank up
+- Scale out read operations
+- Availability
+- Reliable
+- Latency decrease
+- Parallelism
+
+---
+# Database Scaling Patterns
+
+Pattern 1,2,3,4,5,6

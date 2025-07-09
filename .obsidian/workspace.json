@@ -8,20 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "0e163e2d44db0881",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "SQL.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "SQL"
-            }
-          },
-          {
             "id": "6cea593c257122af",
             "type": "leaf",
             "state": {
@@ -35,8 +21,7 @@
               "title": "Bit_Manipulation"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -93,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "fbe0f968a63722db",
@@ -222,10 +208,12 @@
   },
   "active": "6cea593c257122af",
   "lastOpenFiles": [
-    "SQL.md",
-    "Bit_Manipulation.md",
-    "Computer Networks.md",
+    "Assets/Selfie 2025-07-09 at 21.00.21.png",
+    "Godot.md",
     "Compiler Design.md",
+    "Bit_Manipulation.md",
+    "SQL.md",
+    "Computer Networks.md",
     "Clusters.md",
     "Artificial Intelligence.md",
     "Upload Excel.md",
@@ -237,7 +225,6 @@
     "NGINX.md",
     "HTML.md",
     "How I studied.md",
-    "Godot.md",
     "DNS.md",
     "React/React.md",
     "React/Props.md",
@@ -247,7 +234,6 @@
     "NodeJS/Upload files with Multer.md",
     "NodeJS/User Authentication in NodeJS.md",
     "NodeJS/NodeJS.md",
-    "RM/Structure.md",
     "RM",
     "Assets/Pasted image 20250317163327.png",
     "Assets/Screenshot 2025-06-01 at 12.15.19 PM.png",

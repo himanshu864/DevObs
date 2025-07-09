@@ -1,6 +1,27 @@
 #concept 
 
+[[Serverless]]
+
 All data in computer programs are internally stored as **bits**, i.e., as numbers 0 and 1.
+
+> [! info]
+> sda
+
+> how are you?
+
+
+```mermaid
+flowchart TD
+	A[Intermediate Code] --> B(Linear Form)
+	A --> C(Tree Form)
+	B --> D(PostFix)
+	B --> E(Three Address Code)
+	C --> F(Syntax Tree)
+	C --> G(DAG)
+```
+
+
+![[Selfie 2025-07-09 at 21.00.21.png]]
 
 In programming, an n-bit integer is internally stored as a binary number that consists of n bits. For example, the C++ type `int` is a *32*-bit type, which means that every int number consists of 32 bits.
 

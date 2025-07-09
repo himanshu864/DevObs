@@ -12,5 +12,5 @@ But serverless I just code and never worry about architecture. It only runs when
 
 # Serverless NodeJS package
 ---
-Read documentation bitch. Good night.
+Read documentation cunt. Good night.
 

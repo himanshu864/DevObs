@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "0048ead5b8bdfd90",
+        "id": "aa73b9a0acb331e1",
         "type": "tabs",
         "children": [
           {
-            "id": "eff7a985e860a24c",
+            "id": "0e163e2d44db0881",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Engineering Economics.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Engineering Economics"
+              "title": "New tab"
             }
           }
         ]
@@ -78,8 +74,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "fbe0f968a63722db",
@@ -95,7 +90,8 @@
             "state": {
               "type": "backlink",
               "state": {
-                "collapseAll": false,
+                "file": "React/useReducer.md",
+                "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
@@ -104,7 +100,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks"
+              "title": "Backlinks for useReducer"
             }
           },
           {
@@ -141,15 +137,54 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "React/useReducer.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of useReducer"
+            }
+          },
+          {
+            "id": "ade95b49b97b09f6",
+            "type": "leaf",
+            "state": {
+              "type": "localgraph",
+              "state": {
+                "file": "React/useReducer.md",
+                "options": {
+                  "collapse-filter": true,
+                  "search": "",
+                  "localJumps": 1,
+                  "localBacklinks": true,
+                  "localForelinks": true,
+                  "localInterlinks": false,
+                  "showTags": false,
+                  "showAttachments": false,
+                  "hideUnresolved": false,
+                  "collapse-color-groups": true,
+                  "colorGroups": [],
+                  "collapse-display": true,
+                  "showArrow": false,
+                  "textFadeMultiplier": 0,
+                  "nodeSizeMultiplier": 1,
+                  "lineSizeMultiplier": 1,
+                  "collapse-forces": true,
+                  "centerStrength": 0.518713248970312,
+                  "repelStrength": 10,
+                  "linkStrength": 1,
+                  "linkDistance": 250,
+                  "scale": 1,
+                  "close": true
+                }
+              },
+              "icon": "lucide-git-fork",
+              "title": "Graph of useReducer"
             }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -166,40 +201,42 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "eff7a985e860a24c",
+  "active": "0e163e2d44db0881",
   "lastOpenFiles": [
-    "Engineering Economics.md",
-    "Compiler Design.md",
-    "ec2.md",
-    "CORS.md",
-    "NGINX.md",
-    "Pandas.md",
-    "Power Plant Engineering.md",
-    "PPE.md",
-    "Python.md",
+    "RM/RM Frontend Synopsis.md",
+    "RM/Test 1.md",
     "RM Permissions.md",
-    "DBMS.md",
+    "RM/Application and Integration.md",
+    "RM/Structure.md",
+    "RM/Prompts.md",
+    "RM/Self - File.md",
+    "TypeScript.md",
+    "SSH GitHub on MacBook.md",
+    "Redis.md",
+    "README.md",
+    "Python.md",
+    "SQL.md",
+    "Serverless.md",
+    "Theory Of Computation.md",
+    "RM Meeting Notes 8-Jul-2025.md",
+    "RM",
+    "Assets/Pasted image 20250317163327.png",
+    "Upload Excel.md",
+    "Web Sockets React.md",
+    "Web Technology.md",
+    "WebSocket.md",
+    "How I studied.md",
+    "Git Commands.md",
+    "Engineering Economics.md",
+    "DNS.md",
+    "NodeJS/NodeJS Introduction.md",
+    "NodeJS/Working with files in NodeJS.md",
     "Assets/Screenshot 2025-06-01 at 12.15.19 PM.png",
     "Assets/Screenshot 2025-06-04 at 12.47.32 PM.png",
     "Assets/Screenshot 2025-06-11 at 11.56.41 PM.png",
-    "TypeScript.md",
-    "Upload Excel.md",
-    "Redis.md",
-    "w.md",
-    "dmb.md",
     "Assets/Screenshot 2025-06-04 at 12.52.42 PM.png",
-    "Artificial Intelligence.md",
-    "Helpful Articles.md",
-    "Docker.md",
-    "React/Forwarding Props.md",
-    "NGINX Deploy NodeJS AWS Docker.md",
-    "Serverless.md",
-    "React/useEffect.md",
     "Assets/Pasted image 20250606181426.png",
     "Assets/Screenshot 2025-06-06 at 4.36.07 PM.png",
-    "SQL.md",
-    "Assets/Screenshot 2025-06-04 at 12.59.38 PM.png",
-    "Amazon HackOn.md",
-    "NextJS.md"
+    "Assets/Screenshot 2025-06-04 at 12.59.38 PM.png"
   ]
 }

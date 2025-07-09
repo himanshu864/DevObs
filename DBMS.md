@@ -185,8 +185,8 @@ This information helps understand context and decision making.
 
 High level data model based on a perception of a real world that consists of a collection of basic objects, called **entities** and of **relationships** among these objects.
 
-- ER Diagram is graphical representation of ER Model.
-- Entity: Thing or object in real world that is distinguishable from other objects.
+- **ER Diagram** is graphical representation of ER Model.
+- **Entity**: Thing or object in real world that is distinguishable from other objects.
 - **Strong Entity**: can be uniquely identified using primary key.
 - **Weak Entity**: can't be uniquely identified, depends on some other strong entity.
 - **Entity Set**: set of similar type of entities that share the same attributes. Eg: Students.

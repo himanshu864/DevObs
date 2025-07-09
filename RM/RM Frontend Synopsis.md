@@ -1,5 +1,3 @@
-
----
 # Why Resume Manager?
 
 ## Introduction

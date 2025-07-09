@@ -11,10 +11,14 @@
             "id": "0e163e2d44db0881",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "RM/RM Frontend Synopsis.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "RM Frontend Synopsis"
             }
           }
         ]
@@ -201,15 +205,15 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "0e163e2d44db0881",
+  "active": "3d4abda531bfea5c",
   "lastOpenFiles": [
-    "RM/RM Frontend Synopsis.md",
-    "RM/Test 1.md",
-    "RM Permissions.md",
-    "RM/Application and Integration.md",
-    "RM/Structure.md",
     "RM/Prompts.md",
     "RM/Self - File.md",
+    "RM/RM Frontend Synopsis.md",
+    "RM/Application and Integration.md",
+    "RM/Test 1.md",
+    "RM Permissions.md",
+    "RM/Structure.md",
     "TypeScript.md",
     "SSH GitHub on MacBook.md",
     "Redis.md",

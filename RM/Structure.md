@@ -60,3 +60,5 @@ We asked manit.
 - How do you plan on maintaining it?
 - Hired juniors and segregated frontend from backend, ensuring total security. As well as proper hierarchical roles to ensure no departmental conflicts.
 
+
+Namrata 

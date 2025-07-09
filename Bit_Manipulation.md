@@ -22,7 +22,7 @@ flowchart TD
 	C --> G(DAG)
 ```
 
-![[Selfie 2025-07-09 at 21.00.21.png | 500]]
+![[Selfie 2025-07-09 at 21.00.21.png |600 ]]
 
 In programming, an n-bit integer is internally stored as a binary number that consists of n bits. For example, the C++ type `int` is a *32*-bit type, which means that every int number consists of 32 bits.
 

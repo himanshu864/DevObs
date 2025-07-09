@@ -7,7 +7,7 @@ All data in computer programs are internally stored as **bits**, i.e., as number
 > [! info]
 > sda
 
-> how are you?
+> how are you? Dear.
 
 
 ```mermaid

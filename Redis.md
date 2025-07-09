@@ -5,6 +5,7 @@ references:
   - https://youtu.be/Vx2zPMPvmug?si=LjeHY6nCU9HnfwAK
 date_created: 2025-06-15
 date_modified: 2025-06-16
+title: Redis
 ---
 ---
 

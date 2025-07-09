@@ -8,9 +8,7 @@ All data in computer programs are internally stored as **bits**, i.e., as number
 > sda
 > asdfasdf s sa 
 
-
 > how are you? Dear.
-
 
 ```mermaid
 flowchart TD

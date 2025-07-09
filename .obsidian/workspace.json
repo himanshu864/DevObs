@@ -20,23 +20,8 @@
               "icon": "lucide-file",
               "title": "React"
             }
-          },
-          {
-            "id": "0c199f328475afe1",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "index.md",
-                "mode": "source",
-                "source": true
-              },
-              "icon": "lucide-file",
-              "title": "index"
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -93,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "fbe0f968a63722db",
@@ -220,10 +206,10 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "0c199f328475afe1",
+  "active": "6cea593c257122af",
   "lastOpenFiles": [
-    "React/React.md",
     "index.md",
+    "React/React.md",
     "Redis.md",
     "Docker.md",
     "Fundamentals of Management.md",

@@ -4,8 +4,10 @@
 
 All data in computer programs are internally stored as **bits**, i.e., as numbers 0 and 1.
 
-> [! info]
+> [! error]
 > sda
+> asdfasdf s sa 
+
 
 > how are you? Dear.
 

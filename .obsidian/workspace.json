@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "RM/Structure.md",
+                "file": "React/React.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Structure"
+              "title": "React"
             }
           }
         ]
@@ -205,14 +205,21 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "3d4abda531bfea5c",
+  "active": "0e163e2d44db0881",
   "lastOpenFiles": [
-    "RM/Self - File.md",
+    "React/Props.md",
+    "React/Fragments.md",
+    "React/Passing States.md",
+    "React/React.md",
+    "React/React Forms Inputs.md",
+    "NodeJS/Upload files with Multer.md",
+    "NodeJS/User Authentication in NodeJS.md",
+    "NodeJS/NodeJS.md",
     "RM/Structure.md",
+    "RM/Self - File.md",
     "RM/Application and Integration.md",
     "RM/Prompts.md",
     "Template/Template.md",
-    "NodeJS/NodeJS.md",
     "RM/Test 1.md",
     "Computer Networks.md",
     "Data Modelling - Mongoose.md",
@@ -226,13 +233,6 @@
     "README.md",
     "Python.md",
     "Serverless.md",
-    "Theory Of Computation.md",
-    "TypeScript.md",
-    "Web Technology.md",
-    "WebSocket.md",
-    "Upload Excel.md",
-    "HTML.md",
-    "How I studied.md",
     "RM",
     "Assets/Pasted image 20250317163327.png",
     "Assets/Screenshot 2025-06-01 at 12.15.19 PM.png",

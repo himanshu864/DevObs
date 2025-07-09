@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Home Page.md",
+                "file": "Index.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Home Page"
+              "title": "Index"
             }
           }
         ],
@@ -223,7 +223,7 @@
   "active": "0c199f328475afe1",
   "lastOpenFiles": [
     "React/React.md",
-    "Home Page.md",
+    "Index.md",
     "Redis.md",
     "Docker.md",
     "Fundamentals of Management.md",

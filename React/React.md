@@ -1,4 +1,4 @@
-#react #frontend
+#react 
 
 1. [[React Introduction]]
 2. [[Components]]

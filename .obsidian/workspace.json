@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Redis.md",
+                "file": "React/React.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Redis"
+              "title": "React"
             }
           }
         ]
@@ -207,6 +207,7 @@
   },
   "active": "6cea593c257122af",
   "lastOpenFiles": [
+    "Redis.md",
     "Docker.md",
     "Fundamentals of Management.md",
     "ec2.md",
@@ -233,7 +234,6 @@
     "How I studied.md",
     "DNS.md",
     "React/React.md",
-    "React/Props.md",
     "RM",
     "Assets/Pasted image 20250317163327.png",
     "Assets/Screenshot 2025-06-01 at 12.15.19 PM.png",

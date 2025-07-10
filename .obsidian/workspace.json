@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "aa73b9a0acb331e1",
+        "id": "f41233f32542b6f8",
         "type": "tabs",
         "children": [
           {
-            "id": "6cea593c257122af",
+            "id": "0fdc792c19a1bff7",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "React/React.md",
+                "file": "Bit_Manipulation.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "React"
+              "title": "Bit_Manipulation"
             }
           }
         ]
@@ -206,11 +206,13 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "6cea593c257122af",
+  "active": "0fdc792c19a1bff7",
   "lastOpenFiles": [
-    "index.md",
-    "React/React.md",
+    "Assets/WhatsApp Image 2025-07-10 at 05.38.23.jpeg",
+    "Bit_Manipulation.md",
     "Redis.md",
+    "React/React.md",
+    "index.md",
     "Docker.md",
     "Fundamentals of Management.md",
     "ec2.md",
@@ -220,7 +222,6 @@
     "RM/RM Frontend Synopsis.md",
     "RM/Application and Integration.md",
     "RM/Prompts.md",
-    "Bit_Manipulation.md",
     "Assets/Selfie 2025-07-09 at 21.00.21.png",
     "Godot.md",
     "SQL.md",
@@ -234,7 +235,6 @@
     "Serverless.md",
     "NGINX.md",
     "HTML.md",
-    "How I studied.md",
     "RM",
     "Assets/Pasted image 20250317163327.png",
     "Assets/Screenshot 2025-06-01 at 12.15.19 PM.png",

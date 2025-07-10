@@ -6,7 +6,6 @@ All data in computer programs are internally stored as **bits**, i.e., as number
 
 > [! error]
 > sda
-> asdfasdf s sa 
 
 > how are you? Dear.
 

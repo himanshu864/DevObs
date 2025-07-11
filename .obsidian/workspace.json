@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Bit_Manipulation.md",
+                "file": "Docker.md",
                 "mode": "source",
-                "source": true
+                "source": false
               },
               "icon": "lucide-file",
-              "title": "Bit_Manipulation"
+              "title": "Docker"
             }
           }
         ]
@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "fbe0f968a63722db",
@@ -208,8 +207,8 @@
   },
   "active": "0fdc792c19a1bff7",
   "lastOpenFiles": [
-    "Assets/WhatsApp Image 2025-07-10 at 05.38.23.jpeg",
     "Bit_Manipulation.md",
+    "Assets/WhatsApp Image 2025-07-10 at 05.38.23.jpeg",
     "Redis.md",
     "React/React.md",
     "index.md",

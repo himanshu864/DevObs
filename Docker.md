@@ -57,6 +57,8 @@ docker container ls -a
 # docker ps -a
 ```
 
+tushar god
+
 3. To start and stop and a container
 ```bash
 # To start a container
@@ -75,7 +77,7 @@ docker exec <container_name> ls
 docker exec -it <container_name> ls
 
 # to login directly
-docket exec -it <container_name> bash
+docker exec -it <container_name> bash
 ```
 
 5. To list all images

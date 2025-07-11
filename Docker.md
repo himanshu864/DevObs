@@ -1,5 +1,9 @@
 #devops #docker
 
+Tushar Singh
+
+![[Screenshot 2025-06-15 at 10.52.23 PM.png]]
+
 ## What is a Container?
 ---
 Simply put, containers are isolated processes for each of your app's components. Each component runs in its own isolated environment, completely isolated from everything else on your machine.
@@ -56,8 +60,6 @@ docker container ls
 docker container ls -a
 # docker ps -a
 ```
-
-tushar god
 
 3. To start and stop and a container
 ```bash
@@ -167,9 +169,7 @@ Successfully running on PORT:3000
 
 - Dockerfile caches commands that have already ran once
 - That's why whenever make changes, try to keep it as below as possible. To avoid wasting performance and use cache efficiently
-
 - Login, push and pull image containers online
-
 - Also docker composition blah blah copy paste
 
 # Docker Networking

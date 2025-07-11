@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "fbe0f968a63722db",
@@ -207,6 +208,7 @@
   },
   "active": "0fdc792c19a1bff7",
   "lastOpenFiles": [
+    "Assets/Screenshot 2025-06-15 at 10.52.23 PM.png",
     "Bit_Manipulation.md",
     "Assets/WhatsApp Image 2025-07-10 at 05.38.23.jpeg",
     "Redis.md",

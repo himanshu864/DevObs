@@ -11,14 +11,10 @@
             "id": "0fdc792c19a1bff7",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Computer Networks.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Computer Networks"
+              "title": "New tab"
             }
           }
         ]
@@ -208,6 +204,11 @@
   },
   "active": "0fdc792c19a1bff7",
   "lastOpenFiles": [
+    "himanshu-aggarwal.md",
+    "tushar.md",
+    "React/React.md",
+    "How I studied.md",
+    "Computer Networks.md",
     "Docker.md",
     "WebSocket.md",
     "Web Technology.md",
@@ -230,11 +231,6 @@
     "React/useReducer.md",
     "React/useEffect.md",
     "React/TailWind CSS.md",
-    "React/Styled Components.md",
-    "React/Side Effects.md",
-    "React/React.md",
-    "React/React Introduction.md",
-    "React/React Forms Inputs.md",
     "React",
     "NodeJS",
     "LICENSE",

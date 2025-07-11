@@ -11,10 +11,14 @@
             "id": "0fdc792c19a1bff7",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Computer Networks.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Computer Networks"
             }
           }
         ]
@@ -204,7 +208,7 @@
   },
   "active": "0fdc792c19a1bff7",
   "lastOpenFiles": [
-    "CORS.md",
+    "Docker.md",
     "WebSocket.md",
     "Web Technology.md",
     "Web Sockets Simplified.md",
@@ -215,20 +219,20 @@
     "SSH GitHub on MacBook.md",
     "SQL.md",
     "Serverless.md",
-    "RM/RM Frontend Synopsis.md",
     "RM/Prompts.md",
+    "RM/RM Frontend Synopsis.md",
     "RM/Application and Integration.md",
     "RM",
     "Redis.md",
     "README.md",
     "React/useState and Hooks.md",
-    "React/useReducer.md",
     "React/useRef.md",
+    "React/useReducer.md",
     "React/useEffect.md",
     "React/TailWind CSS.md",
     "React/Styled Components.md",
-    "React/React.md",
     "React/Side Effects.md",
+    "React/React.md",
     "React/React Introduction.md",
     "React/React Forms Inputs.md",
     "React",

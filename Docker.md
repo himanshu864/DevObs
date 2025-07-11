@@ -1,6 +1,6 @@
 #devops #docker
 
-#### Tushar Singh
+> Tushar Singh
 
 ![[Screenshot 2025-06-15 at 10.52.23 PM.png]]
 

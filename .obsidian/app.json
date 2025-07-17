@@ -7,5 +7,6 @@
     "downscalePercent": 100
   },
   "attachmentFolderPath": "Assets",
-  "livePreview": false
+  "livePreview": true,
+  "defaultViewMode": "source"
 }

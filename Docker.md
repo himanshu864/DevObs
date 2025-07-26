@@ -137,7 +137,7 @@ The Dockerfile supports the following instructions:
 
 ### Dockerfile
 
-```Dockerfile
+```docker
 # Set the `baseImage` to use for subsequent instructions. `FROM` must be the first instruction in a `Dockerfile`.
 FROM node
 

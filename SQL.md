@@ -166,6 +166,18 @@ WHERE name IN ('Claire', 'Jack');
 SELECT *
 FROM student
 WHERE major IN ('Biology', 'Chemistry') AND student_id > 2;
+
+-- there also exists BETWEEN and is NULL
+
+-- WILDCARD
+-- `%` represents any combination of characters.
+-- `_` represents only one character.
+SELECT * FROM worker WHERE first_name = '_i%' -- 'himanshu', 'rishav'
+
+-- DISTINCT
+SELECT DISTINCT departments FROM worker
+
+
 ```
 
 ---
@@ -230,3 +242,7 @@ And also insert all employee that reference ‘`Corporate`' branch into employee
 ```sql
 INSERT INTO employee VALUES(101, 'Jan', 'Levinson', '1961-05-11', 'F', 110000, 100, 1);
 ```
+
+---
+## Wildcard
+

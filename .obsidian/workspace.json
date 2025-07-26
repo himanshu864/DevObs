@@ -8,13 +8,17 @@
         "type": "tabs",
         "children": [
           {
-            "id": "b360f88fbafe05b7",
+            "id": "1805a1bea5dd59db",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "System Design.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "System Design"
             }
           }
         ]
@@ -203,8 +207,13 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "b360f88fbafe05b7",
+  "active": "1805a1bea5dd59db",
   "lastOpenFiles": [
+    "FastAPI.md",
+    "System Design.md",
+    "Prisma with FastAPI.md",
+    "Prisma.md",
+    "Machine Learning.md",
     "WebSocket.md",
     "Web Technology.md",
     "Web Sockets Simplified.md",
@@ -227,11 +236,6 @@
     "React/useEffect.md",
     "React/TailWind CSS.md",
     "React/Styled Components.md",
-    "React/React.md",
-    "React/Side Effects.md",
-    "React/React Introduction.md",
-    "React/React Backend.md",
-    "React/React Forms Inputs.md",
     "React",
     "NodeJS",
     "LICENSE",

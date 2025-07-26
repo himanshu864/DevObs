@@ -19,6 +19,10 @@ source venv/bin/activate
 
 pip3 install fastapi
 pip3 install uvicorn
+
+# or
+
+pip3 install "fastapi[standard]"
 ```
 
 2. Create your hello world application
@@ -39,6 +43,10 @@ def root():
 
 ```bash
 uvicorn app:app --reload
+
+# or 
+
+fastapi dev app.py
 ```
 
 ---
@@ -138,5 +146,38 @@ curl
 	-d '{"text": "DBMS"}'
 	'http://127.0.0.1:8000/items'
 # [{"text":"OS"},{"text":"CN"},{"text":"DBMS","is_done":false}]
+```
+
+---
+## Lifespan
+
+For events like connecting to database or loading machine learning model, that needs to be run at the start of the application and close with it, you can use **Lifespan** feature of FastAPI.
+
+```python
+from contextlib import asynccontextmanager
+from fastapi import FastAPI
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    # connect to database
+    yield
+    # disconnect to database
+
+app = FastAPI(lifespan=lifespan)
+```
+
+---
+## Logs
+
+```python
+import logging
+
+logger = logging.getLogger("uvicorn.error")
+logger.setLevel(logging.DEBUG)
+
+@app.get("/")
+async def root():
+    loggerdebug("Server is running")
+    return {"message": "Server is running"}
 ```
 

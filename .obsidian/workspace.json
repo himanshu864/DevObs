@@ -11,10 +11,14 @@
             "id": "79ffb7487a40a626",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Boilerplate For MERN Project.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Boilerplate For MERN Project"
             }
           }
         ]
@@ -156,17 +160,6 @@
   },
   "active": "79ffb7487a40a626",
   "lastOpenFiles": [
-    "Pygame.md",
-    "DBMS.md",
-    "Boilerplate For MERN Project.md",
-    "Artificial Intelligence.md",
-    "Compiler Design.md",
-    "Pydantic.md",
-    "Prisma with FastAPI.md",
-    "Computer Networks.md",
-    "README.md",
-    "Welcome.md",
-    "LICENSE",
     "WebSocket.md",
     "Web Technology.md",
     "Web Sockets Simplified.md",
@@ -174,19 +167,30 @@
     "Upload Excel.md",
     "TypeScript.md",
     "Theory Of Computation.md",
+    "Template/Template.md",
+    "Template",
     "System Design.md",
     "SSH GitHub on MacBook.md",
     "SQL.md",
     "Serverless.md",
-    "Redis.md",
-    "Python.md",
-    "Prisma.md",
-    "PPE.md",
-    "Power Plant Engineering.md",
-    "Template",
+    "RM/Prompts.md",
+    "RM/RM Frontend Synopsis.md",
+    "RM/Application and Integration.md",
     "RM",
+    "Redis.md",
+    "README.md",
+    "React/React Introduction.md",
+    "React/CSS in JSX.md",
+    "React/useState and Hooks.md",
+    "React/useRef.md",
+    "React/useEffect.md",
+    "React/useReducer.md",
+    "React/TailWind CSS.md",
+    "React/Styled Components.md",
+    "React/Side Effects.md",
     "React",
     "NodeJS",
+    "LICENSE",
     "Assets"
   ]
 }

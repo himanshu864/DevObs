@@ -11,14 +11,10 @@
             "id": "79ffb7487a40a626",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Pygame.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Pygame"
+              "title": "New tab"
             }
           }
         ]
@@ -160,6 +156,7 @@
   },
   "active": "79ffb7487a40a626",
   "lastOpenFiles": [
+    "Pygame.md",
     "DBMS.md",
     "Boilerplate For MERN Project.md",
     "Artificial Intelligence.md",
@@ -183,7 +180,6 @@
     "Serverless.md",
     "Redis.md",
     "Python.md",
-    "Pygame.md",
     "Prisma.md",
     "PPE.md",
     "Power Plant Engineering.md",

@@ -1,0 +1,65 @@
+{
+  "collapse-filter": false,
+  "search": "",
+  "showTags": false,
+  "showAttachments": false,
+  "hideUnresolved": false,
+  "showOrphans": true,
+  "collapse-color-groups": false,
+  "colorGroups": [
+    {
+      "query": "tag:#core  ",
+      "color": {
+        "a": 1,
+        "rgb": 5357575
+      }
+    },
+    {
+      "query": "tag:#nodejs",
+      "color": {
+        "a": 1,
+        "rgb": 15364624
+      }
+    },
+    {
+      "query": "tag:#dev",
+      "color": {
+        "a": 1,
+        "rgb": 9000678
+      }
+    },
+    {
+      "query": "tag:#devops",
+      "color": {
+        "a": 1,
+        "rgb": 14497334
+      }
+    },
+    {
+      "query": "path:React  ",
+      "color": {
+        "a": 1,
+        "rgb": 3987364
+      }
+    },
+    {
+      "query": "tag:#python",
+      "color": {
+        "a": 1,
+        "rgb": 13820012
+      }
+    }
+  ],
+  "collapse-display": true,
+  "showArrow": false,
+  "textFadeMultiplier": 0,
+  "nodeSizeMultiplier": 0.745198567708333,
+  "lineSizeMultiplier": 1.045068359375,
+  "collapse-forces": false,
+  "centerStrength": 0.637898763020833,
+  "repelStrength": 9.98616536458333,
+  "linkStrength": 1,
+  "linkDistance": 250,
+  "scale": 1.148511302762182,
+  "close": false
+}

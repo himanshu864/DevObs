@@ -1,0 +1,196 @@
+{
+  "main": {
+    "id": "202b7fd4df6b95d9",
+    "type": "split",
+    "children": [
+      {
+        "id": "69afcdfd653eaf6f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "79ffb7487a40a626",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Pygame.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Pygame"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "ef29ea6d8a5e6516",
+    "type": "split",
+    "children": [
+      {
+        "id": "470d2a9686ded5d3",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e1854aaa04101158",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "24d8363313ed063f",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "right": {
+    "id": "db4fd881c4c230f3",
+    "type": "split",
+    "children": [
+      {
+        "id": "aff538b2232e75d8",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8ac80ddee4a2a125",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Welcome.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Welcome"
+            }
+          },
+          {
+            "id": "0d46ebc1b300d7b5",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Welcome.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Welcome"
+            }
+          },
+          {
+            "id": "ecfbce409b4a33d8",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "aa1b0140ee3ad52b",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Welcome.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Welcome"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "obsidian-git:Open Git source control": false
+    }
+  },
+  "active": "79ffb7487a40a626",
+  "lastOpenFiles": [
+    "DBMS.md",
+    "Boilerplate For MERN Project.md",
+    "Artificial Intelligence.md",
+    "Compiler Design.md",
+    "Pydantic.md",
+    "Prisma with FastAPI.md",
+    "Computer Networks.md",
+    "README.md",
+    "Welcome.md",
+    "LICENSE",
+    "WebSocket.md",
+    "Web Technology.md",
+    "Web Sockets Simplified.md",
+    "Web Sockets React.md",
+    "Upload Excel.md",
+    "TypeScript.md",
+    "Theory Of Computation.md",
+    "System Design.md",
+    "SSH GitHub on MacBook.md",
+    "SQL.md",
+    "Serverless.md",
+    "Redis.md",
+    "Python.md",
+    "Pygame.md",
+    "Prisma.md",
+    "PPE.md",
+    "Power Plant Engineering.md",
+    "Template",
+    "RM",
+    "React",
+    "NodeJS",
+    "Assets"
+  ]
+}

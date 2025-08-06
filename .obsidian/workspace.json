@@ -11,14 +11,10 @@
             "id": "79ffb7487a40a626",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Boilerplate For MERN Project.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Boilerplate For MERN Project"
+              "title": "New tab"
             }
           }
         ]
@@ -160,6 +156,7 @@
   },
   "active": "79ffb7487a40a626",
   "lastOpenFiles": [
+    "Boilerplate For MERN Project.md",
     "WebSocket.md",
     "Web Technology.md",
     "Web Sockets Simplified.md",
@@ -187,7 +184,6 @@
     "React/useReducer.md",
     "React/TailWind CSS.md",
     "React/Styled Components.md",
-    "React/Side Effects.md",
     "React",
     "NodeJS",
     "LICENSE",

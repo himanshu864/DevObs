@@ -1,4 +1,4 @@
-[]()#core 
+#core 
 
 ![[Screenshot 2025-02-28 at 10.14.57 AM.png | 600]]
 

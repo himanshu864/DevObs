@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Bit_Manipulation.md",
+                "file": "Computer Networks.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Bit_Manipulation"
+              "title": "Computer Networks"
             }
           }
         ]
@@ -162,9 +162,25 @@
   },
   "active": "ca6de5b85941115d",
   "lastOpenFiles": [
+    "Operating System.md",
+    "DBMS.md",
+    "WebSocket.md",
+    "Web Technology.md",
+    "Web Sockets Simplified.md",
+    "Web Sockets React.md",
+    "Upload Excel.md",
+    "TypeScript.md",
+    "Serverless.md",
+    "System Design.md",
+    "Python.md",
+    "Computer Networks.md",
+    "Boilerplate For MERN Project.md",
     "RM/RM Frontend Synopsis.md",
     "RM/Prompts.md",
     "RM/Application and Integration.md",
+    "Kartik Walia Planning.md",
+    "Operating System - 2.md",
+    "Bit_Manipulation.md",
     "React/Passing States.md",
     "React/CSS in JSX.md",
     "React/Forwarding Props.md",
@@ -172,22 +188,6 @@
     "React/useReducer.md",
     "React/useState and Hooks.md",
     "React/Class-Based ErrorBoundry.md",
-    "React/useRef.md",
-    "React/React Introduction.md",
-    "React/React Backend.md",
-    "React/Optimize React - Memo.md",
-    "React/React.md",
-    "React/Dynamic Styling.md",
-    "React/TailWind CSS.md",
-    "React/Conditional Rendering.md",
-    "React/useEffect.md",
-    "React/Context API.md",
-    "React/CSS Modules.md",
-    "React/Props.md",
-    "React/Fragments.md",
-    "React/Components.md",
-    "React/Boilerplate Context.md",
-    "React/Custom Hooks.md",
     "RM",
     "React",
     "NodeJS",

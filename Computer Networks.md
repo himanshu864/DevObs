@@ -182,9 +182,11 @@ The controller acts as an exchange.
 
 1. Representation of bits: bits are encoded into signals - electric or optical.
 2. Data rate: transmission rate.
-3. Line configuration: Point-to-point or Multipoint.
-4. Physical topology.
-5. Transmission mode: (duplex)
+
+asdf
+1. Line configuration: Point-to-point or Multipoint.
+2. Physical topology.
+3. Transmission mode: (duplex)
 
 **Data Link Layer**:
 - Ensures *error-free* data transfer between two devices on same network

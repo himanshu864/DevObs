@@ -745,12 +745,12 @@ $$A = \{\, (x,\;\mu_A(x)) \mid x\in X \}$$
 
 For any fuzzy set $A$ with membership function $\mu_A(x)$:
 
-| Feature                      | Definition                       | Notation                 |
-| :--------------------------- | :------------------------------- | :----------------------- |
-| **Support**                  | All $x$ with non‑zero membership | $\{x\mid \mu_A(x)>0\}$   |
-| **Core**                     | All $x$ fully in the set         | $\{x\mid \mu_A(x)=1\}$   |
-| **Crossover** (α‑cut at 0.5) | All $x$ where $\mu_A(x)=0.5$     | $\{x\mid \mu_A(x)=0.5\}$ |
-| **Boundary**                 | Region between support and core  | $\{x\mid 0<\mu_A(x)<1\}$ |
+| Feature                      | Definition                       | Notation                     |
+| :--------------------------- | :------------------------------- | :--------------------------- |
+| **Support**                  | All $x$ with non‑zero membership | $\{x\mid \mu_A(x)>0\}$       |
+| **Core**                     | All $x$ fully in the set         | $\{x\mid \mu_A(x)=1\}$       |
+| **Crossover** (α‑cut at 0.5) | All $x$ where $\mu_A(x)=0.5$     | $\{x\mid \mu_A(x)=0.5\}$     |
+| **Boundary**                 | Region between support and core  | $\{x\mid 0 < \mu_A(x) < 1\}$ |
 
 ![[Pasted image 20250517002441.png]]
 

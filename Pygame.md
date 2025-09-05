@@ -1,5 +1,6 @@
 #python #game #dev 
 
+---
 # Installation
 
 1. Download and install `python` from [python.org](https://www.python.org/).

@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "NumPy.md",
+                "file": "Operating System.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "NumPy"
+              "title": "Operating System"
             }
           }
         ]
@@ -68,8 +68,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "db4fd881c4c230f3",
@@ -162,11 +161,12 @@
   },
   "active": "ca6de5b85941115d",
   "lastOpenFiles": [
+    "TheSceneZone-Policies.md",
+    "NumPy.md",
     "Operating System.md",
     "Power Plant Engineering.md",
     "PostGreSQL.md",
     "Pandas.md",
-    "NumPy.md",
     "Python.md",
     "Artificial Intelligence.md",
     "WebSocket.md",
@@ -175,7 +175,6 @@
     "Web Sockets React.md",
     "Upload Excel.md",
     "TypeScript.md",
-    "TheSceneZone-Policies.md",
     "Theory Of Computation.md",
     "System Design.md",
     "SSH GitHub on MacBook.md",

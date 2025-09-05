@@ -11,14 +11,10 @@
             "id": "ca6de5b85941115d",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Computer Networks.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Computer Networks"
+              "title": "New tab"
             }
           }
         ]
@@ -133,13 +129,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Welcome.md",
+                "file": "Fareportal.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Welcome"
+              "title": "Outline of Fareportal"
             }
           }
         ],
@@ -162,6 +158,8 @@
   },
   "active": "ca6de5b85941115d",
   "lastOpenFiles": [
+    "Fareportal.md",
+    "Computer Networks.md",
     "Operating System.md",
     "DBMS.md",
     "WebSocket.md",
@@ -173,7 +171,6 @@
     "Serverless.md",
     "System Design.md",
     "Python.md",
-    "Computer Networks.md",
     "Boilerplate For MERN Project.md",
     "RM/RM Frontend Synopsis.md",
     "RM/Prompts.md",
@@ -187,7 +184,6 @@
     "React/Events.md",
     "React/useReducer.md",
     "React/useState and Hooks.md",
-    "React/Class-Based ErrorBoundry.md",
     "RM",
     "React",
     "NodeJS",

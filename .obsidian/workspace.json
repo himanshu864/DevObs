@@ -11,14 +11,10 @@
             "id": "ca6de5b85941115d",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Pygame.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Pygame"
+              "title": "New tab"
             }
           }
         ]
@@ -68,8 +64,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "db4fd881c4c230f3",
